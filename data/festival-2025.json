@@ -1,0 +1,204 @@
+{
+  "festival": {
+    "name": "Boston Mountain Pawpaw Festival",
+    "year": 2025,
+    "edition": "2nd Annual",
+    "date": "2025-09-20",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "timezone": "America/Chicago",
+    "location": {
+      "venue": "Beard & Lady Inn",
+      "address": {
+        "street": "Beard & Lady Inn",
+        "city": "Chester",
+        "state": "AR",
+        "zip": "72936",
+        "country": "USA"
+      },
+      "coordinates": {
+        "lat": 35.6789,
+        "lng": -94.1234
+      },
+      "parking": [
+        {
+          "name": "Main Lot",
+          "capacity": 200,
+          "accessible": true,
+          "free": true
+        },
+        {
+          "name": "Overflow Field",
+          "capacity": 100,
+          "accessible": false,
+          "free": true
+        }
+      ]
+    },
+    "admission": {
+      "general": {
+        "price": 0,
+        "description": "Free entry to festival grounds"
+      },
+      "activities": {
+        "description": "Food and some activities priced separately"
+      }
+    },
+    "features": [
+      "Pawpaw desserts and treats",
+      "Live music by Dreadful Day",
+      "Growing workshops",
+      "Cornhole tournament",
+      "Pawpaw pageant",
+      "Kids activities",
+      "Local vendors",
+      "Food trucks"
+    ],
+    "organizers": [
+      {
+        "name": "Boston Mountain Pawpaw Festival Committee",
+        "role": "Primary Organizer"
+      },
+      {
+        "name": "Beard & Lady Inn",
+        "role": "Host Venue"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "Example Sponsor 1",
+        "level": "gold",
+        "logo": "/assets/images/sponsors/sponsor1.png",
+        "url": "https://example.com"
+      }
+    ]
+  },
+  "schedule": [
+    {
+      "id": 1,
+      "time": "9:00 AM",
+      "endTime": "9:30 AM",
+      "title": "Festival Gates Open",
+      "description": "Welcome to the 2nd Annual Boston Mountain Pawpaw Festival!",
+      "type": "opening",
+      "icon": "🎪",
+      "location": "Main Entrance"
+    },
+    {
+      "id": 2,
+      "time": "9:30 AM",
+      "endTime": "4:30 PM",
+      "title": "Pawpaw Dessert Vendors",
+      "description": "Sample and purchase amazing pawpaw ice cream, pies, breads, cookies, and more from local vendors",
+      "type": "food",
+      "icon": "🥧",
+      "location": "Vendor Row",
+      "vendors": [
+        "Sweet Pawpaw Treats",
+        "Mountain Valley Ice Cream",
+        "Ozark Bakery"
+      ]
+    },
+    {
+      "id": 3,
+      "time": "10:00 AM",
+      "endTime": "10:45 AM",
+      "title": "Pawpaw Growing Workshop",
+      "description": "Learn how to cultivate your own pawpaw trees with expert growers",
+      "type": "workshop",
+      "icon": "🌱",
+      "location": "Workshop Tent",
+      "speaker": "Dr. Jane Smith, Horticulturist",
+      "capacity": 50,
+      "requiresRegistration": false
+    },
+    {
+      "id": 4,
+      "time": "11:00 AM",
+      "endTime": "4:00 PM",
+      "title": "Live Music: Dreadful Day",
+      "description": "Enjoy live performances throughout the day on the main stage",
+      "type": "entertainment",
+      "icon": "🎵",
+      "location": "Main Stage"
+    },
+    {
+      "id": 5,
+      "time": "11:30 AM",
+      "endTime": "1:00 PM",
+      "title": "Cornhole Tournament",
+      "description": "Test your skills in our pawpaw-themed cornhole tournament. Prizes for winners!",
+      "type": "activity",
+      "icon": "🎯",
+      "location": "Game Area",
+      "prizes": ["$100 Grand Prize", "$50 Runner-up", "$25 Third Place"],
+      "registrationRequired": true,
+      "registrationDeadline": "11:15 AM"
+    },
+    {
+      "id": 6,
+      "time": "1:00 PM",
+      "endTime": "2:00 PM",
+      "title": "Pawpaw Pageant",
+      "description": "Crown the 2025 Pawpaw King and Queen in this fun, family-friendly pageant",
+      "type": "featured",
+      "icon": "👑",
+      "location": "Main Stage",
+      "categories": ["Adult King/Queen", "Youth Prince/Princess", "Pet Costume Contest"]
+    }
+  ],
+  "vendors": [
+    {
+      "id": 1,
+      "name": "Sweet Pawpaw Treats",
+      "category": "food",
+      "description": "Homemade pawpaw ice cream, cookies, and candies",
+      "booth": "A1",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Mountain Valley Ice Cream",
+      "category": "food",
+      "description": "Artisanal pawpaw ice cream in unique flavors",
+      "booth": "A2"
+    },
+    {
+      "id": 3,
+      "name": "Ozark Native Plants",
+      "category": "plants",
+      "description": "Pawpaw seedlings and native plant starts",
+      "booth": "B1"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a pawpaw?",
+      "answer": "The pawpaw is North America's largest native edible fruit, with a tropical flavor often described as a cross between banana and mango."
+    },
+    {
+      "question": "Is there parking available?",
+      "answer": "Yes! We have free parking in our main lot and overflow field. Accessible parking is available near the main entrance."
+    },
+    {
+      "question": "Can I bring my dog?",
+      "answer": "Well-behaved dogs on leashes are welcome! We even have a pet costume contest as part of the Pawpaw Pageant."
+    },
+    {
+      "question": "What if it rains?",
+      "answer": "The festival will proceed rain or shine! Some activities will move under tents or indoor spaces if needed."
+    },
+    {
+      "question": "Are pawpaw trees for sale?",
+      "answer": "Yes! Several vendors will have pawpaw seedlings and young trees available for purchase."
+    }
+  ],
+  "contact": {
+    "email": "info@pawpawfestar.org",
+    "phone": "(555) 123-4567",
+    "social": {
+      "facebook": "https://facebook.com/bostonmountainpawpawfestival",
+      "instagram": "https://instagram.com/bmpawpawfest"
+    }
+  }
+}
