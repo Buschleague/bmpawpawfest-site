@@ -157,58 +157,8 @@
 -->
 
   <!-- Header -->
-  <header class="site-header" id="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="logo-wrapper">
-          <img src="/assets/images/logo-primary.png" alt="Boston Mountains Pawpaw Festival" class="site-logo">
-          <h1 class="site-title">Boston Mountains Pawpaw Festival</h1>
-        </div>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
-          <span class="hamburger"></span>
-          <span class="hamburger"></span>
-          <span class="hamburger"></span>
-        </button>
-
-        <!-- Navigation -->
-        <nav class="main-nav" id="main-nav">
-          <ul class="nav-list">
-            <li><a href="#home" class="nav-link active">Home</a></li>
-            <li class="nav-dropdown">
-              <a href="#about" class="nav-link">About</a>
-              <ul class="dropdown-menu">
-                <li><a href="#history" class="dropdown-link">Festival History</a></li>
-                <li><a href="#pawpaws" class="dropdown-link">What are Pawpaws?</a></li>
-                <li><a href="#mission" class="dropdown-link">Our Mission</a></li>
-              </ul>
-            </li>
-            <li class="nav-dropdown">
-              <a href="#info" class="nav-link">Festival Info</a>
-              <ul class="dropdown-menu">
-                <li><a href="#schedule" class="dropdown-link">Schedule</a></li>
-                <li><a href="#location" class="dropdown-link">Location & Parking</a></li>
-                <li><a href="#what-to-bring" class="dropdown-link">What to Bring</a></li>
-                <li><a href="#faq" class="dropdown-link">FAQ</a></li>
-              </ul>
-            </li>
-            <li><a href="pages/gallery/" class="nav-link">Gallery</a></li>
-            <li><a href="pages/news/" class="nav-link">News</a></li>
-            <li class="nav-dropdown">
-              <a href="#vendors" class="nav-link">Vendors</a>
-              <ul class="dropdown-menu">
-                <li><a href="#become-vendor" class="dropdown-link">Become a Vendor</a></li>
-                <li><a href="#sponsors" class="dropdown-link">Sponsors</a></li>
-                <li><a href="#vendor-list" class="dropdown-link">2025 Vendors</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+  <!-- Header Component -->
+  <div data-component="header"></div>
 
   <!-- Hero Section -->
   <section id="home" class="hero" role="banner">
@@ -1345,10 +1295,20 @@
 }
 </style>
 
-  <!-- JavaScript Files -->
+<!-- JavaScript Files -->
+  <script src="js/core/component-loader.js"></script>
+  <script src="js/core/path-resolver.js"></script>
   <script src="js/modules/navigation.js"></script>
   <script src="js/modules/schedule.js"></script>
   <script src="js/modules/countdown.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('componentsLoaded', () => {
+      PathResolver.updatePaths();
+      if (typeof Navigation !== 'undefined') {
+        Navigation.init();
+      }
+    });
+  </script>
 </body>
 </html>
