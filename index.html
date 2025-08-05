@@ -348,80 +348,537 @@
       </div>
     </section>
 
-    <!-- Gallery Preview Section -->
-<section id="gallery" class="section section-gallery" aria-labelledby="gallery-title">
+    <!-- Gallery Preview Section - Immersive Collage Style -->
+<section id="gallery" class="section section-gallery-preview" aria-labelledby="gallery-title">
   <div class="container">
-    <h2 id="gallery-title" class="section-title">Festival Memories</h2>
-    <p class="section-subtitle">Glimpses from our inaugural 2024 festival</p>
+    <h2 id="gallery-title" class="section-title">2024 Festival Highlights</h2>
+    <p class="section-subtitle">A glimpse into the magic of our inaugural year</p>
 
-    <!-- Photo Categories -->
-    <div class="photo-categories">
-      <span class="category-tag">🥧 Pawpaw Desserts</span>
-      <span class="category-tag">🎵 Live Music</span>
-      <span class="category-tag">👑 Pageant</span>
-      <span class="category-tag">🌱 Workshops</span>
-      <span class="category-tag">🎯 Activities</span>
+    <!-- Immersive Photo Collage -->
+    <div class="photo-collage">
+      <!-- Large featured image -->
+      <div class="collage-item collage-featured">
+        <img src="/assets/images/gallery/2024/entertainment/pageantcontestants.jpeg" alt="Pawpaw pageant contestants" loading="lazy">
+        <!--<div class="collage-overlay">
+          <span class="photo-count">500+ Photos</span>
+        </div> -->
+      </div>
+
+      <!-- Medium images -->
+      <div class="collage-item collage-medium-1">
+        <img src="/assets/images/gallery/2024/food/pawpawicecream.jpeg" alt="Pawpaw ice cream" loading="lazy">
+      </div>
+
+      <div class="collage-item collage-medium-2">
+        <img src="/assets/images/gallery/2024/entertainment/dreadfulday.jpeg" alt="Live music performance" loading="lazy">
+      </div>
+
+      <!-- Small accent images -->
+      <div class="collage-item collage-small-1">
+        <img src="/assets/images/gallery/2024/workshops/edenforage.jpeg" alt="Foraging workshop" loading="lazy">
+      </div>
+
+      <div class="collage-item collage-small-2">
+        <img src="/assets/images/gallery/2024/entertainment/cornhole.jpeg" alt="Cornhole tournament" loading="lazy">
+      </div>
+
+      <div class="collage-item collage-small-3">
+        <img src="/assets/images/gallery/2024/vendors/v1.jpeg" alt="Vendor booth" loading="lazy">
+      </div>
+
+      <!-- CTA Overlay -->
+      <div class="collage-cta">
+        <h3>Relive the Magic</h3>
+        <p>Explore hundreds of photos from vendors, activities, performances, and more</p>
+        <a href="pages/gallery/" class="btn btn-primary btn-lg">
+          View Full Gallery
+          <span class="arrow">→</span>
+        </a>
+      </div>
     </div>
 
-    <!-- Gallery Preview Grid -->
-<div class="gallery-preview-grid">
-  <div class="gallery-preview-item">
-    <img src="/assets/images/gallery/2024/food/pawpawicecream.jpeg" alt="Pawpaw ice cream" loading="lazy">
-    <div class="gallery-overlay">
-      <h4>Pawpaw Desserts</h4>
-    </div>
-  </div>
-
-  <div class="gallery-preview-item">
-    <img src="/assets/images/gallery/2024/entertainment/dreadfulday.jpeg" alt="Live music" loading="lazy">
-    <div class="gallery-overlay">
-      <h4>Live Entertainment</h4>
-    </div>
-  </div>
-
-  <div class="gallery-preview-item">
-    <img src="/assets/images/gallery/2024/entertainment/pawpawkingtrophy.jpeg" alt="Pawpaw pageant" loading="lazy">
-    <div class="gallery-overlay">
-      <h4>Pawpaw Pageant</h4>
-    </div>
-  </div>
-
-  <div class="gallery-preview-item">
-    <img src="/assets/images/gallery/2024/workshops/edenforage.jpeg" alt="Workshops" loading="lazy">
-    <div class="gallery-overlay">
-      <h4>Festival Workshops</h4>
-    </div>
-  </div>
-</div>
-
-    <!-- Gallery CTA -->
-    <div class="gallery-cta">
-      <a href="pages/gallery/" class="btn btn-primary">
-        View Full Gallery
-        <span>→</span>
-      </a>
-      <p class="mt-2">Have photos from 2024? <a href="mailto:photos@pawpawfestar.org">Share them with us!</a></p>
+    <!-- Bottom CTA -->
+    <div class="gallery-share-cta">
+      <p>Were you there? <a href="mailto:photos@pawpawfestar.org">Share your photos</a> to be featured!</p>
     </div>
   </div>
 </section>
 
+<style>
+/* Gallery Preview Section - Immersive Collage */
+.section-gallery-preview {
+  background-color: var(--color-white);
+  overflow: hidden;
+  padding: var(--spacing-section) 0;
+}
+
+.section-gallery-preview .section-subtitle {
+  color: var(--color-text-light);
+  font-size: 1.125rem;
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+}
+
+/* Photo Collage Layout */
+.photo-collage {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 600px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Mobile height adjustment */
+@media (max-width: 768px) {
+  .photo-collage {
+    height: 500px;
+  }
+}
+
+/* Collage Items Positioning */
+.collage-item {
+  position: absolute;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-medium);
+  cursor: pointer;
+}
+
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.collage-item:hover {
+  z-index: 10;
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.collage-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Featured Large Image */
+.collage-featured {
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 70%;
+  z-index: 1;
+}
+
+/* Medium Images */
+.collage-medium-1 {
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 45%;
+  z-index: 2;
+}
+
+.collage-medium-2 {
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  height: 28%;
+  z-index: 2;
+}
+
+/* Small Accent Images */
+.collage-small-1 {
+  bottom: 0;
+  right: 30%;
+  width: 20%;
+  height: 35%;
+  z-index: 3;
+}
+
+.collage-small-2 {
+  bottom: 0;
+  right: 0;
+  width: 28%;
+  height: 52%;
+  z-index: 2;
+}
+
+.collage-small-3 {
+  top: 47%;
+  right: 25%;
+  width: 22%;
+  height: 25%;
+  z-index: 4;
+  transform: rotate(-5deg);
+}
+
+/* Photo Count Badge */
+.collage-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 5;
+}
+
+.photo-count {
+  background: rgba(45, 80, 22, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-round);
+  font-weight: var(--font-weight-bold);
+  font-size: 0.875rem;
+}
+
+/* CTA Overlay */
+.collage-cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  max-width: 400px;
+  width: 90%;
+}
+
+.collage-cta h3 {
+  font-family: var(--font-decorative);
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.collage-cta p {
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.collage-cta .btn-lg {
+  font-size: 1.125rem;
+  padding: 0.875rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.collage-cta .arrow {
+  font-size: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.collage-cta .btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Bottom Share CTA */
+.gallery-share-cta {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: var(--color-text-light);
+}
+
+.gallery-share-cta a {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  transition: all var(--transition-fast);
+}
+
+.gallery-share-cta a:hover {
+  color: var(--color-accent-hover);
+  text-decoration-thickness: 3px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .photo-collage {
+    height: 400px;
+  }
+
+  /* Adjust positions for mobile */
+  .collage-featured {
+    width: 60%;
+    height: 60%;
+  }
+
+  .collage-medium-1 {
+    width: 38%;
+    height: 40%;
+  }
+
+  .collage-medium-2 {
+    width: 40%;
+    height: 35%;
+  }
+
+  .collage-small-1 {
+    display: none; /* Hide some small images on mobile */
+  }
+
+  .collage-small-3 {
+    width: 30%;
+    height: 30%;
+    transform: rotate(-3deg);
+  }
+
+  .collage-cta {
+    padding: 1.5rem 2rem;
+    width: 85%;
+  }
+
+  .collage-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .collage-cta p {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .collage-cta .btn-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Animation on scroll */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.photo-collage {
+  animation: fadeInScale 0.8s ease-out;
+}
+
+/* Hover effect for entire collage on desktop */
+@media (min-width: 1024px) {
+  .photo-collage:hover .collage-item:not(:hover) {
+    opacity: 0.8;
+    filter: grayscale(20%);
+  }
+}
+</style>
+
     <!-- Contact Section -->
-    <section id="contact" class="section section-contact" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 id="contact-title" class="section-title">Get In Touch</h2>
-        <p class="section-text">Have questions about the festival? Want to become a vendor or sponsor?<br>
-        Email us at <a href="mailto:info@pawpawfestar.org" class="email-link">info@pawpawfestar.org</a></p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="Facebook">
-            <span class="social-icon">f</span>
-          </a>
-          <a href="#" class="social-link" aria-label="Instagram">
-            <span class="social-icon">📷</span>
-          </a>
-        </div>
+<section id="contact" class="section section-contact" aria-labelledby="contact-title">
+  <div class="container">
+    <h2 id="contact-title" class="section-title">Connect With Us</h2>
+
+    <div class="contact-channels">
+      <!-- General Inquiries -->
+      <div class="contact-channel">
+        <div class="channel-icon">✉️</div>
+        <h3>General Inquiries</h3>
+        <p>Questions about the festival?</p>
+        <a href="mailto:info@ozarkeventshub.com" class="contact-link">info@ozarkeventshub.com</a>
+        <span class="channel-note">Managed by Ozark Events Hub</span>
       </div>
-    </section>
-  </main>
+
+      <!-- Festival Updates -->
+      <div class="contact-channel">
+        <div class="channel-icon">📱</div>
+        <h3>Festival Updates</h3>
+        <p>Follow us for news & announcements</p>
+        <a href="https://www.facebook.com/events/1247505777050837/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22attachment%22%2C%22surface%22%3A%22newsfeed%22%7D]%2C%22ref_notif_type%22%3Anull%7D" target="_blank" rel="noopener" class="contact-link">
+          <span class="fb-icon">f</span> 2nd Annual Boston Mountain Pawpaw Festival
+        </a>
+      </div>
+
+      <!-- Venue Information -->
+      <div class="contact-channel">
+        <div class="channel-icon">🏡</div>
+        <h3>Venue Information</h3>
+        <p>Questions about Beard & Lady Inn</p>
+        <a href="https://www.facebook.com/beardandladyinn" target="_blank" rel="noopener" class="contact-link">
+          <span class="fb-icon">f</span> Beard & Lady Inn
+        </a>
+      </div>
+
+      <!-- Vendor/Sponsor Inquiries -->
+      <div class="contact-channel">
+        <div class="channel-icon">🤝</div>
+        <h3>Vendor Applications</h3>
+        <p>Interested in being a vendor?</p>
+        <a href="https://www.facebook.com/thegardenofeden1999" target="_blank" rel="noopener" class="contact-link">
+          <span class="fb-icon">f</span> Contact The Garden of Eden
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links Bar -->
+    <div class="social-links-bar">
+      <p>Find us on social media:</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/events/1247505777050837/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22attachment%22%2C%22surface%22%3A%22newsfeed%22%7D]%2C%22ref_notif_type%22%3Anull%7D" target="_blank" rel="noopener" aria-label="Festival Facebook Page" class="social-link">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/beardandladyinn" target="_blank" rel="noopener" aria-label="Beard & Lady Inn Facebook" class="social-link">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Updated Contact Section Styles */
+.section-contact {
+  background-color: var(--color-light);
+  text-align: center;
+  padding: var(--spacing-section) 0;
+}
+
+.contact-channels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 3rem auto;
+}
+
+.contact-channel {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-medium);
+}
+
+.contact-channel:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.channel-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  filter: grayscale(0);
+}
+
+.contact-channel h3 {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-decorative);
+}
+
+.contact-channel p {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.contact-link {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.contact-link:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+.channel-note {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.fb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #1877f2;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Social Links Bar */
+.social-links-bar {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.social-links-bar p {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-round);
+  transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-3px);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .contact-channels {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    margin: 2rem auto;
+  }
+
+  .contact-channel {
+    padding: 1.5rem;
+  }
+
+  .channel-icon {
+    font-size: 2rem;
+  }
+}
+</style>
 
   <!-- Footer -->
   <footer class="site-footer">
