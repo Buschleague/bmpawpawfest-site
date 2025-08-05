@@ -323,4 +323,37 @@
     padding: var(--spacing-xxl);
     font-size: 1rem;
   }
+
+  /* Schedule Meta Information */
+.schedule-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin: var(--spacing-xs) 0;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+.schedule-location {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.registration-required {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .schedule-meta {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    font-size: 0.75rem;
+  }
+}
 }
