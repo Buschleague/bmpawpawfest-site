@@ -1,10 +1,9 @@
-
 .hero {
   position: relative;
   background: url('/assets/images/gallery/featured/hero-pawpaw-festival.jpg') center/cover no-repeat;
   color: var(--color-white);
   text-align: center;
-  padding: 100px 0 60px; /* Reduced from 200px */
+  padding: 100px 0 80px; /* Increased bottom padding */
   margin-top: 60px; /* Reduced for mobile header */
   overflow: hidden;
   min-height: 70vh; /* Reduced from 90vh */
@@ -135,9 +134,11 @@
   grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
   gap: var(--spacing-sm);
   margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg); /* Add bottom margin */
   max-width: 280px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center; /* Ensure internal centering */
 }
 
 .countdown-item {
@@ -148,6 +149,7 @@
   min-width: auto; /* Remove fixed width */
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all var(--transition-medium);
+  text-align: center; /* Center the content */
 }
 
 .countdown-number {
@@ -164,7 +166,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   opacity: 0.9;
-  margin-top: 0;
+  margin-top: -2px; /* Negative margin to bring closer to number */
 }
 
 /* Small Mobile (max-width: 480px) */
@@ -196,17 +198,10 @@
     padding: 60px 0 40px;
   }
 
-  /* Countdown Timer - Mobile First */
-.countdown {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg); /* Add bottom margin */
-  max-width: 280px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .countdown {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%;
+  }
 }
 
 /* Tablet (min-width: 768px) */
@@ -263,6 +258,7 @@
     grid-template-columns: none;
     gap: var(--spacing-lg);
     max-width: none;
+    margin-bottom: 0; /* Reset bottom margin on desktop */
   }
 
   .countdown-item {
@@ -276,6 +272,7 @@
 
   .countdown-label {
     font-size: 0.875rem;
+    margin-top: 0; /* Reset negative margin */
   }
 }
 
