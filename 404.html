@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - Boston Mountain Pawpaw Festival</title>
+  <meta name="description" content="Oops! The page you're looking for doesn't exist.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/css/utilities/variables.css">
+  <link rel="stylesheet" href="/css/utilities/reset.css">
+  <link rel="stylesheet" href="/css/utilities/base.css">
+  <link rel="stylesheet" href="/css/components/header.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/utilities/responsive.css">
+
+  <style>
+    .error-page {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      margin-top: 80px;
+    }
+
+    .error-content {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-size: 6rem;
+      color: var(--color-primary);
+      font-weight: bold;
+      margin-bottom: 1rem;
+      font-family: var(--font-decorative);
+    }
+
+    .error-icon {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    .error-message {
+      font-size: 1.25rem;
+      color: var(--color-text-light);
+      margin-bottom: 2rem;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body class="page-404">
+  <!-- Header Component -->
+  <div data-component="header"></div>
+
+  <!-- Error Content -->
+  <main class="error-page">
+    <div class="error-content">
+      <div class="error-icon">🍂</div>
+      <h1 class="error-code">404</h1>
+      <p class="error-message">Oops! Looks like this pawpaw fell off the tree. The page you're looking for doesn't exist.</p>
+
+      <div class="error-actions">
+        <a href="/" class="btn btn-primary">Go Home</a>
+        <a href="/#schedule" class="btn btn-secondary">View Schedule</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
+
+  <!-- JavaScript -->
+  <script src="/js/core/component-loader.js"></script>
+  <script src="/js/core/path-resolver.js"></script>
+  <script src="/js/modules/navigation.js"></script>
+
+  <script>
+    document.addEventListener('componentsLoaded', () => {
+      PathResolver.updatePaths();
+      if (typeof Navigation !== 'undefined') {
+        Navigation.init();
+      }
+    });
+  </script>
+</body>
+</html>
