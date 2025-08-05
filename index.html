@@ -679,22 +679,206 @@
 </style>
 
     <!-- Contact Section -->
-    <section id="contact" class="section section-contact" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 id="contact-title" class="section-title">Get In Touch</h2>
-        <p class="section-text">Have questions about the festival? Want to become a vendor or sponsor?<br>
-        Email us at <a href="mailto:info@pawpawfestar.org" class="email-link">info@pawpawfestar.org</a></p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="Facebook">
-            <span class="social-icon">f</span>
-          </a>
-          <a href="#" class="social-link" aria-label="Instagram">
-            <span class="social-icon">📷</span>
-          </a>
-        </div>
+<section id="contact" class="section section-contact" aria-labelledby="contact-title">
+  <div class="container">
+    <h2 id="contact-title" class="section-title">Connect With Us</h2>
+
+    <div class="contact-channels">
+      <!-- General Inquiries -->
+      <div class="contact-channel">
+        <div class="channel-icon">✉️</div>
+        <h3>General Inquiries</h3>
+        <p>Questions about the festival?</p>
+        <a href="mailto:info@ozarkeventshub.com" class="contact-link">info@ozarkeventshub.com</a>
+        <span class="channel-note">Managed by Ozark Events Hub</span>
       </div>
-    </section>
-  </main>
+
+      <!-- Festival Updates -->
+      <div class="contact-channel">
+        <div class="channel-icon">📱</div>
+        <h3>Festival Updates</h3>
+        <p>Follow us for news & announcements</p>
+        <a href="https://www.facebook.com/events/1247505777050837/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22attachment%22%2C%22surface%22%3A%22newsfeed%22%7D]%2C%22ref_notif_type%22%3Anull%7D" target="_blank" rel="noopener" class="contact-link">
+          <span class="fb-icon">f</span> 2nd Annual Boston Mountain Pawpaw Festival
+        </a>
+      </div>
+
+      <!-- Venue Information -->
+      <div class="contact-channel">
+        <div class="channel-icon">🏡</div>
+        <h3>Venue Information</h3>
+        <p>Questions about Beard & Lady Inn</p>
+        <a href="https://www.facebook.com/beardandladyinn" target="_blank" rel="noopener" class="contact-link">
+          <span class="fb-icon">f</span> Beard & Lady Inn
+        </a>
+      </div>
+
+      <!-- Vendor/Sponsor Inquiries -->
+      <div class="contact-channel">
+        <div class="channel-icon">🤝</div>
+        <h3>Vendor Applications</h3>
+        <p>Interested in being a vendor?</p>
+        <a href="https://www.facebook.com/thegardenofeden1999" target="_blank" rel="noopener" class="contact-link">
+          <span class="fb-icon">f</span> Contact The Garden of Eden
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links Bar -->
+    <div class="social-links-bar">
+      <p>Find us on social media:</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/events/1247505777050837/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22attachment%22%2C%22surface%22%3A%22newsfeed%22%7D]%2C%22ref_notif_type%22%3Anull%7D" target="_blank" rel="noopener" aria-label="Festival Facebook Page" class="social-link">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/beardandladyinn" target="_blank" rel="noopener" aria-label="Beard & Lady Inn Facebook" class="social-link">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Updated Contact Section Styles */
+.section-contact {
+  background-color: var(--color-light);
+  text-align: center;
+  padding: var(--spacing-section) 0;
+}
+
+.contact-channels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 3rem auto;
+}
+
+.contact-channel {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-medium);
+}
+
+.contact-channel:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.channel-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  filter: grayscale(0);
+}
+
+.contact-channel h3 {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-decorative);
+}
+
+.contact-channel p {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.contact-link {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.contact-link:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+.channel-note {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.fb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #1877f2;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Social Links Bar */
+.social-links-bar {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.social-links-bar p {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-round);
+  transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-3px);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .contact-channels {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    margin: 2rem auto;
+  }
+
+  .contact-channel {
+    padding: 1.5rem;
+  }
+
+  .channel-icon {
+    font-size: 2rem;
+  }
+}
+</style>
 
   <!-- Footer -->
   <footer class="site-footer">
