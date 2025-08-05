@@ -251,24 +251,70 @@
 
     <!-- Gallery Grid -->
     <div class="gallery-grid" id="galleryGrid">
-      <!-- Placeholder message while photos are being gathered -->
-      <div class="placeholder-message" style="grid-column: 1/-1;">
-        <h3>📸 2025 Gallery Coming Soon!</h3>
-        <p>We're currently gathering photos from our 2024 inaugural festival. Check back soon to see all the pawpaw fun!</p>
-        <p>Have photos from last year? We'd love to feature them! Email us at <a href="mailto:photos@pawpawfestar.org">photos@pawpawfestar.org</a></p>
-      </div>
-
-      <!-- Sample placeholder items (remove when real photos are added) -->
-      <!-- These demonstrate the structure for when photos are added -->
-      <!--
+      <!-- Gallery images from 2024 festival -->
       <div class="gallery-item" data-category="2024 food">
-        <img src="/assets/images/gallery/pawpaw-ice-cream.jpg" alt="Pawpaw ice cream" loading="lazy">
+        <img src="/assets/images/pawpaw-desserts.jpg" alt="Pawpaw desserts display" loading="lazy">
         <div class="gallery-caption">
-          <h4>Pawpaw Ice Cream</h4>
-          <p>Delicious homemade pawpaw ice cream from Sweet Treats Vendor</p>
+          <h4>Pawpaw Desserts</h4>
+          <p>Amazing array of pawpaw treats from local vendors</p>
         </div>
       </div>
-      -->
+
+      <div class="gallery-item" data-category="2024 entertainment">
+        <img src="/assets/images/live-music.jpg" alt="Live music performance" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Live Music</h4>
+          <p>Dreadful Day performing on the main stage</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="2024 activities">
+        <img src="/assets/images/pageant-winner.jpg" alt="Pawpaw pageant winners" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Pawpaw Royalty</h4>
+          <p>2024 Pawpaw King and Queen crowned</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="2024 activities">
+        <img src="/assets/images/festival-crowd.jpg" alt="Festival atmosphere" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Festival Atmosphere</h4>
+          <p>Crowds enjoying the beautiful day at Beard & Lady Inn</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="2024 vendors">
+        <img src="/assets/images/vendor-scene.jpg" alt="Vendor booths" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Vendor Village</h4>
+          <p>Local artisans and pawpaw product vendors</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="2024 activities">
+        <img src="/assets/images/workshop-scene.jpg" alt="Pawpaw growing workshop" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Growing Workshop</h4>
+          <p>Learning about pawpaw cultivation from experts</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="2024 food">
+        <img src="/assets/images/pawpaw-fruit.jpg" alt="Fresh pawpaw fruit" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Fresh Pawpaws</h4>
+          <p>Beautiful ripe pawpaws ready for tasting</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="2024 activities">
+        <img src="/assets/images/ozark-mountains.jpg" alt="Ozark mountain scenery" loading="lazy">
+        <div class="gallery-caption">
+          <h4>Boston Mountains</h4>
+          <p>The beautiful Ozark backdrop for our festival</p>
+        </div>
+      </div>
     </div>
 
     <!-- Upload Section -->
@@ -302,6 +348,24 @@
     // Gallery functionality
     let currentImageIndex = 0;
     let galleryImages = [];
+
+    // Initialize gallery images array
+    function initializeGallery() {
+      const items = document.querySelectorAll('.gallery-item img');
+      galleryImages = Array.from(items).map((img, index) => ({
+        src: img.src,
+        alt: img.alt,
+        index: index
+      }));
+
+      // Add click handlers to gallery items
+      document.querySelectorAll('.gallery-item').forEach((item, index) => {
+        item.addEventListener('click', () => openLightbox(index));
+      });
+    }
+
+    // Initialize on load
+    initializeGallery();
 
     // Filter functionality
     document.querySelectorAll('.filter-btn').forEach(btn => {

@@ -268,4 +268,117 @@
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
+
+  /* Feature with Image Styles */
+.feature-with-image .feature-image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.feature-with-image .feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.feature:hover .feature-image img {
+  transform: scale(1.05);
+}
+
+/* Pawpaw Info Section */
+.pawpaw-info-section {
+  margin-top: var(--spacing-section);
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--color-light);
+  border-radius: var(--radius-lg);
+}
+
+.pawpaw-info-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.pawpaw-text h3 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-decorative);
+}
+
+.pawpaw-text p {
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.pawpaw-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.pawpaw-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .info-card {
+    padding: var(--spacing-lg);
+  }
+
+  .festival-date {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .date-month {
+    border-left: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    padding-left: 0;
+    padding-top: var(--spacing-xs);
+  }
+
+  .sticky-cta {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .cta-text {
+    display: none;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .pawpaw-info-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .pawpaw-text {
+    order: 2;
+  }
+
+  .pawpaw-image {
+    order: 1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
