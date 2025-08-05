@@ -37,11 +37,22 @@
       padding: 3rem 1rem;
     }
 
+    .vendor-registration-section {
+      margin-bottom: 4rem;
+    }
+
+    .vendor-registration-section h2 {
+      text-align: center;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+      font-family: var(--font-decorative);
+    }
+
     .vendor-info-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-top: 3rem;
+      margin-bottom: 3rem;
     }
 
     .vendor-card {
@@ -51,6 +62,8 @@
       box-shadow: var(--shadow-md);
       text-align: center;
       transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .vendor-card:hover {
@@ -58,14 +71,128 @@
       box-shadow: var(--shadow-hover);
     }
 
+    .vendor-card.featured {
+      background: linear-gradient(135deg, white 0%, rgba(140, 191, 63, 0.05) 100%);
+      border: 2px solid var(--color-accent);
+    }
+
     .vendor-card h3 {
       color: var(--color-primary);
       margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
 
     .vendor-card .icon {
       font-size: 3rem;
       margin-bottom: 1rem;
+    }
+
+    .vendor-details {
+      background: var(--color-light);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .vendor-details p {
+      margin: 0.5rem 0;
+      font-size: 0.875rem;
+      color: var(--color-text);
+    }
+
+    .price-tag {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--color-secondary);
+      margin: 1rem 0;
+    }
+
+    .vendor-card .btn {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .sponsor-section {
+      background: var(--color-light);
+      padding: 3rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .sponsor-section h2 {
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .confirmed-vendors {
+      margin-top: 4rem;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .coming-soon {
+      color: var(--color-secondary);
+      font-style: italic;
+      font-weight: var(--font-weight-medium);
+    }
+
+    /* Vendor List Styles */
+    .vendor-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .vendor-category {
+      background: var(--color-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-accent);
+    }
+
+    .vendor-category h3 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .vendor-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .vendor-items li {
+      margin-bottom: 0.75rem;
+      padding-left: 1rem;
+      position: relative;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+
+    .vendor-items li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--color-secondary);
+      font-weight: bold;
+    }
+
+    .vendor-items strong {
+      color: var(--color-primary);
+      font-weight: var(--font-weight-medium);
+    }
+
+    @media (max-width: 768px) {
+      .vendor-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -83,28 +210,110 @@
 
   <!-- Vendors Content -->
   <main class="vendors-container">
-    <div class="vendor-info-grid">
-      <div class="vendor-card">
-        <div class="icon">🛍️</div>
-        <h3>Become a Vendor</h3>
-        <p>Showcase your pawpaw products, crafts, or local goods at our festival. Limited spaces available!</p>
-        <a href="mailto:vendors@pawpawfestar.org" class="btn btn-primary">Apply Now</a>
+    <!-- Vendor Registration Section -->
+    <section class="vendor-registration-section">
+      <h2>2025 Vendor Registration Now Open!</h2>
+
+      <div class="vendor-info-grid">
+        <!-- Vendor Booth -->
+        <div class="vendor-card featured">
+          <div class="icon">🛍️</div>
+          <h3>10x10 Vendor Booth</h3>
+          <div class="vendor-details">
+            <p>📍 Prime festival location</p>
+            <p>⚡ Electricity available</p>
+          </div>
+          <p class="price-tag">$25</p>
+          <p>Perfect for artisans, crafters, pawpaw products, and retail vendors</p>
+          <a href="https://www.beardandlady.com/products/10x10-vendor-space-at-beard-lady-inn-for-2025-paw-paw-festival?_pos=2&_sid=8c389d020&_ss=r" target="_blank" rel="noopener" class="btn btn-primary">Reserve Booth</a>
+        </div>
+
+        <!-- Food & Drink Trucks -->
+        <div class="vendor-card">
+          <div class="icon">🚚</div>
+          <h3>Food & Drink Trucks</h3>
+          <div class="vendor-details">
+            <p>📍 High-traffic food court area</p>
+            <p>⚡ Power hookups available</p>
+            <p>🚗 Easy setup/breakdown access</p>
+          </div>
+          <p class="price-tag">$50</p>
+          <p>Serve hungry festival-goers with your delicious offerings</p>
+          <a href="https://www.beardandlady.com/products/vendor-food-drink-trucks-for-2025-paw-paw-festival-at-beard-lady-inn?_pos=2&_sid=64ffb9faa&_ss=r" target="_blank" rel="noopener" class="btn btn-primary">Register Food Truck</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsor Section -->
+    <section class="sponsor-section">
+      <h2>🤝 Become a Festival Sponsor</h2>
+      <p>Support the Boston Mountains Pawpaw Festival and gain valuable exposure for your business. Multiple sponsorship levels available with benefits including logo placement, social media mentions, and booth space.</p>
+      <a href="mailto:info@ozarkeventshub.com?subject=Pawpaw Festival Sponsorship" class="btn btn-primary">Contact Us About Sponsorship</a>
+    </section>
+
+    <!-- Confirmed Vendors -->
+    <section class="confirmed-vendors">
+      <h2>2025 Confirmed Vendors</h2>
+      <p style="margin-bottom: 2rem; color: var(--color-text-light);">We're excited to feature these amazing local artisans and businesses!</p>
+
+      <div class="vendor-list">
+        <div class="vendor-category">
+          <h3>🎨 Arts & Crafts</h3>
+          <ul class="vendor-items">
+            <li><strong>Kyndall Brinson</strong> - Purses, bags, wood burning, crochet</li>
+            <li><strong>Mama's Peak (Makayla Foley)</strong> - Painted hats, shirts and keychains</li>
+            <li><strong>Whitney McLeland</strong> - Wood carvings and burning</li>
+            <li><strong>Amber Miranda</strong> - Pottery and jewelry</li>
+            <li><strong>Garnet & Rose (Savannah Troub)</strong> - Artisan crafts</li>
+            <li><strong>Handcrafted by Ashley (Ashley Wiens)</strong> - Handmade soap</li>
+          </ul>
+        </div>
+
+        <div class="vendor-category">
+          <h3>🥧 Food & Baked Goods</h3>
+          <ul class="vendor-items">
+            <li><strong>Madyson Hudspeth</strong> - Sourdough, baked goods, jams, jellies</li>
+            <li><strong>Auburn Jackson</strong> - Breads, baked goods (possibly pawpaw bread!)</li>
+            <li><strong>Girl with a Goal (Loretta Turner)</strong> - Cupcakes and goodies</li>
+          </ul>
+        </div>
+
+        <div class="vendor-category">
+          <h3>💎 Jewelry & Accessories</h3>
+          <ul class="vendor-items">
+            <li><strong>Misty Johnson</strong> - Jewelry, clay figurines</li>
+          </ul>
+        </div>
+
+        <div class="vendor-category">
+          <h3>🌿 Wellness & Apothecary</h3>
+          <ul class="vendor-items">
+            <li><strong>Amanda Sarten</strong> - Apothecary items</li>
+          </ul>
+        </div>
+
+        <div class="vendor-category">
+          <h3>🚗 Adventure Tours</h3>
+          <ul class="vendor-items">
+            <li><strong>Squatch UTV Rentals LLC</strong> - SxS tours</li>
+            <li><strong>Cove City Cabins</strong> - SxS tours</li>
+            <li><strong>Barkers Gap Camp Ground</strong> - SxS tours</li>
+            <li><strong>Where the Black Top Ends</strong> - SxS tours</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="vendor-card">
-        <div class="icon">🤝</div>
-        <h3>Sponsorship Opportunities</h3>
-        <p>Support the festival and gain valuable exposure for your business. Multiple sponsorship levels available.</p>
-        <a href="mailto:sponsors@pawpawfestar.org" class="btn btn-primary">Learn More</a>
-      </div>
+      <p style="margin-top: 2rem; text-align: center; color: var(--color-secondary); font-weight: bold;">
+        More vendors being added daily! Limited spaces still available.
+      </p>
+    </section>
 
-      <div class="vendor-card">
-        <div class="icon">📋</div>
-        <h3>2025 Vendor List</h3>
-        <p>Check back soon for our growing list of confirmed vendors for the 2025 festival!</p>
-        <p class="coming-soon">Coming Soon</p>
-      </div>
-    </div>
+    <!-- Event Registration CTA -->
+    <section class="vendor-cta" style="margin-top: 3rem; text-align: center; padding: 2rem; background: var(--color-light); border-radius: 12px;">
+      <h3>Looking to Participate in Festival Events?</h3>
+      <p>Registration is also open for the Cornhole Tournament and Pawpaw Pageant!</p>
+      <a href="../../#registration" class="btn btn-secondary">View Event Registration</a>
+    </section>
   </main>
 
   <!-- Footer Component -->
