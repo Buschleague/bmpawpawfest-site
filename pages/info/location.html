@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location & Parking - Boston Mountain Pawpaw Festival</title>
+  <meta name="description" content="Directions, parking information, and interactive map for the Boston Mountain Pawpaw Festival at Beard & Lady Inn in Chester, Arkansas.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pawpawfestar.org/pages/info/location.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../../../css/utilities/variables.css">
+  <link rel="stylesheet" href="../../../css/utilities/reset.css">
+  <link rel="stylesheet" href="../../../css/utilities/base.css">
+  <link rel="stylesheet" href="../../../css/components/header.css">
+  <link rel="stylesheet" href="../../../css/components/footer.css">
+  <link rel="stylesheet" href="../../../css/utilities/responsive.css">
+
+  <style>
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, #2d5016 0%, #8cbf3f 100%);
+      color: white;
+      padding: 120px 0 60px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .page-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-decorative);
+    }
+
+    /* Location Container */
+    .location-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    /* Interactive Map */
+    #festival-map {
+      height: 500px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 3rem;
+    }
+
+    /* Location Info Grid */
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .location-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease;
+    }
+
+    .location-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .location-card h2 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .location-card .icon {
+      font-size: 1.5rem;
+    }
+
+    .address-block {
+      background: var(--color-light);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      border-left: 4px solid var(--color-accent);
+    }
+
+    .address-block p {
+      margin: 0.25rem 0;
+      color: var(--color-text);
+    }
+
+    /* Parking Info */
+    .parking-options {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .parking-option {
+      background: var(--color-light);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-secondary);
+    }
+
+    .parking-option h4 {
+      color: var(--color-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .parking-option p {
+      margin: 0.25rem 0;
+      font-size: 0.875rem;
+      color: var(--color-text);
+    }
+
+    /* Directions */
+    .directions-section {
+      background: linear-gradient(135deg, var(--color-light) 0%, rgba(140, 191, 63, 0.05) 100%);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .directions-section h3 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    .directions-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .directions-list li {
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .directions-list li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: bold;
+    }
+
+    /* Stay Section */
+    .stay-section {
+      background: var(--color-primary);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .stay-section h2 {
+      margin-bottom: 1rem;
+    }
+
+    .stay-section p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .stay-features {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .stay-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    /* Map Legend */
+    .map-legend {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      box-shadow: var(--shadow-md);
+      font-size: 0.875rem;
+    }
+
+    .map-legend h4 {
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .legend-marker {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+
+      #festival-map {
+        height: 350px;
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stay-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .map-legend {
+        font-size: 0.75rem;
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body class="page-location">
+  <!-- Header Component -->
+  <div data-component="header"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>📍 Location & Parking</h1>
+      <p>Find your way to the festival!</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="location-container">
+    <!-- Interactive Map -->
+    <div style="position: relative;">
+      <div id="festival-map"></div>
+      <div class="map-legend">
+        <h4>Map Legend</h4>
+        <div class="legend-item">
+          <span class="legend-marker" style="background: #2d5016;"></span>
+          <span>Festival Venues</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-marker" style="background: #f4a460;"></span>
+          <span>Parking Areas</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-marker" style="background: #8cbf3f;"></span>
+          <span>Food & Activities</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location Information Grid -->
+    <div class="location-grid">
+      <!-- Main Venue -->
+      <div class="location-card">
+        <h2><span class="icon">🏡</span> Main Festival Venue</h2>
+        <div class="address-block">
+          <p><strong>Beard & Lady Inn</strong></p>
+          <p>Chester, AR 72936</p>
+          <p>📞 (479) 369-4331</p>
+        </div>
+        <p>The historic Beard & Lady Inn serves as the heart of our festival, hosting vendors, workshops, and dining experiences.</p>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Beard+%26+Lady+Inn,+Chester,+AR+72936" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+      </div>
+
+      <!-- Farmer's Market -->
+      <div class="location-card">
+        <h2><span class="icon">🛍️</span> Farmer's Market</h2>
+        <div class="address-block">
+          <p><strong>Chester Farmer's Market</strong></p>
+          <p>120 S. Wright Street</p>
+          <p>Chester, AR 72936</p>
+        </div>
+        <p>Home to our cornhole tournament, live music on the main stage, and the pawpaw pageant.</p>
+      </div>
+
+      <!-- Parking Information -->
+      <div class="location-card">
+        <h2><span class="icon">🚗</span> Parking Options</h2>
+        <div class="parking-options">
+          <div class="parking-option">
+            <h4>Free Parking</h4>
+            <p>📍 Main lot near Beard & Lady Inn</p>
+            <p>♿ Accessible parking available</p>
+            <p>🚶 5-minute walk to all venues</p>
+          </div>
+          <div class="parking-option">
+            <h4>Overflow Parking</h4>
+            <p>📍 Field parking available</p>
+            <p>🚌 Shuttle service provided</p>
+            <p>🎟️ Free with festival admission</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Driving Directions -->
+    <div class="directions-section">
+      <h3>🗺️ Driving Directions</h3>
+      <div class="location-grid" style="margin-top: 1.5rem;">
+        <div>
+          <h4>From Fort Smith (45 minutes)</h4>
+          <ul class="directions-list">
+            <li>Take US-71 South</li>
+            <li>Exit onto AR-282 West</li>
+            <li>Follow AR-282 to Chester</li>
+            <li>Look for festival signs</li>
+          </ul>
+        </div>
+        <div>
+          <h4>From Fayetteville (1 hour)</h4>
+          <ul class="directions-list">
+            <li>Take I-49 South to Mountainburg</li>
+            <li>Take US-71 South</li>
+            <li>Exit onto AR-282 West</li>
+            <li>Follow signs to Chester</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stay at Beard & Lady Inn CTA -->
+    <div class="stay-section">
+      <h2>🏨 Stay at the Heart of the Festival</h2>
+      <p>Make your festival experience complete with a stay at the historic Beard & Lady Inn!</p>
+      <div class="stay-features">
+        <span class="stay-feature">✨ Historic charm</span>
+        <span class="stay-feature">🍳 Breakfast included</span>
+        <span class="stay-feature">🚶 Walk to all events</span>
+        <span class="stay-feature">🌿 Beautiful grounds</span>
+      </div>
+      <a href="https://hotels.cloudbeds.com/en/reservation/8dTuqi?currency=usd" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Your Stay</a>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- JavaScript -->
+  <script src="../../../js/core/component-loader.js"></script>
+  <script src="../../../js/core/path-resolver.js"></script>
+  <script src="../../../js/modules/navigation.js"></script>
+
+  <script>
+    // Initialize map after components load
+    document.addEventListener('componentsLoaded', () => {
+      PathResolver.updatePaths();
+      if (typeof Navigation !== 'undefined') {
+        Navigation.init();
+      }
+
+      // Initialize the map
+      initializeMap();
+    });
+
+    function initializeMap() {
+      // Chester, AR coordinates (approximate - you may need to adjust)
+      const chesterLat = 35.6792;
+      const chesterLng = -94.1332;
+
+      // Create map
+      const map = L.map('festival-map').setView([chesterLat, chesterLng], 15);
+
+      // Add OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Custom icon for venues
+      const venueIcon = L.divIcon({
+        html: '<div style="background-color: #2d5016; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">🏡</div>',
+        iconSize: [30, 30],
+        className: 'custom-div-icon'
+      });
+
+      const marketIcon = L.divIcon({
+        html: '<div style="background-color: #8cbf3f; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">🛍️</div>',
+        iconSize: [30, 30],
+        className: 'custom-div-icon'
+      });
+
+      const parkingIcon = L.divIcon({
+        html: '<div style="background-color: #f4a460; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">P</div>',
+        iconSize: [30, 30],
+        className: 'custom-div-icon'
+      });
+
+      // Add markers
+      L.marker([chesterLat, chesterLng], {icon: venueIcon})
+        .addTo(map)
+        .bindPopup('<strong>Beard & Lady Inn</strong><br>Main Festival Venue');
+
+      // Add Farmer's Market marker (slightly offset)
+      L.marker([chesterLat + 0.002, chesterLng - 0.002], {icon: marketIcon})
+        .addTo(map)
+        .bindPopup('<strong>Chester Farmer\'s Market</strong><br>120 S. Wright Street');
+
+      // Add parking markers
+      L.marker([chesterLat - 0.002, chesterLng + 0.001], {icon: parkingIcon})
+        .addTo(map)
+        .bindPopup('<strong>Free Parking</strong><br>Main festival parking');
+
+      L.marker([chesterLat - 0.003, chesterLng - 0.001], {icon: parkingIcon})
+        .addTo(map)
+        .bindPopup('<strong>Overflow Parking</strong><br>Shuttle service available');
+    }
+  </script>
+</body>
+</html>
