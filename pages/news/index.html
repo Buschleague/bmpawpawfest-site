@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Updates - Boston Mountain Pawpaw Festival</title>
+  <meta name="description" content="Latest news and updates from the Boston Mountain Pawpaw Festival. Stay informed about festival announcements, vendor spotlights, and pawpaw tips.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pawpawfestar.org/pages/news/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../../css/utilities/variables.css">
+  <link rel="stylesheet" href="../../css/utilities/reset.css">
+  <link rel="stylesheet" href="../../css/utilities/base.css">
+  <link rel="stylesheet" href="../../css/components/header.css">
+  <link rel="stylesheet" href="../../css/components/footer.css">
+  <link rel="stylesheet" href="../../css/utilities/responsive.css">
+
+  <style>
+    .news-hero {
+      background: linear-gradient(135deg, #2d5016 0%, #8cbf3f 100%);
+      color: white;
+      padding: 120px 0 60px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .news-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .coming-soon-message {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--color-light);
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 600px;
+    }
+
+    .coming-soon-message h2 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-signup {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.75rem;
+      border: 2px solid var(--color-primary);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="page-news">
+  <!-- Header Component -->
+  <div data-component="header"></div>
+
+  <!-- News Hero -->
+  <section class="news-hero">
+    <div class="container">
+      <h1>News & Updates</h1>
+      <p>Stay up to date with the latest from the Boston Mountain Pawpaw Festival</p>
+    </div>
+  </section>
+
+  <!-- News Content -->
+  <main class="news-container">
+    <div class="coming-soon-message">
+      <h2>🌿 News Section Coming Soon!</h2>
+      <p>We're working on bringing you the latest updates, vendor spotlights, pawpaw growing tips, and festival announcements.</p>
+
+      <div class="newsletter-signup">
+        <h3>Get Festival Updates</h3>
+        <p>Be the first to know about festival news!</p>
+        <form class="newsletter-form" action="#" method="post">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
+
+  <!-- JavaScript -->
+  <script src="../../js/core/component-loader.js"></script>
+  <script src="../../js/core/path-resolver.js"></script>
+  <script src="../../js/modules/navigation.js"></script>
+
+  <script>
+    // Initialize after components load
+    document.addEventListener('componentsLoaded', () => {
+      PathResolver.updatePaths();
+      PathResolver.markActiveNav();
+
+      if (typeof Navigation !== 'undefined') {
+        Navigation.init();
+      }
+    });
+  </script>
+</body>
+</html>

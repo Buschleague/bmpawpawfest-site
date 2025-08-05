@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendors & Sponsors - Boston Mountain Pawpaw Festival</title>
+  <meta name="description" content="Information for vendors and sponsors of the Boston Mountain Pawpaw Festival. Apply to be a vendor or learn about sponsorship opportunities.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pawpawfestar.org/pages/vendors/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../../css/utilities/variables.css">
+  <link rel="stylesheet" href="../../css/utilities/reset.css">
+  <link rel="stylesheet" href="../../css/utilities/base.css">
+  <link rel="stylesheet" href="../../css/components/header.css">
+  <link rel="stylesheet" href="../../css/components/footer.css">
+  <link rel="stylesheet" href="../../css/utilities/responsive.css">
+
+  <style>
+    .vendors-hero {
+      background: linear-gradient(135deg, #2d5016 0%, #f4a460 100%);
+      color: white;
+      padding: 120px 0 60px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .vendors-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .vendor-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .vendor-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .vendor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .vendor-card h3 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    .vendor-card .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="page-vendors">
+  <!-- Header Component -->
+  <div data-component="header"></div>
+
+  <!-- Vendors Hero -->
+  <section class="vendors-hero">
+    <div class="container">
+      <h1>Vendors & Sponsors</h1>
+      <p>Join us in celebrating Arkansas's native pawpaw fruit</p>
+    </div>
+  </section>
+
+  <!-- Vendors Content -->
+  <main class="vendors-container">
+    <div class="vendor-info-grid">
+      <div class="vendor-card">
+        <div class="icon">🛍️</div>
+        <h3>Become a Vendor</h3>
+        <p>Showcase your pawpaw products, crafts, or local goods at our festival. Limited spaces available!</p>
+        <a href="mailto:vendors@pawpawfestar.org" class="btn btn-primary">Apply Now</a>
+      </div>
+
+      <div class="vendor-card">
+        <div class="icon">🤝</div>
+        <h3>Sponsorship Opportunities</h3>
+        <p>Support the festival and gain valuable exposure for your business. Multiple sponsorship levels available.</p>
+        <a href="mailto:sponsors@pawpawfestar.org" class="btn btn-primary">Learn More</a>
+      </div>
+
+      <div class="vendor-card">
+        <div class="icon">📋</div>
+        <h3>2025 Vendor List</h3>
+        <p>Check back soon for our growing list of confirmed vendors for the 2025 festival!</p>
+        <p class="coming-soon">Coming Soon</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
+
+  <!-- JavaScript -->
+  <script src="../../js/core/component-loader.js"></script>
+  <script src="../../js/core/path-resolver.js"></script>
+  <script src="../../js/modules/navigation.js"></script>
+
+  <script>
+    // Initialize after components load
+    document.addEventListener('componentsLoaded', () => {
+      PathResolver.updatePaths();
+      PathResolver.markActiveNav();
+
+      if (typeof Navigation !== 'undefined') {
+        Navigation.init();
+      }
+    });
+  </script>
+</body>
+</html>
