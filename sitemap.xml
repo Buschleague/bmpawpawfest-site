@@ -6,31 +6,31 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://ozarkeventshub.com/</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc><![CDATA[<?xml version="1.0" encoding="UTF-8"?>]]></loc>
+    <lastmod><![CDATA[<?xml version="1.0" encoding="UTF-8"?>]]></lastmod>
+    <changefreq><![CDATA[<?xml version="1.0" encoding="UTF-8"?>]]></changefreq>
+    <priority><![CDATA[<?xml version="1.0" encoding="UTF-8"?>]]></priority>
   </url>
 
   <!-- Main sections (using anchors) -->
   <url>
-    <loc>https://ozarkeventshub.com/#about</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc><![CDATA[<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"]]></loc>
+    <lastmod><![CDATA[<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"]]></lastmod>
+    <changefreq><![CDATA[<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"]]></changefreq>
+    <priority><![CDATA[<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"]]></priority>
   </url>
 
   <url>
-    <loc>https://ozarkeventshub.com/#events</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</loc>
+    <lastmod>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</lastmod>
+    <changefreq>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</changefreq>
+    <priority>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</priority>
   </url>
 
   <url>
-    <loc>https://ozarkeventshub.com/#contact</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9</loc>
+    <lastmod>xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9</lastmod>
+    <changefreq>xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9</changefreq>
+    <priority>xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9</priority>
   </url>
 </urlset>

@@ -1,9 +1,10 @@
-# Robots.txt for Ozark Events Hub
-# https://ozarkeventshub.com
+# Robots.txt for Boston Mountain Pawpaw Festival
+# https://pawpawfestar.org
 
 # Allow all crawlers
 User-agent: *
 Allow: /
+Crawl-delay: 0
 
 # Specific rules for major search engines
 User-agent: Googlebot
@@ -13,6 +14,27 @@ Crawl-delay: 0
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
 
 # AI crawlers
 User-agent: GPTBot
@@ -30,10 +52,14 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-# Sitemap location
-Sitemap: https://ozarkeventshub.com/sitemap.xml
+User-agent: anthropic-ai
+Allow: /
 
-# Disallow access to specific directories (if any)
-# User-agent: *
-# Disallow: /admin/
-# Disallow: /private/
+User-agent: Bytespider
+Allow: /
+
+# Sitemap location
+Sitemap: https://pawpawfestar.org/sitemap.xml
+
+# No restricted directories for this public festival site
+# All content is meant to be accessible and indexed

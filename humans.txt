@@ -1,16 +1,36 @@
 /* TEAM */
-Name: Ozark Events Hub Team
-Site: info@ozarkeventshub.com
+Festival Director: Eden Ellis
+Contact: eden@thegardenofeden1999.com
+Location: Chester, Arkansas, USA
+
+Web Developer: Buschleague
+Site: https://github.com/Buschleague/
+Twitter: @BPSAI
+Location: Arkansas, USA
+
+Graphic Designer: Buschleague
 Location: Northwest Arkansas, USA
 
 /* THANKS */
-Communities: All the vibrant communities across the Ozarks
-Event Organizers: For creating amazing experiences
-Visitors: For supporting local culture
+Venue: Beard & Lady Inn, Chester, AR
+Musicians: Dreadful Day
+Pawpaw Experts: Local growers and enthusiasts
+Volunteers: All our amazing festival volunteers
+Vendors: Local artisans and food creators
+Community: Chester and the Boston Mountain region
+
+/* FESTIVAL */
+Name: Boston Mountain Pawpaw Festival
+First Edition: 2024
+Current Edition: 2nd Annual (2025)
+Date: September 20, 2025
+Location: Chester, Arkansas
 
 /* SITE */
-Last update: 2025/01/24
+Last update: 2025/08/04
+Doctype: HTML5
 Language: English
 Standards: HTML5, CSS3, JavaScript ES6
-Components: Modular CSS, Vanilla JavaScript
-Software: GitHub Pages
+Components: Vanilla JavaScript, Modular CSS, Progressive Enhancement
+Tools: GitHub Pages, PyCharm
+Fonts: Roboto, Merriweather (Google Fonts)

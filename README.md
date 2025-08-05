@@ -1,100 +1,144 @@
-# Boston Mountain Pawpaw Festival Site
+# Boston Mountain Pawpaw Festival Website
+
+Official website for the annual Boston Mountain Pawpaw Festival in Chester, Arkansas. This site serves as the primary information hub for festival attendees, vendors, and pawpaw enthusiasts.
+
+## About the Festival
+
+The Boston Mountain Pawpaw Festival celebrates Arkansas's largest native fruit with a full day of:
+- 🥧 Pawpaw desserts and treats
+- 🎵 Live music performances
+- 🌱 Growing workshops
+- 👑 Pawpaw pageant
+- 🎯 Family activities
+- 🛍️ Local vendors
+
+**2025 Festival Date:** September 20, 2025  
+**Location:** Beard & Lady Inn, Chester, AR
 
 ## Project Structure
 
 ```
-ozarkeventshub/
+pawpaw-festival/
 ├── index.html              # Main HTML file
 ├── css/                    # Stylesheets
 │   ├── utilities/          # Utility styles
-│   │   ├── variables.css   # CSS custom properties
+│   │   ├── variables.css   # CSS custom properties (pawpaw theme colors)
 │   │   ├── reset.css       # Modern CSS reset
 │   │   ├── base.css        # Base typography and elements
 │   │   └── responsive.css  # Responsive utilities
 │   └── components/         # Component-specific styles
-│       ├── header.css      # Header and navigation
-│       ├── hero.css        # Hero section
-│       ├── events.css      # Event cards and grid
+│       ├── header.css      # Header and navigation with dropdowns
+│       ├── hero.css        # Hero section with countdown
+│       ├── schedule.css    # Festival schedule timeline
+│       ├── activities.css  # Quick info cards and features
 │       └── footer.css      # Footer and contact
 ├── js/                     # JavaScript modules
-│   ├── navigation.js       # Navigation functionality
-│   ├── schedule.js           # Event loading and rendering
+│   ├── navigation.js       # Navigation and mobile menu
+│   ├── schedule.js         # Schedule display and filtering
+│   ├── countdown.js        # Countdown timer to festival
 │   └── main.js             # Main app initialization
 ├── data/                   # Data files
-│   └── events.json         # Event data (for future API integration)
+│   └── festival-2025.json  # Festival information and schedule
 └── assets/                 # Static assets
     ├── images/             # Image files
-    │   ├── hero.jpg        # Hero background image
-    │   └── events/         # Event images
-    ├── icons/              # Icon files
-    └── favicon.ico         # Favicon
+    │   ├── hero-*.jpg      # Hero and feature images
+    │   ├── gallery/        # Photo gallery (coming soon)
+    │   └── sponsors/       # Sponsor logos
+    └── icons/              # Favicon and app icons
 ```
 
-## Key Improvements
+## Key Features
 
-### 1. **Modular CSS Architecture**
-- **CSS Variables**: Centralized theming and consistent values
-- **Component-based**: Each section has its own CSS file
-- **Utility Classes**: Reusable helper classes
-- **Modern Reset**: Consistent cross-browser styling
+### 1. **Festival Information Hub**
+- Comprehensive schedule with filtering by activity type
+- Vendor directory and application information
+- Interactive location/parking details
+- FAQ section for common questions
 
-### 2. **JavaScript Modules**
-- **Navigation Module**: Handles mobile menu, smooth scrolling, and scroll effects
-- **Events Module**: Manages event data loading and rendering
-- **Main Module**: Coordinates app initialization and performance features
+### 2. **Countdown Timer**
+- Dynamic countdown to festival date
+- Special states for final week/day
+- Automatic display updates during festival
 
-### 3. **Enhanced Features**
-- **Smooth Scrolling**: Click navigation links for smooth section transitions
-- **Mobile Menu**: Responsive hamburger menu with slide animation
-- **Active Navigation**: Current section highlighting
-- **Scroll Effects**: Header shrinks on scroll
-- **Animation**: Fade-in effects for content
-- **Performance**: Lazy loading and prefetching ready
+### 3. **Responsive Design**
+- Mobile-first approach
+- Touch-friendly navigation
+- Optimized for all devices
 
 ### 4. **Accessibility**
 - Semantic HTML structure
-- ARIA labels where needed
+- ARIA labels and landmarks
 - Keyboard navigation support
-- Focus management
-- Screen reader announcements
+- Screen reader optimized
 
-### 5. **Performance Optimizations**
-- Modular loading (only load what's needed)
-- CSS and JS can be minified
-- Ready for lazy loading images
-- Prefetch external links on hover
+### 5. **Performance Optimized**
+- Modular CSS/JS architecture
+- Lazy loading for images
+- Progressive enhancement
+- PWA-ready structure
 
-## How to Use
+## Development
 
-1. **Development**:
-   - Simply open `index.html` in a browser
-   - All files are linked with relative paths
-   - No build process required for basic development
+### Getting Started
 
-2. **Production**:
-   - Consider minifying CSS and JS files
-   - Optimize images
-   - Enable gzip compression on server
-   - Add a service worker for PWA features
+1. Clone the repository
+2. Open `index.html` in a web browser
+3. No build process required for basic development
 
-3. **Customization**:
-   - Edit CSS variables in `variables.css` for theming
-   - Modify event data in `schedule.js` or connect to API
-   - Add new components by creating new CSS/JS files
+### Local Development
 
-## Next Steps
+```bash
+# Serve files locally (using Python)
+python -m http.server 8000
 
-To implement the remaining improvements:
+# Or using Node.js
+npx http-server
+```
 
-2. **Event Filters**: Add search and filter functionality
-3. **Calendar View**: Create alternative event display
-4. **Map Integration**: Show event locations
-5. **Dark Mode**: Add theme toggle
-6. **PWA Features**: Add service worker and manifest
-7. **API Integration**: Connect to backend for dynamic data
+### Customization
 
-## Browser Support
+- **Colors**: Edit CSS variables in `css/utilities/variables.css`
+- **Schedule**: Update events in `data/festival-2025.json`
+- **Content**: Modify section content in `index.html`
 
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- IE11 requires polyfills for some features
-- Progressive enhancement ensures basic functionality everywhere
+## Deployment
+
+The site is deployed via GitHub Pages:
+
+1. Push changes to `main` branch
+2. GitHub Actions automatically updates the sitemap
+3. Site is live at [pawpawfestar.org](https://pawpawfestar.org)
+
+## Future Enhancements
+
+- [ ] Photo gallery from previous festivals
+- [ ] News/blog system for updates
+- [ ] Online vendor applications
+- [ ] Ticket sales integration
+- [ ] Interactive festival map
+- [ ] Email newsletter signup
+- [ ] Social media feed integration
+
+## Contributing
+
+To contribute to the festival website:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## Contact
+
+- **Website**: [pawpawfestar.org](https://pawpawfestar.org)
+- **Email**: info@pawpawfestar.org
+- **Facebook**: [Boston Mountain Pawpaw Festival](https://facebook.com/bostonmountainpawpawfestival)
+- **Instagram**: [@bmpawpawfest](https://instagram.com/bmpawpawfest)
+
+## License
+
+© 2025 Boston Mountain Pawpaw Festival. All rights reserved.
+
+---
+
+*Celebrating Arkansas's native treasure in the heart of the Ozarks* 🌿
