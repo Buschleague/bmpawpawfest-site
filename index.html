@@ -2,7 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- viewport-fit=cover for iOS support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- Mobile-specific meta tags -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2d5016">
+
   <!-- Primary Meta Tags -->
   <title>Boston Mountain Pawpaw Festival 2025 - September 20 | Chester, AR</title>
   <meta name="title" content="Boston Mountain Pawpaw Festival 2025 - September 20 | Chester, AR">
@@ -28,17 +36,17 @@
   <meta property="twitter:description" content="September 20, 2025 - Celebrate Arkansas's native pawpaw fruit with desserts, music, workshops, and family fun!">
   <meta property="twitter:image" content="https://pawpawfestar.org/assets/images/og-image.jpg">
 
-  <!-- Canonical URL -->
+  <!-- Canonical URL  -->
   <link rel="canonical" href="https://pawpawfestar.org/">
 
-  <!-- Favicon and App Icons -->
+  <!-- Favicon and App Icons  -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
 
-  <!-- Structured Data for Festival Event -->
+  <!-- Structured Data for Festival Event  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -81,6 +89,43 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 
+  <style>
+    /* Critical mobile design inline for immediate application */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 70vh !important;
+        max-height: 600px !important;
+        padding: 100px 0 60px !important;
+      }
+
+      .hero-title {
+        font-size: 2rem !important;
+      }
+
+      .countdown {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+      }
+    }
+
+    /* Prevent layout shift on load */
+    .site-header {
+      height: 60px;
+    }
+
+    @media (min-width: 768px) {
+      .site-header {
+        height: auto;
+      }
+    }
+  </style>
+
   <!-- CSS Files -->
   <link rel="stylesheet" href="css/utilities/variables.css">
   <link rel="stylesheet" href="css/utilities/reset.css">
@@ -91,6 +136,16 @@
   <link rel="stylesheet" href="css/components/activities.css">
   <link rel="stylesheet" href="css/components/footer.css">
   <link rel="stylesheet" href="css/utilities/responsive.css">
+
+  <!-- Smooth scroll polyfill -->
+  <script>
+    // Smooth scroll polyfill for Safari and older browsers
+    if (!('scrollBehavior' in document.documentElement.style)) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js';
+      document.head.appendChild(script);
+    }
+  </script>
 </head>
 <body>
   <!-- Sticky Ticket CTA -->
