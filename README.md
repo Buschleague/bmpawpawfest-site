@@ -1,4 +1,4 @@
-# Ozark Events Hub
+# Boston Mountain Pawpaw Festival Site
 
 ## Project Structure
 
