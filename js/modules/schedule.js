@@ -2,104 +2,107 @@
 const Schedule = (() => {
   'use strict';
 
-  // Festival schedule data
-  const scheduleData = [
-    {
-      id: 1,
-      time: "9:00 AM",
-      title: "Festival Gates Open",
-      description: "Welcome to the 2nd Annual Boston Mountain Pawpaw Festival!",
-      type: "opening",
-      icon: "🎪"
-    },
-    {
-      id: 2,
-      time: "9:30 AM - 4:30 PM",
-      title: "Pawpaw Dessert Vendors",
-      description: "Sample and purchase amazing pawpaw ice cream, pies, breads, cookies, and more from local vendors",
-      type: "food",
-      icon: "🥧"
-    },
-    {
-      id: 3,
-      time: "10:00 AM",
-      title: "Pawpaw Growing Workshop",
-      description: "Learn how to cultivate your own pawpaw trees with expert growers",
-      type: "workshop",
-      duration: "45 minutes",
-      icon: "🌱"
-    },
-    {
-      id: 4,
-      time: "11:00 AM - 4:00 PM",
-      title: "Live Music: Dreadful Day",
-      description: "Enjoy live performances throughout the day on the main stage",
-      type: "entertainment",
-      icon: "🎵"
-    },
-    {
-      id: 5,
-      time: "11:30 AM",
-      title: "Cornhole Tournament",
-      description: "Test your skills in our pawpaw-themed cornhole tournament. Prizes for winners!",
-      type: "activity",
-      duration: "90 minutes",
-      icon: "🎯"
-    },
-    {
-      id: 6,
-      time: "1:00 PM",
-      title: "Pawpaw Pageant",
-      description: "Crown the 2025 Pawpaw King and Queen in this fun, family-friendly pageant",
-      type: "featured",
-      duration: "60 minutes",
-      icon: "👑"
-    },
-    {
-      id: 7,
-      time: "2:30 PM",
-      title: "Pawpaw Cooking Demo",
-      description: "Watch local chefs demonstrate creative pawpaw recipes you can make at home",
-      type: "workshop",
-      duration: "30 minutes",
-      icon: "👨‍🍳"
-    },
-    {
-      id: 8,
-      time: "3:30 PM",
-      title: "Kids Pawpaw Activities",
-      description: "Face painting, pawpaw crafts, and games for our youngest festival-goers",
-      type: "activity",
-      icon: "🎨"
-    },
-    {
-      id: 9,
-      time: "4:00 PM",
-      title: "Final Pawpaw Growing Q&A",
-      description: "Last chance to ask our experts your pawpaw cultivation questions",
-      type: "workshop",
-      duration: "30 minutes",
-      icon: "❓"
-    },
-    {
-      id: 10,
-      time: "5:00 PM",
-      title: "Festival Closes",
-      description: "Thank you for celebrating with us! See you next year!",
-      type: "closing",
-      icon: "🌅"
-    }
-  ];
+// Festival schedule data with multiple locations
+const scheduleData = [
+  // Farmer's Market Events (120 S. Wright Street)
+  {
+    id: 1,
+    time: "8:00 AM - 11:00 AM",
+    title: "Chester Farmer's Market",
+    description: "Browse local produce, crafts, and goods at the Chester Farmer's Market",
+    type: "market",
+    location: "Farmer's Market - 120 S. Wright Street",
+    icon: "🛍️"
+  },
+  {
+    id: 2,
+    time: "9:00 AM",
+    title: "Fall Foraging with Eden",
+    description: "Eden Ellis speaks about fall foraging techniques and identifying wild edibles",
+    type: "workshop",
+    duration: "45 minutes",
+    location: "Apothecary Stage - Beard & Lady Inn",
+    icon: "🌿"
+  },
+  {
+    id: 3,
+    time: "9:00 AM - 12:00 PM",
+    title: "Cornhole Tournament",
+    description: "Competitive cornhole tournament - Registration required",
+    type: "activity",
+    location: "Farmer's Market - 120 S. Wright Street",
+    icon: "🎯",
+    requiresRegistration: true
+  },
+  {
+    id: 4,
+    time: "9:30 AM - 12:00 PM",
+    title: "Dreadful Day Live",
+    description: "Live music performance by Dreadful Day on the main stage",
+    type: "entertainment",
+    location: "Main Stage - Farmer's Market",
+    icon: "🎵"
+  },
+  {
+    id: 5,
+    time: "10:00 AM",
+    title: "Pawpaw Mead Making Demo",
+    description: "Cyrus Mason with Still'n The Clear demonstrates pawpaw mead making",
+    type: "workshop",
+    duration: "45 minutes",
+    location: "Apothecary Stage - Beard & Lady Inn",
+    icon: "🍯"
+  },
+  {
+    id: 6,
+    time: "11:30 AM - 2:00 PM",
+    title: "Hobo's Kitchen Lunch",
+    description: "Donation-based lunch featuring venison stew and cornbread",
+    type: "food",
+    location: "Beard & Lady Inn",
+    icon: "🍲"
+  },
+  {
+    id: 7,
+    time: "1:00 PM - 2:00 PM",
+    title: "Pawpaw Pageant",
+    description: "Crown the 2025 Pawpaw King - Registration required",
+    type: "featured",
+    location: "Main Stage - Farmer's Market",
+    icon: "👑",
+    requiresRegistration: true
+  },
+  {
+    id: 8,
+    time: "1:00 PM",
+    title: "Growing & Raising Pawpaws",
+    description: "Guy King Ames from Ames Orchard speaks on pawpaw cultivation",
+    type: "workshop",
+    duration: "45 minutes",
+    location: "Apothecary Stage - Beard & Lady Inn",
+    icon: "🌱"
+  },
+  {
+    id: 9,
+    time: "2:00 PM - 5:00 PM",
+    title: "Jesse Dean Live Music",
+    description: "Live music performance by Jesse Dean",
+    type: "entertainment",
+    location: "Beard & Lady Inn",
+    icon: "🎸"
+  }
+];
 
-  // Activity types for filtering
-  const activityTypes = {
-    all: { name: "All Activities", color: "var(--color-primary)" },
-    workshop: { name: "Workshops", color: "var(--color-leaf)" },
-    food: { name: "Food & Vendors", color: "var(--color-secondary)" },
-    entertainment: { name: "Entertainment", color: "var(--color-accent)" },
-    activity: { name: "Activities", color: "var(--color-autumn)" },
-    featured: { name: "Featured Events", color: "var(--color-tertiary)" }
-  };
+// Activity types for filtering
+const activityTypes = {
+  all: { name: "All Activities", color: "var(--color-primary)" },
+  workshop: { name: "Workshops", color: "var(--color-leaf)" },
+  food: { name: "Food & Dining", color: "var(--color-secondary)" },
+  entertainment: { name: "Entertainment", color: "var(--color-accent)" },
+  activity: { name: "Activities", color: "var(--color-autumn)" },
+  featured: { name: "Featured Events", color: "var(--color-tertiary)" },
+  market: { name: "Market", color: "var(--color-earth)" }
+};
 
   // DOM Elements
   let scheduleTimeline;
@@ -166,38 +169,42 @@ const Schedule = (() => {
     });
   };
 
-  // Create individual schedule item
-  const createScheduleItem = (item, index) => {
-    const itemElement = document.createElement('div');
-    itemElement.className = `schedule-item schedule-${item.type}`;
-    itemElement.style.animationDelay = `${index * 0.1}s`;
+ // Create individual schedule item
+const createScheduleItem = (item, index) => {
+  const itemElement = document.createElement('div');
+  itemElement.className = `schedule-item schedule-${item.type}`;
+  itemElement.style.animationDelay = `${index * 0.1}s`;
 
-    const typeColor = activityTypes[item.type]?.color || 'var(--color-primary)';
+  const typeColor = activityTypes[item.type]?.color || 'var(--color-primary)';
 
-    itemElement.innerHTML = `
-      <div class="schedule-time">
-        <span class="time-text">${escapeHtml(item.time)}</span>
-        ${item.duration ? `<span class="duration">${escapeHtml(item.duration)}</span>` : ''}
+  itemElement.innerHTML = `
+    <div class="schedule-time">
+      <span class="time-text">${escapeHtml(item.time)}</span>
+      ${item.duration ? `<span class="duration">${escapeHtml(item.duration)}</span>` : ''}
+    </div>
+    <div class="schedule-content">
+      <div class="schedule-icon" style="background-color: ${typeColor}">
+        ${item.icon}
       </div>
-      <div class="schedule-content">
-        <div class="schedule-icon" style="background-color: ${typeColor}">
-          ${item.icon}
+      <div class="schedule-details">
+        <h3 class="schedule-title">${escapeHtml(item.title)}</h3>
+        <p class="schedule-description">${escapeHtml(item.description)}</p>
+        <div class="schedule-meta">
+          <span class="schedule-location">📍 ${escapeHtml(item.location)}</span>
+          ${item.requiresRegistration ? '<span class="registration-required">🎟️ Registration Required</span>' : ''}
         </div>
-        <div class="schedule-details">
-          <h3 class="schedule-title">${escapeHtml(item.title)}</h3>
-          <p class="schedule-description">${escapeHtml(item.description)}</p>
-          <span class="schedule-type" style="color: ${typeColor}">${activityTypes[item.type].name}</span>
-        </div>
+        <span class="schedule-type" style="color: ${typeColor}">${activityTypes[item.type].name}</span>
       </div>
-    `;
+    </div>
+  `;
 
-    // Add featured class for special events
-    if (item.type === 'featured') {
-      itemElement.classList.add('featured-event');
-    }
+  // Add featured class for special events
+  if (item.type === 'featured') {
+    itemElement.classList.add('featured-event');
+  }
 
-    return itemElement;
-  };
+  return itemElement;
+};
 
   // Filter schedule by type
   const filterSchedule = (type) => {
