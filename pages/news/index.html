@@ -92,15 +92,15 @@
       <h2>🌿 News Section Coming Soon!</h2>
       <p>We're working on bringing you the latest updates, vendor spotlights, pawpaw growing tips, and festival announcements.</p>
 
-      <div class="newsletter-signup">
+       <div class="newsletter-signup">
         <h3>Get Festival Updates</h3>
         <p>Be the first to know about festival news!</p>
-        <form class="newsletter-form" action="#" method="post">
-          <input type="email" placeholder="Enter your email" required>
+        <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+          <input type="email" id="email" placeholder="Enter your email" required>
           <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
+        <p id="subscribe-message" style="margin-top: 1rem; display: none;"></p>
       </div>
-    </div>
   </main>
 
   <!-- Footer Component -->

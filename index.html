@@ -348,6 +348,158 @@
       </div>
     </section>
 
+    <!-- Stay at Beard & Lady Inn Section -->
+    <section class="section stay-promotion" aria-labelledby="stay-title">
+      <div class="container">
+        <div class="stay-content">
+          <div class="stay-text">
+            <h2 id="stay-title">🏨 Stay Where the Magic Happens</h2>
+            <p class="lead">Make your festival experience complete with a stay at the historic Beard & Lady Inn—the heart of the Pawpaw Festival!</p>
+            <div class="stay-benefits">
+              <div class="benefit">
+                <span class="benefit-icon">🚶</span>
+                <p>Walk to all festival events</p>
+              </div>
+              <div class="benefit">
+                <span class="benefit-icon">🍳</span>
+                <p>Delicious breakfast included</p>
+              </div>
+              <div class="benefit">
+                <span class="benefit-icon">✨</span>
+                <p>Historic charm & modern comfort</p>
+              </div>
+              <div class="benefit">
+                <span class="benefit-icon">🌿</span>
+                <p>Beautiful gardens to explore</p>
+              </div>
+            </div>
+            <p class="stay-note">Limited rooms available for festival weekend—book early!</p>
+            <a href="https://hotels.cloudbeds.com/en/reservation/8dTuqi?currency=usd" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Your Room</a>
+          </div>
+          <div class="stay-images">
+            <img src="/assets/images/beard-lady-inn.jpg" alt="Beard & Lady Inn exterior" class="stay-image-main" loading="lazy">
+            <div class="stay-image-badge">
+              <span>Official Festival Venue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+    /* Stay Promotion Section */
+    .stay-promotion {
+      background: linear-gradient(135deg, var(--color-light) 0%, rgba(244, 164, 96, 0.1) 100%);
+      padding: var(--spacing-section) 0;
+    }
+
+    .stay-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xxl);
+      align-items: center;
+    }
+
+    .stay-text h2 {
+      color: var(--color-primary);
+      font-family: var(--font-decorative);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .stay-text .lead {
+      font-size: 1.25rem;
+      color: var(--color-text);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .stay-benefits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .benefit p {
+      margin: 0;
+      color: var(--color-text);
+      font-size: 1rem;
+    }
+
+    .stay-note {
+      background: rgba(244, 164, 96, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-secondary);
+      margin-bottom: 1.5rem;
+      color: var(--color-text);
+    }
+
+    .stay-images {
+      position: relative;
+    }
+
+    .stay-image-main {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stay-image-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--color-secondary);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      font-weight: bold;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .stay-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .stay-text h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .stay-text .lead {
+        font-size: 1.125rem;
+        text-align: center;
+      }
+
+      .stay-benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .stay-images {
+        order: -1;
+      }
+
+      .stay-text {
+        text-align: center;
+      }
+    }
+    </style>
+
     <!-- Gallery Preview Section - Immersive Collage Style -->
 <section id="gallery" class="section section-gallery-preview" aria-labelledby="gallery-title">
   <div class="container">

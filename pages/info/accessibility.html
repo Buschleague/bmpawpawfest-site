@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility - Boston Mountain Pawpaw Festival</title>
+  <meta name="description" content="Accessibility information for the Boston Mountain Pawpaw Festival. We strive to make our festival welcoming and accessible to all.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pawpawfestar.org/pages/info/accessibility.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../../../css/utilities/variables.css">
+  <link rel="stylesheet" href="../../../css/utilities/reset.css">
+  <link rel="stylesheet" href="../../../css/utilities/base.css">
+  <link rel="stylesheet" href="../../../css/components/header.css">
+  <link rel="stylesheet" href="../../../css/components/footer.css">
+  <link rel="stylesheet" href="../../../css/utilities/responsive.css">
+
+  <style>
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, #2d5016 0%, #8cbf3f 100%);
+      color: white;
+      padding: 120px 0 60px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .page-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-decorative);
+    }
+
+    /* Content Container */
+    .content-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    /* Accessibility Info */
+    .accessibility-section {
+      background: var(--color-light);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .accessibility-section h2 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .accessibility-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--color-accent);
+    }
+
+    .accessibility-item h3 {
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .accessibility-item p {
+      color: var(--color-text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .contact-info {
+      background: var(--color-primary);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body class="page-accessibility">
+  <!-- Header Component -->
+  <div data-component="header"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Accessibility Information</h1>
+      <p>Making the festival welcoming for everyone</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="content-container">
+    <!-- Introduction -->
+    <div class="accessibility-section">
+      <h2>♿ Our Commitment to Accessibility</h2>
+      <p>The Boston Mountain Pawpaw Festival is committed to ensuring our event is accessible and enjoyable for all attendees. We continuously work to improve accessibility at our festival venues.</p>
+    </div>
+
+    <!-- Accessibility Features -->
+    <div class="accessibility-section">
+      <h2>Available Accessibility Features</h2>
+
+      <div class="accessibility-item">
+        <h3>🚗 Accessible Parking</h3>
+        <p>Designated accessible parking spaces are available near the main festival entrance at Beard & Lady Inn. Look for marked spaces or ask our parking volunteers for assistance.</p>
+      </div>
+
+      <div class="accessibility-item">
+        <h3>🚻 Accessible Restrooms</h3>
+        <p>ADA-compliant porta potty facilities are available across from the Beard & Lady Inn for your convenience.</p>
+      </div>
+
+      <div class="accessibility-item">
+        <h3>🏛️ Venue Access</h3>
+        <p>The outdoor festival areas are generally accessible, though some areas may have uneven terrain. Our volunteers are happy to assist with navigation.</p>
+      </div>
+
+      <div class="accessibility-item">
+        <h3>🪑 Seating Areas</h3>
+        <p>Designated seating areas are available near the main stage and performance areas. Feel free to bring your own chair if needed.</p>
+      </div>
+
+      <div class="accessibility-item">
+        <h3>🐕‍🦺 Service Animals</h3>
+        <p>Service animals are always welcome at the festival. Please ensure they are properly identified and remain under your control.</p>
+      </div>
+    </div>
+
+    <!-- Contact for Assistance -->
+    <div class="contact-info">
+      <h2>Need Additional Assistance?</h2>
+      <p>If you have specific accessibility needs or questions, please contact us before the festival so we can best accommodate you.</p>
+      <a href="mailto:info@ozarkeventshub.com?subject=Accessibility Question" class="btn btn-primary">Contact Us</a>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
+
+  <!-- JavaScript -->
+  <script src="../../../js/core/component-loader.js"></script>
+  <script src="../../../js/core/path-resolver.js"></script>
+  <script src="../../../js/modules/navigation.js"></script>
+
+  <script>
+    document.addEventListener('componentsLoaded', () => {
+      PathResolver.updatePaths();
+      if (typeof Navigation !== 'undefined') {
+        Navigation.init();
+      }
+    });
+  </script>
+</body>
+</html>
