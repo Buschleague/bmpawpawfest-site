@@ -37,7 +37,7 @@ Sticky CTA: "Get Tickets" (floating button)
 ## Technical Debt Cleanup Tasks
 
 ### 1. **Remove Multi-Event Architecture**
-- Delete/refactor `events.js` to focus on single festival activities/schedule
+- Delete/refactor `schedule.js` to focus on single festival activities/schedule
 - Remove event grid system from `events.css`
 - Transform event cards into activity/schedule cards
 - Update data structure from multiple events to single festival with activities
@@ -164,7 +164,7 @@ pawpaw-festival/
 │       └── footer.css      # Update contact info
 ├── js/
 │   ├── navigation.js       # Update for new nav items
-│   ├── schedule.js         # Renamed from events.js
+│   ├── schedule.js         # Renamed from schedule.js
 │   ├── countdown.js        # New countdown timer
 │   └── main.js            # Update branding
 ├── data/

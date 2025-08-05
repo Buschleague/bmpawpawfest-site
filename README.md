@@ -18,7 +18,7 @@ ozarkeventshub/
 │       └── footer.css      # Footer and contact
 ├── js/                     # JavaScript modules
 │   ├── navigation.js       # Navigation functionality
-│   ├── events.js           # Event loading and rendering
+│   ├── schedule.js           # Event loading and rendering
 │   └── main.js             # Main app initialization
 ├── data/                   # Data files
 │   └── events.json         # Event data (for future API integration)
@@ -79,7 +79,7 @@ ozarkeventshub/
 
 3. **Customization**:
    - Edit CSS variables in `variables.css` for theming
-   - Modify event data in `events.js` or connect to API
+   - Modify event data in `schedule.js` or connect to API
    - Add new components by creating new CSS/JS files
 
 ## Next Steps
