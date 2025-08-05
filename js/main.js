@@ -1,22 +1,24 @@
-// Main Application Module
+// Main Application Module for Boston Mountain Pawpaw Festival
 const App = (() => {
   'use strict';
 
   // Configuration
   const config = {
     animationObserverThreshold: 0.1,
-    lazyLoadOffset: 50
+    lazyLoadOffset: 50,
+    festivalYear: 2025
   };
 
   // Initialize Application
   const init = () => {
-    console.log('🎉 Ozark Events Hub initialized');
+    console.log('🌿 Boston Mountain Pawpaw Festival site initialized');
 
     // Setup features
     setupIntersectionObserver();
     setupLazyLoading();
     setupAccessibility();
     setupPerformanceOptimizations();
+    addFestivalInteractions();
 
     // Log performance metrics in development
     if (window.location.hostname === 'localhost') {
@@ -28,7 +30,7 @@ const App = (() => {
   const setupIntersectionObserver = () => {
     if (!('IntersectionObserver' in window)) return;
 
-    const animatedElements = document.querySelectorAll('.section, .hero-content');
+    const animatedElements = document.querySelectorAll('.section, .hero-content, .info-card, .feature');
 
     const observerOptions = {
       threshold: config.animationObserverThreshold,
@@ -77,10 +79,10 @@ const App = (() => {
   const setupAccessibility = () => {
     // Skip to content link
     const skipLink = document.createElement('a');
-    skipLink.href = '#events';
+    skipLink.href = '#schedule';
     skipLink.className = 'skip-to-content';
-    skipLink.textContent = 'Skip to main content';
-    skipLink.innerHTML = '<span class="sr-only">Skip to main content</span>';
+    skipLink.textContent = 'Skip to festival schedule';
+    skipLink.innerHTML = '<span class="sr-only">Skip to festival schedule</span>';
     document.body.insertBefore(skipLink, document.body.firstChild);
 
     // Announce page changes for screen readers
@@ -106,7 +108,72 @@ const App = (() => {
           document.getElementById('mobile-menu-toggle').click();
         }
       }
+
+      // Press 'T' to jump to tickets
+      if (e.key === 't' && !isInputFocused()) {
+        e.preventDefault();
+        document.querySelector('.sticky-cta')?.click();
+      }
     });
+  };
+
+  // Add Festival-specific interactions
+  const addFestivalInteractions = () => {
+    // Add hover effect to pawpaw icons
+    const infoCards = document.querySelectorAll('.info-card');
+    infoCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const icon = card.querySelector('.info-icon');
+        if (icon) {
+          icon.style.transform = 'scale(1.1) rotate(5deg)';
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        const icon = card.querySelector('.info-icon');
+        if (icon) {
+          icon.style.transform = 'scale(1) rotate(0deg)';
+        }
+      });
+    });
+
+    // Add seasonal decorations based on date
+    addSeasonalDecorations();
+  };
+
+  // Add seasonal decorations
+  const addSeasonalDecorations = () => {
+    const now = new Date();
+    const festivalDate = new Date('2025-09-20');
+    const daysUntil = Math.floor((festivalDate - now) / (1000 * 60 * 60 * 24));
+
+    // Add fall leaves animation if close to festival
+    if (daysUntil <= 30 && daysUntil > 0) {
+      createFallingLeaves();
+    }
+  };
+
+  // Create falling leaves animation
+  const createFallingLeaves = () => {
+    const leafContainer = document.createElement('div');
+    leafContainer.className = 'falling-leaves';
+    leafContainer.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(leafContainer);
+
+    const leaves = ['🍂', '🍁', '🌿'];
+    const numberOfLeaves = 5;
+
+    for (let i = 0; i < numberOfLeaves; i++) {
+      setTimeout(() => {
+        const leaf = document.createElement('span');
+        leaf.className = 'leaf';
+        leaf.textContent = leaves[Math.floor(Math.random() * leaves.length)];
+        leaf.style.left = Math.random() * 100 + '%';
+        leaf.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        leaf.style.animationDelay = Math.random() * 5 + 's';
+        leafContainer.appendChild(leaf);
+      }, i * 2000);
+    }
   };
 
   // Setup Performance Optimizations
@@ -115,10 +182,10 @@ const App = (() => {
     const preloadLink = document.createElement('link');
     preloadLink.rel = 'preload';
     preloadLink.as = 'image';
-    preloadLink.href = 'assets/images/hero.jpg';
+    preloadLink.href = '/assets/images/hero-pawpaw-festival.jpg';
     document.head.appendChild(preloadLink);
 
-    // Prefetch event sites on hover
+    // Prefetch vendor sites on hover
     document.addEventListener('mouseover', (e) => {
       const link = e.target.closest('a[href^="http"]');
       if (link && !link.dataset.prefetched) {
@@ -129,6 +196,13 @@ const App = (() => {
         link.dataset.prefetched = 'true';
       }
     });
+
+    // Reduce motion for users who prefer it
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.style.setProperty('--transition-fast', '0.01ms');
+      document.documentElement.style.setProperty('--transition-medium', '0.01ms');
+      document.documentElement.style.setProperty('--transition-slow', '0.01ms');
+    }
   };
 
   // Utility: Check if input is focused
@@ -166,7 +240,8 @@ const App = (() => {
       if (announcer) {
         announcer.textContent = message;
       }
-    }
+    },
+    getFestivalYear: () => config.festivalYear
   };
 })();
 
