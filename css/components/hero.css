@@ -1,7 +1,7 @@
 
 .hero {
   position: relative;
-  background: url('/assets/images/hero-pawpaw-festival.jpg') center/cover no-repeat;
+  background: url('/assets/images/gallery/featured/hero-pawpaw-festival.jpg') center/cover no-repeat;
   color: var(--color-white);
   text-align: center;
   padding: 100px 0 60px; /* Reduced from 200px */
