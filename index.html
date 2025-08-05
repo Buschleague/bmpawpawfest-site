@@ -90,41 +90,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 
   <style>
-    /* Critical mobile design inline for immediate application */
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 70vh !important;
-        max-height: 600px !important;
-        padding: 100px 0 60px !important;
-      }
-
-      .hero-title {
-        font-size: 2rem !important;
-      }
-
-      .countdown {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
-
-      body.menu-open {
-        overflow: hidden;
-        position: fixed;
-        width: 100%;
-      }
+  /* Critical mobile design inline for immediate application */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 70vh !important;
+      max-height: 600px !important;
+      padding: 100px 0 80px !important; /* Increased bottom padding */
     }
 
-    /* Prevent layout shift on load */
+    .hero-title {
+      font-size: 2rem !important;
+    }
+
+    .countdown {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      margin-bottom: 20px !important; /* Add space below countdown */
+    }
+
+    body.menu-open {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+    }
+  }
+
+  /* Prevent layout shift on load */
+  .site-header {
+    height: 60px;
+  }
+
+  @media (min-width: 768px) {
     .site-header {
-      height: 60px;
+      height: auto;
     }
-
-    @media (min-width: 768px) {
-      .site-header {
-        height: auto;
-      }
-    }
-  </style>
+  }
+</style>
 
   <!-- CSS Files -->
   <link rel="stylesheet" href="css/utilities/variables.css">

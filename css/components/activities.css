@@ -61,7 +61,7 @@
 .quick-info {
   background-color: var(--color-white);
   padding: var(--spacing-lg) 0; /* Reduced from var(--spacing-xl) */
-  margin-top: -30px; /* Reduced from -60px */
+  margin-top: -15px; /* Reduced from -30px to prevent overlap */
   position: relative;
   z-index: 10;
 }
