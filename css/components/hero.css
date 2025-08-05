@@ -196,10 +196,17 @@
     padding: 60px 0 40px;
   }
 
-  .countdown {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 100%;
-  }
+  /* Countdown Timer - Mobile First */
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg); /* Add bottom margin */
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
 }
 
 /* Tablet (min-width: 768px) */
