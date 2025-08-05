@@ -678,6 +678,183 @@
 }
 </style>
 
+    <!-- Registration Section -->
+<section id="registration" class="section section-registration" aria-labelledby="registration-title">
+  <div class="container">
+    <h2 id="registration-title" class="section-title">Event Registration</h2>
+    <p class="section-subtitle">Register for competitions and secure your spot!</p>
+
+    <div class="registration-grid">
+      <!-- Cornhole Tournament -->
+      <div class="registration-card">
+        <div class="reg-icon">🎯</div>
+        <h3>Cornhole Tournament</h3>
+        <div class="reg-details">
+          <p class="reg-time">📅 Saturday, 9:00 AM - 12:00 PM</p>
+          <p class="reg-location">📍 Farmer's Market</p>
+          <p class="reg-fee">💵 Registration Required</p>
+        </div>
+        <p class="reg-description">Compete in our exciting cornhole tournament with cash prizes for the winners!</p>
+        <a href="https://thegardenofeden1999.com/products/untitled-jul19_13-36" target="_blank" rel="noopener" class="btn btn-primary">Register Now</a>
+      </div>
+
+      <!-- Pawpaw Pageant -->
+      <div class="registration-card featured">
+        <div class="reg-icon">👑</div>
+        <h3>Pawpaw Pageant</h3>
+        <div class="reg-details">
+          <p class="reg-time">📅 Saturday, 1:00 PM - 2:00 PM</p>
+          <p class="reg-location">📍 Main Stage</p>
+          <p class="reg-fee">💵 Registration Required</p>
+        </div>
+        <p class="reg-description">Be crowned the 2025 Pawpaw King! Open to all ages with multiple categories.</p>
+        <a href="https://thegardenofeden1999.com/products/2nd-annual-paw-paw-pageant-2025" target="_blank" rel="noopener" class="btn btn-secondary">Enter Pageant</a>
+      </div>
+    </div>
+
+    <div class="vendor-cta">
+      <p>Looking to be a vendor or food truck? <a href="/pages/vendors/">Visit our vendors page</a> for registration information.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Registration Section Styles */
+.section-registration {
+  background-color: var(--color-white);
+  padding: var(--spacing-section) 0;
+}
+
+.section-registration .section-subtitle {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 1.125rem;
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+}
+
+.registration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.registration-card {
+  background: var(--color-light);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.registration-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.registration-card.featured {
+  background: linear-gradient(135deg, var(--color-light) 0%, rgba(244, 164, 96, 0.1) 100%);
+  border: 2px solid var(--color-secondary);
+}
+
+.reg-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.registration-card h3 {
+  color: var(--color-primary);
+  font-family: var(--font-decorative);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.reg-details {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reg-details p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.reg-description {
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.registration-card .btn {
+  width: 100%;
+  max-width: 200px;
+  font-weight: var(--font-weight-bold);
+}
+
+.vendor-cta {
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-light);
+  border-radius: var(--radius-lg);
+  margin-top: 2rem;
+}
+
+.vendor-cta p {
+  color: var(--color-text);
+  font-size: 1.125rem;
+}
+
+.vendor-cta a {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+}
+
+.vendor-cta a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .registration-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .registration-card {
+    padding: 2rem;
+  }
+
+  .reg-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+</style>
+
     <!-- Contact Section -->
 <section id="contact" class="section section-contact" aria-labelledby="contact-title">
   <div class="container">
@@ -881,32 +1058,140 @@
 </style>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Boston Mountains Pawpaw Festival</h3>
-          <p>Celebrating Arkansas's native pawpaw fruit in the heart of the Ozarks</p>
-        </div>
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="#schedule">Schedule</a></li>
-            <li><a href="#vendors">Vendors</a></li>
-            <li><a href="#tickets">Tickets</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Location</h4>
-          <p>Beard & Lady Inn<br>Chester, AR 72936</p>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Boston Mountains Pawpaw Festival</h3>
+        <p>Celebrating Arkansas's native pawpaw fruit in the heart of the Ozarks</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/events/1247505777050837/" target="_blank" rel="noopener" aria-label="Facebook">
+            <span class="fb-icon-footer">f</span>
+          </a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p class="footer-text">&copy; 2025 Boston Mountains Pawpaw Festival · All rights reserved</p>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="/pages/vendors/">Vendors</a></li>
+          <li><a href="#registration">Event Registration</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Event Location</h4>
+        <p>Beard & Lady Inn<br>Chester, AR 72936</p>
+        <p class="footer-date">September 20, 2025</p>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <p><a href="mailto:info@ozarkeventshub.com" class="footer-email">info@ozarkeventshub.com</a></p>
+        <p class="footer-note">Event inquiries handled by<br>Ozark Events Hub</p>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <p class="footer-text">&copy; 2025 Boston Mountains Pawpaw Festival · All rights reserved</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* Additional Footer Styles */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.footer-section p,
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-white);
+}
+
+.footer-email {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.footer-email:hover {
+  text-decoration: underline;
+}
+
+.footer-note {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.footer-date {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  margin-top: 0.5rem;
+}
+
+.footer-social {
+  margin-top: 1rem;
+}
+
+.fb-icon-footer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all var(--transition-fast);
+}
+
+.footer-social a:hover .fb-icon-footer {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+</style>
 
   <!-- JavaScript Files -->
   <script src="js/modules/navigation.js"></script>
