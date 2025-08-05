@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsors - Boston Mountain Pawpaw Festival</title>
+  <meta name="description" content="Thank you to our sponsors who make the Boston Mountain Pawpaw Festival possible. Learn about sponsorship opportunities.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pawpawfestar.org/pages/vendors/sponsors.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../../../css/utilities/variables.css">
+  <link rel="stylesheet" href="../../../css/utilities/reset.css">
+  <link rel="stylesheet" href="../../../css/utilities/base.css">
+  <link rel="stylesheet" href="../../../css/components/header.css">
+  <link rel="stylesheet" href="../../../css/components/footer.css">
+  <link rel="stylesheet" href="../../../css/utilities/responsive.css">
+
+  <style>
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, #2d5016 0%, #f4a460 100%);
+      color: white;
+      padding: 120px 0 60px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .page-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-decorative);
+    }
+
+    /* Sponsors Container */
+    .sponsors-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    /* Thank You Section */
+    .thank-you-section {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .thank-you-section h2 {
+      color: var(--color-primary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-decorative);
+    }
+
+    .thank-you-section p {
+      color: var(--color-text-light);
+      font-size: 1.125rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Current Sponsors */
+    .current-sponsors {
+      margin-bottom: 4rem;
+    }
+
+    .sponsor-tier {
+      margin-bottom: 3rem;
+    }
+
+    .sponsor-tier h3 {
+      text-align: center;
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      font-family: var(--font-decorative);
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .sponsor-tier h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--color-accent);
+    }
+
+    /* Sponsor Logos Grid */
+    .sponsor-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .sponsor-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sponsor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .sponsor-card.gold {
+      border: 3px solid #FFD700;
+      background: linear-gradient(135deg, white 0%, rgba(255, 215, 0, 0.05) 100%);
+    }
+
+    .sponsor-card.silver {
+      border: 2px solid #C0C0C0;
+      background: linear-gradient(135deg, white 0%, rgba(192, 192, 192, 0.05) 100%);
+    }
+
+    .sponsor-card.bronze {
+      border: 2px solid #CD7F32;
+      background: linear-gradient(135deg, white 0%, rgba(205, 127, 50, 0.05) 100%);
+    }
+
+    .sponsor-logo {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-logo img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    /* Placeholder logo style */
+    .logo-placeholder {
+      background: var(--color-light);
+      padding: 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      color: var(--color-primary);
+      font-size: 1.25rem;
+    }
+
+    .sponsor-name {
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sponsor-description {
+      color: var(--color-text-light);
+      font-size: 0.875rem;
+    }
+
+    /* Sponsorship Levels */
+    .sponsorship-levels {
+      background: var(--color-light);
+      padding: 3rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .sponsorship-levels h2 {
+      text-align: center;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+      font-family: var(--font-decorative);
+    }
+
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .level-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .level-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .level-card.featured {
+      border: 3px solid var(--color-accent);
+      transform: scale(1.05);
+    }
+
+    .level-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-accent);
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: bold;
+    }
+
+    .level-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-decorative);
+    }
+
+    .level-name.gold { color: #FFD700; }
+    .level-name.silver { color: #C0C0C0; }
+    .level-name.bronze { color: #CD7F32; }
+
+    .level-price {
+      font-size: 2rem;
+      color: var(--color-secondary);
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .level-benefits {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .level-benefits li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--color-text);
+    }
+
+    .level-benefits li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: bold;
+    }
+
+    /* CTA Section */
+    .sponsor-cta {
+      background: var(--color-primary);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .sponsor-cta h2 {
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-cta p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+
+      .sponsor-logos {
+        grid-template-columns: 1fr;
+      }
+
+      .levels-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .level-card.featured {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body class="page-sponsors">
+  <!-- Header Component -->
+  <div data-component="header"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our Sponsors</h1>
+      <p>Supporting the celebration of Arkansas's native treasure</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="sponsors-container">
+    <!-- Thank You Section -->
+    <section class="thank-you-section">
+      <h2>Thank You to Our 2025 Sponsors!</h2>
+      <p>The Boston Mountain Pawpaw Festival wouldn't be possible without the generous support of our sponsors. Their commitment helps us celebrate and preserve Arkansas's pawpaw heritage.</p>
+    </section>
+
+    <!-- Current Sponsors -->
+    <section class="current-sponsors">
+      <!-- Gold Sponsors -->
+      <div class="sponsor-tier">
+        <h3>🥇 Gold Sponsors</h3>
+        <div class="sponsor-logos">
+          <div class="sponsor-card gold">
+            <div class="sponsor-logo">
+              <div class="logo-placeholder">Gemini Capital Group</div>
+            </div>
+            <h4 class="sponsor-name">Gemini Capital Group</h4>
+            <p class="sponsor-description">Premier investment partner supporting Arkansas communities</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Silver Sponsors -->
+      <div class="sponsor-tier">
+        <h3>🥈 Silver Sponsors</h3>
+        <div class="sponsor-logos">
+          <div class="sponsor-card silver">
+            <div class="sponsor-logo">
+              <div class="logo-placeholder">Beard & Lady Inn</div>
+            </div>
+            <h4 class="sponsor-name">Beard & Lady Inn</h4>
+            <p class="sponsor-description">Historic venue and heart of the festival</p>
+          </div>
+          <div class="sponsor-card silver">
+            <div class="sponsor-logo">
+              <div class="logo-placeholder">The Garden of Eden</div>
+            </div>
+            <h4 class="sponsor-name">The Garden of Eden</h4>
+            <p class="sponsor-description">Supporting local agriculture and sustainability</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsorship Levels -->
+    <section class="sponsorship-levels">
+      <h2>Become a 2025 Festival Sponsor</h2>
+      <div class="levels-grid">
+        <!-- Bronze Level -->
+        <div class="level-card">
+          <h3 class="level-name bronze">Bronze</h3>
+          <p class="level-price">$250</p>
+          <ul class="level-benefits">
+            <li>Logo on festival website</li>
+            <li>Social media recognition</li>
+            <li>Signage at festival entrance</li>
+            <li>2 complimentary vendor passes</li>
+          </ul>
+        </div>
+
+        <!-- Silver Level -->
+        <div class="level-card featured">
+          <span class="level-badge">Most Popular</span>
+          <h3 class="level-name silver">Silver</h3>
+          <p class="level-price">$500</p>
+          <ul class="level-benefits">
+            <li>All Bronze benefits</li>
+            <li>Logo on festival t-shirts</li>
+            <li>Dedicated social media post</li>
+            <li>Banner at main stage</li>
+            <li>4 complimentary vendor passes</li>
+          </ul>
+        </div>
+
+        <!-- Gold Level -->
+        <div class="level-card">
+          <h3 class="level-name gold">Gold</h3>
+          <p class="level-price">$1,000+</p>
+          <ul class="level-benefits">
+            <li>All Silver benefits</li>
+            <li>Premier logo placement</li>
+            <li>Speaking opportunity</li>
+            <li>Dedicated vendor booth</li>
+            <li>Year-round recognition</li>
+            <li>6 complimentary vendor passes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="sponsor-cta">
+      <h2>Join Our Growing Family of Sponsors</h2>
+      <p>Support the Boston Mountains Pawpaw Festival and connect with thousands of festival-goers while supporting local agriculture, education, and community.</p>
+      <a href="mailto:info@ozarkeventshub.com?subject=Pawpaw Festival Sponsorship Inquiry" class="btn btn-primary btn-lg">Become a Sponsor</a>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
+
+  <!-- JavaScript -->
+  <script src="../../../js/core/component-loader.js"></script>
+  <script src="../../../js/core/path-resolver.js"></script>
+  <script src="../../../js/modules/navigation.js"></script>
+
+  <script>
+    document.addEventListener('componentsLoaded', () => {
+      PathResolver.updatePaths();
+      if (typeof Navigation !== 'undefined') {
+        Navigation.init();
+      }
+    });
+  </script>
+</body>
+</html>
