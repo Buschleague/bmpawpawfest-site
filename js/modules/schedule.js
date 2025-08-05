@@ -57,7 +57,7 @@ const scheduleData = [
     id: 6,
     time: "11:30 AM - 2:00 PM",
     title: "Hobo's Kitchen Lunch",
-    description: "Donation-based lunch featuring venison stew and cornbread",
+    description: "Donation-based lunch featuring venison chili and cornbread",
     type: "food",
     location: "Beard & Lady Inn",
     icon: "🍲"
