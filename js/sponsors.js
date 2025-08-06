@@ -1,3 +1,4 @@
+
 const SponsorsCarousel = (() => {
   'use strict';
 
@@ -23,20 +24,20 @@ const SponsorsCarousel = (() => {
     {
       name: 'Beard & Lady Inn',
       image: '/assets/images/sponsors/beard.jpg',
-      url: 'https://beardandladyinn.com/', // Update with actual URL
+      url: 'https://beardandladyinn.com/',
       description: 'Historic inn and event venue in Chester, AR'
     },
     {
-      name: 'GCG',
-      image: '/assets/images/sponsors/GeminiCG.png',
-      url: '#', // Update with actual URL
-      description: 'Supporting local community events'
+      name: 'The Garden of Eden',
+      image: '/assets/images/sponsors/garden.jpg',
+      url: 'https://www.instagram.com/thegardenofeden1999/',
+      description: 'Community garden and sustainable living'
     },
     {
-      name: 'Garden Sponsor',
-      image: '/assets/images/sponsors/garden.jpg',
-      url: '#', // Update with actual URL
-      description: 'Cultivating community connections'
+      name: 'Gemini Capital Group',
+      image: '/assets/images/sponsors/GeminiCG.png',
+      url: null, // No website yet
+      description: 'Investment and capital management'
     }
   ];
 
