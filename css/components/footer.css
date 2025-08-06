@@ -198,7 +198,25 @@
 .footer-bottom {
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.footer-powered {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-white);
+  opacity: 0.6;
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.footer-powered:hover {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
