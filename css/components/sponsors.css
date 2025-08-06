@@ -199,144 +199,6 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Footer Sponsors Strip */
-.footer-sponsors {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: var(--spacing-xxl) 0;  /* Increased padding */
-  margin-bottom: var(--spacing-xl);  /* Increased margin */
-}
-
-.footer-sponsors-title {
-  color: var(--color-white);
-  text-align: center;
-  font-size: 0.875rem;
-  margin-bottom: var(--spacing-lg);
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.footer-sponsors-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: calc(var(--spacing-xxl) * 2);  /* Doubled gap for larger logos */
-  flex-wrap: wrap;
-  padding: var(--spacing-lg) 0;  /* Added padding */
-}
-
-.footer-sponsor-link {
-  display: block;
-  opacity: 0.8;
-  transition: opacity var(--transition-fast);
-}
-
-.footer-sponsor-link:not(.no-link):hover {
-  opacity: 1;
-}
-
-.footer-sponsor-link.no-link {
-  cursor: default;
-  opacity: 0.8;
-}
-
-/* Much larger footer logos - DOUBLED */
-.footer-sponsor-logo {
-  height: 160px;  /* Doubled from 80px */
-  width: auto;
-  max-width: 400px;  /* Doubled from 200px */
-  object-fit: contain;
-  filter: brightness(0) invert(1);  /* Makes dark logos white */
-  transition: transform var(--transition-fast);
-}
-
-/* Special class for logos that are already white */
-.footer-sponsor-logo-white {
-  filter: none !important;  /* Don't apply filter to already-white logos */
-}
-
-/* Special class for logos that need custom filtering */
-.footer-sponsor-logo-no-filter {
-  filter: none;  /* No filter at all */
-  opacity: 0.9;  /* Slightly reduce opacity to match others */
-}
-
-.footer-sponsor-link:not(.no-link):hover .footer-sponsor-logo {
-  transform: scale(1.1);
-}
-
-/* FOOTER LOGO FIX - Add this AFTER your existing sponsors.css or at the end of the file */
-
-/* Force footer logos to be LARGE */
-.footer-sponsors .footer-sponsor-logo {
-  height: 160px !important;
-  min-height: 160px !important;
-  width: auto !important;
-  max-width: 400px !important;
-  object-fit: contain !important;
-}
-
-/* Ensure the container has enough space */
-.footer-sponsors {
-  padding: 3rem 0 !important;
-  min-height: 250px !important;
-}
-
-.footer-sponsors-list {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 4rem !important;
-  flex-wrap: wrap !important;
-  min-height: 180px !important;
-  padding: 2rem 0 !important;
-}
-
-.footer-sponsor-link {
-  display: inline-block !important;
-  height: 160px !important;
-  line-height: 160px !important;
-}
-
-.footer-sponsor-link.no-link {
-  display: inline-block !important;
-  height: 160px !important;
-  line-height: 160px !important;
-}
-
-/* Apply filters correctly */
-.footer-sponsors .footer-sponsor-logo:not(.footer-sponsor-logo-white):not(.footer-sponsor-logo-no-filter) {
-  filter: brightness(0) invert(1) !important;
-}
-
-.footer-sponsors .footer-sponsor-logo-white {
-  filter: none !important;
-}
-
-.footer-sponsors .footer-sponsor-logo-no-filter {
-  filter: none !important;
-  opacity: 0.9 !important;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .footer-sponsors .footer-sponsor-logo {
-    height: 100px !important;
-    min-height: 100px !important;
-    max-width: 250px !important;
-  }
-
-  .footer-sponsor-link,
-  .footer-sponsor-link.no-link {
-    height: 100px !important;
-    line-height: 100px !important;
-  }
-
-  .footer-sponsors-list {
-    gap: 2rem !important;
-    min-height: 120px !important;
-  }
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -370,14 +232,6 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: var(--spacing-md);
   }
-
-  .footer-sponsors-list {
-    gap: var(--spacing-lg);
-  }
-
-  .footer-sponsor-logo {
-    height: 40px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -396,10 +250,6 @@
 
   .carousel-next {
     right: 10px;
-  }
-
-  .footer-sponsor-logo {
-    height: 35px;
   }
 }
 
