@@ -265,6 +265,79 @@
   transform: scale(1.1);
 }
 
+/* FOOTER LOGO FIX - Add this AFTER your existing sponsors.css or at the end of the file */
+
+/* Force footer logos to be LARGE */
+.footer-sponsors .footer-sponsor-logo {
+  height: 160px !important;
+  min-height: 160px !important;
+  width: auto !important;
+  max-width: 400px !important;
+  object-fit: contain !important;
+}
+
+/* Ensure the container has enough space */
+.footer-sponsors {
+  padding: 3rem 0 !important;
+  min-height: 250px !important;
+}
+
+.footer-sponsors-list {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 4rem !important;
+  flex-wrap: wrap !important;
+  min-height: 180px !important;
+  padding: 2rem 0 !important;
+}
+
+.footer-sponsor-link {
+  display: inline-block !important;
+  height: 160px !important;
+  line-height: 160px !important;
+}
+
+.footer-sponsor-link.no-link {
+  display: inline-block !important;
+  height: 160px !important;
+  line-height: 160px !important;
+}
+
+/* Apply filters correctly */
+.footer-sponsors .footer-sponsor-logo:not(.footer-sponsor-logo-white):not(.footer-sponsor-logo-no-filter) {
+  filter: brightness(0) invert(1) !important;
+}
+
+.footer-sponsors .footer-sponsor-logo-white {
+  filter: none !important;
+}
+
+.footer-sponsors .footer-sponsor-logo-no-filter {
+  filter: none !important;
+  opacity: 0.9 !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .footer-sponsors .footer-sponsor-logo {
+    height: 100px !important;
+    min-height: 100px !important;
+    max-width: 250px !important;
+  }
+
+  .footer-sponsor-link,
+  .footer-sponsor-link.no-link {
+    height: 100px !important;
+    line-height: 100px !important;
+  }
+
+  .footer-sponsors-list {
+    gap: 2rem !important;
+    min-height: 120px !important;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .sponsors-carousel-wrapper {
