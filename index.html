@@ -137,6 +137,7 @@
   <link rel="stylesheet" href="css/components/activities.css">
   <link rel="stylesheet" href="css/components/footer.css">
   <link rel="stylesheet" href="css/utilities/responsive.css">
+  <link rel="stylesheet" href="css/components/sponsors.css">
 
   <!-- Smooth scroll polyfill -->
   <script>
@@ -957,6 +958,51 @@
 }
 </style>
 
+<!-- Sponsors Section -->
+<section id="sponsors" class="section section-sponsors" aria-labelledby="sponsors-title">
+  <div class="container">
+    <h2 id="sponsors-title" class="section-title">Thanks to Our Sponsors</h2>
+    <p class="sponsors-subtitle">These local businesses help make our community events possible</p>
+
+    <div class="sponsors-carousel-wrapper">
+      <div class="sponsors-carousel" id="sponsors-carousel">
+        <div class="sponsor-slide active">
+          <a href="#" class="sponsor-link" aria-label="Visit Beard & Lady Inn website">
+            <img src="/assets/images/sponsors/beard.jpg" alt="Beard & Lady Inn" class="sponsor-logo">
+          </a>
+        </div>
+        <div class="sponsor-slide">
+          <a href="#" class="sponsor-link" aria-label="Visit GCG website">
+            <img src="/assets/images/sponsors/GeminiCG.png" alt="GCG" class="sponsor-logo">
+          </a>
+        </div>
+        <div class="sponsor-slide">
+          <a href="#" class="sponsor-link" aria-label="Visit Garden sponsor website">
+            <img src="/assets/images/sponsors/garden.png" alt="Garden Sponsor" class="sponsor-logo">
+          </a>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control carousel-prev" id="sponsors-prev" aria-label="Previous sponsor">
+        <span class="carousel-arrow">‹</span>
+      </button>
+      <button class="carousel-control carousel-next" id="sponsors-next" aria-label="Next sponsor">
+        <span class="carousel-arrow">›</span>
+      </button>
+
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button class="indicator active" data-slide="0" aria-label="Go to sponsor 1"></button>
+        <button class="indicator" data-slide="1" aria-label="Go to sponsor 2"></button>
+        <button class="indicator" data-slide="2" aria-label="Go to sponsor 3"></button>
+      </div>
+    </div>
+
+    <p class="sponsor-cta">Interested in sponsoring local events? <a href="#contact" class="sponsor-contact-link">Get in touch</a></p>
+  </div>
+</section>
+
     <!-- Contact Section -->
 <section id="contact" class="section section-contact" aria-labelledby="contact-title">
   <div class="container">
@@ -1300,6 +1346,7 @@
   <script src="js/core/path-resolver.js"></script>
   <script src="js/modules/navigation.js"></script>
   <script src="js/modules/schedule.js"></script>
+    <script src="js/sponsors.js"></script>
   <script src="js/modules/countdown.js"></script>
   <script src="js/main.js"></script>
   <script>
