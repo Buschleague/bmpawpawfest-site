@@ -23,7 +23,7 @@
     "chester",
     "boston-mountains"
   ],
-  "author": "David Busch",
+  "author": "Buschleague",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Buschleague/bmpawpawfest-site/issues"
@@ -32,8 +32,10 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.1.0",
-    "html-proofer": "^0.0.1",
     "postcss": "^8.5.6",
-    "sass": "^1.90.0"
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.90.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^13.0.0"
   }
 }

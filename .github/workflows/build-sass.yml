@@ -5,13 +5,14 @@ on:
     branches: [ main, refactor-sitewide ]
     paths:
       - 'scss/**'
-      - 'css/**'
       - 'package.json'
       - 'package-lock.json'
   pull_request:
     branches: [ main, refactor-sitewide ]
     paths:
       - 'scss/**'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   build:
@@ -20,186 +21,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
-
-    - name: Install dependencies
-      run: npm ci || npm install
-
-    - name: Create scss directory if needed
-      run: |
-        mkdir -p scss
-        # If scss directory is empty, migrate existing CSS
-        if [ ! "$(ls -A scss)" ]; then
-          echo "Migrating CSS files to SCSS..."
-          
-          # Create main.scss that imports all components
-          cat > scss/main.scss << 'EOF'
-        // Boston Mountain Pawpaw Festival - Main Stylesheet
-        // This file imports all component styles
-        
-        // Utilities (order matters)
-        @import 'utilities/variables';
-        @import 'utilities/mixins';
-        @import 'utilities/reset';
-        @import 'utilities/base';
-        
-        // Components
-        @import 'components/header';
-        @import 'components/hero';
-        @import 'components/schedule';
-        @import 'components/activities';
-        @import 'components/gallery';
-        @import 'components/sponsors';
-        @import 'components/footer';
-        
-        // Utilities (last)
-        @import 'utilities/responsive';
-        EOF
-          
-          # Create directories
-          mkdir -p scss/utilities
-          mkdir -p scss/components
-          
-          # Copy CSS files to SCSS (preserving structure)
-          cp -r css/utilities/*.css scss/utilities/ 2>/dev/null || true
-          cp -r css/components/*.css scss/components/ 2>/dev/null || true
-          
-          # Rename .css to .scss
-          find scss -name "*.css" -exec sh -c 'mv "$0" "${0%.css}.scss"' {} \;
-          
-          # Create a mixins file
-          cat > scss/utilities/_mixins.scss << 'EOF'
-        // Mixins for Boston Mountain Pawpaw Festival
-        
-        // Responsive breakpoint mixin
-        @mixin respond-to($breakpoint) {
-          @if $breakpoint == 'mobile' {
-            @media (max-width: 768px) { @content; }
-          }
-          @else if $breakpoint == 'tablet' {
-            @media (min-width: 769px) and (max-width: 1024px) { @content; }
-          }
-          @else if $breakpoint == 'desktop' {
-            @media (min-width: 1025px) { @content; }
-          }
-        }
-        
-        // Button mixin
-        @mixin button-style($bg-color, $text-color: white) {
-          background-color: $bg-color;
-          color: $text-color;
-          padding: var(--spacing-sm) var(--spacing-lg);
-          border-radius: var(--radius-sm);
-          border: 2px solid transparent;
-          font-weight: var(--font-weight-bold);
-          text-align: center;
-          cursor: pointer;
-          transition: all var(--transition-fast);
-          
-          &:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-          }
-        }
-        
-        // Card mixin
-        @mixin card-style($padding: var(--spacing-lg)) {
-          background: white;
-          padding: $padding;
-          border-radius: var(--radius-lg);
-          box-shadow: var(--shadow-md);
-          transition: all var(--transition-medium);
-          
-          &:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-          }
-        }
-        
-        // Flex center mixin
-        @mixin flex-center {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        
-        // Absolute center mixin
-        @mixin absolute-center {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-        EOF
-        fi
-
-    - name: Build Sass
-      run: |
-        npm run build:sass
-        
-        # Also create an unminified version for development
-        npx sass scss/main.scss css/main.css --style=expanded --source-map
-        
-        # Create minified version
-        npx sass scss/main.scss css/main.min.css --style=compressed --no-source-map
-
-    - name: Run PostCSS (autoprefixer & cssnano)
-      run: |
-        # Create postcss config if it doesn't exist
-        if [ ! -f postcss.config.js ]; then
-          cat > postcss.config.js << 'EOF'
-        module.exports = {
-          plugins: [
-            require('autoprefixer'),
-            require('cssnano')({
-              preset: 'default',
-            })
-          ]
-        }
-        EOF
-        fi
-        
-        # Install PostCSS if not already installed
-        if ! command -v postcss &> /dev/null; then
-          npm install --save-dev postcss postcss-cli autoprefixer cssnano
-        fi
-        
-        # Run PostCSS on the compiled CSS
-        npx postcss css/main.css -o css/main.optimized.css
-
-    - name: Check for changes
-      id: verify-changed-files
-      run: |
-        git diff --quiet css/ || echo "css_changed=true" >> $GITHUB_OUTPUT
-
-    - name: Commit compiled CSS
-      if: steps.verify-changed-files.outputs.css_changed == 'true'
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add css/*.css css/*.css.map
-        git diff --staged --quiet || git commit -m "Auto-compile Sass to CSS [skip ci]"
-
-    - name: Push changes
-      if: steps.verify-changed-files.outputs.css_changed == 'true'
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
-
-  # Additional job to check Sass syntax
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -210,27 +31,30 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Lint Sass files
+    - name: Build Sass
       run: |
-        # Install stylelint if not present
-        if ! command -v stylelint &> /dev/null; then
-          npm install --save-dev stylelint stylelint-config-standard-scss
-        fi
+        # Build minified version
+        npm run build:sass
         
-        # Create stylelint config if it doesn't exist
-        if [ ! -f .stylelintrc.json ]; then
-          cat > .stylelintrc.json << 'EOF'
-        {
-          "extends": "stylelint-config-standard-scss",
-          "rules": {
-            "selector-class-pattern": null,
-            "scss/dollar-variable-pattern": null,
-            "color-hex-length": "long",
-            "declaration-empty-line-before": null
-          }
-        }
-        EOF
-        fi
-        
-        # Run stylelint (continue even if it fails for now)
-        npx stylelint "scss/**/*.scss" --fix || true
+        # Also create an unminified version for development
+        npx sass scss/main.scss css/main.css --style=expanded --source-map
+
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        git diff --quiet css/ || echo "css_changed=true" >> $GITHUB_OUTPUT
+
+    - name: Commit compiled CSS
+      if: steps.verify-changed-files.outputs.css_changed == 'true' && github.event_name == 'push'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add css/*.css css/*.css.map
+        git diff --staged --quiet || git commit -m "Auto-compile Sass to CSS [skip ci]"
+
+    - name: Push changes
+      if: steps.verify-changed-files.outputs.css_changed == 'true' && github.event_name == 'push'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
