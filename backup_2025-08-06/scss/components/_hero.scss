@@ -1,0 +1,344 @@
+.hero {
+  position: relative;
+  background: url('/assets/images/gallery/featured/hero-pawpaw-festival.jpg') center/cover no-repeat;
+  color: var(--color-white);
+  text-align: center;
+  padding: 100px 0 80px; /* Increased bottom padding */
+  margin-top: 60px; /* Reduced for mobile header */
+  overflow: hidden;
+  min-height: 70vh; /* Reduced from 90vh */
+  max-height: 600px; /* Cap height on mobile */
+  display: flex;
+  align-items: center;
+}
+
+/* Use dynamic viewport height for better iOS support */
+@supports (height: 100dvh) {
+  .hero {
+    min-height: 70dvh;
+  }
+}
+
+/* Animated background elements */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(140, 191, 63, 0.1) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(45, 80, 22, 0.8) 0%,
+    rgba(45, 80, 22, 0.6) 50%,
+    rgba(139, 69, 19, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Add horizontal padding for mobile */
+  animation: fadeInUp 1s ease-out;
+  width: 100%; /* Ensure full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all children */
+}
+
+/* Mobile First Typography */
+.hero-title {
+  font-size: 2rem; /* Start smaller */
+  margin-bottom: var(--spacing-md);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-decorative);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  width: 100%; /* Full width for proper centering */
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-lg);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  line-height: 1.5;
+  width: 100%; /* Full width for proper centering */
+  text-align: center;
+}
+
+/* Festival Date - Mobile First */
+.festival-date {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.875rem; /* Smaller on mobile */
+}
+
+.date-day {
+  font-size: 1.75rem; /* Reduced from 2.5rem */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  font-family: var(--font-decorative);
+}
+
+.date-month,
+.date-year {
+  font-size: 0.875rem; /* Reduced from 1.125rem */
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Hero Actions - Mobile First */
+.hero-actions {
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  gap: var(--spacing-sm);
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero .btn {
+  font-size: 1rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Countdown Timer - Mobile First - STRONG CENTERING */
+#countdown,
+.countdown {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
+  gap: var(--spacing-sm);
+  margin: var(--spacing-lg) auto var(--spacing-lg) auto !important; /* Force auto margins */
+  max-width: 280px;
+  width: 100%;
+  text-align: center;
+  justify-content: center; /* Center grid items */
+  align-items: center; /* Center grid items vertically */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* Absolute centering fallback */
+}
+
+@supports (display: grid) {
+  #countdown,
+  .countdown {
+    left: auto;
+    transform: none;
+  }
+}
+
+.countdown-item {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  min-width: auto; /* Remove fixed width */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all var(--transition-medium);
+  text-align: center; /* Center the content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown-number {
+  display: block;
+  font-size: 1.75rem; /* Reduced from 2.5rem */
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-decorative);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.75rem; /* Reduced from 0.875rem */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  margin-top: 2px;
+  line-height: 1;
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 0 60px; /* Increased from 40px */
+    min-height: 60vh;
+    max-height: 500px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .festival-date {
+    transform: scale(0.9);
+  }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 90vh;
+    max-height: none;
+    padding: 60px 0 40px;
+  }
+
+  #countdown,
+  .countdown {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%;
+  }
+}
+
+/* Tablet (min-width: 768px) */
+@media (min-width: 768px) {
+  .hero {
+    padding: 140px 0 100px;
+    margin-top: 80px;
+    min-height: 80vh;
+    max-height: none;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .festival-date {
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 1rem;
+  }
+
+  .date-day {
+    font-size: 2.5rem;
+  }
+
+  .date-month,
+  .date-year {
+    font-size: 1.125rem;
+  }
+
+  .date-month {
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    padding-left: var(--spacing-sm);
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hero .btn {
+    width: auto;
+    font-size: 1.125rem;
+    padding: var(--spacing-md) var(--spacing-xl);
+  }
+
+  #countdown,
+  .countdown {
+    display: flex !important;
+    grid-template-columns: none;
+    gap: var(--spacing-lg);
+    max-width: none;
+    margin-bottom: 0; /* Reset bottom margin on desktop */
+    position: static;
+    transform: none;
+    left: auto;
+  }
+
+  .countdown-item {
+    padding: var(--spacing-lg);
+    min-width: 100px;
+  }
+
+  .countdown-number {
+    font-size: 2.5rem;
+  }
+
+  .countdown-label {
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+}
+
+/* Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .hero {
+    padding: 200px 0 140px;
+    min-height: 90vh;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.375rem;
+    margin-bottom: var(--spacing-xl);
+  }
+}
+
+/* Remove or reduce floating elements on mobile */
+@media (max-width: 768px) {
+  .hero::after {
+    display: none; /* Remove floating leaf animation on mobile */
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions - Boston Mountain Pawpaw Festival</title>
+  <meta name="description" content="Find answers to common questions about the Boston Mountain Pawpaw Festival including admission, parking, food, pets, and more.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pawpawfestar.org/pages/info/faq.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/css/utilities/variables.css">
+  <link rel="stylesheet" href="/css/utilities/reset.css">
+  <link rel="stylesheet" href="/css/utilities/base.css">
+  <link rel="stylesheet" href="/css/components/header.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/utilities/responsive.css">
+
+  <style>
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, #2d5016 0%, #8cbf3f 100%);
+      color: white;
+      padding: 120px 0 60px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .page-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-decorative);
+    }
+
+    /* FAQ Container */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    /* FAQ Intro */
+    .faq-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--color-text-light);
+      font-size: 1.125rem;
+    }
+
+    /* FAQ Items */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      background: var(--color-light);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      font-size: 1.125rem;
+      border-left: 4px solid var(--color-accent);
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 1.5rem;
+      max-height: 300px;
+    }
+
+    .faq-answer p {
+      color: var(--color-text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Quick Info Cards */
+    .quick-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .quick-info-card {
+      background: linear-gradient(135deg, var(--color-light) 0%, rgba(140, 191, 63, 0.05) 100%);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid var(--color-accent);
+    }
+
+    .quick-info-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .quick-info-card h3 {
+      color: var(--color-primary);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .quick-info-card p {
+      color: var(--color-text);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+      background: var(--color-primary);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .contact-cta h2 {
+      margin-bottom: 1rem;
+    }
+
+    .contact-cta p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2rem;
+      }
+
+      .faq-question {
+        font-size: 1rem;
+        padding: 1.25rem;
+      }
+
+      .quick-info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="page-faq">
+  <!-- Header Component -->
+  <div data-component="header"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Festival FAQ</h1>
+      <p>Everything you need to know for a great festival experience</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="faq-container">
+    <!-- Introduction -->
+    <p class="faq-intro">
+      Got questions? We've got answers! Here are the most frequently asked questions about the Boston Mountain Pawpaw Festival.
+    </p>
+
+    <!-- Quick Info Cards -->
+    <div class="quick-info-grid">
+      <div class="quick-info-card">
+        <div class="icon">🎟️</div>
+        <h3>Free Admission</h3>
+        <p>Open to all ages</p>
+      </div>
+      <div class="quick-info-card">
+        <div class="icon">🌦️</div>
+        <h3>Rain or Shine</h3>
+        <p>Festival happens regardless</p>
+      </div>
+      <div class="quick-info-card">
+        <div class="icon">🚗</div>
+        <h3>Free Parking</h3>
+        <p>Multiple options available</p>
+      </div>
+      <div class="quick-info-card">
+        <div class="icon">🐕</div>
+        <h3>Pet Friendly</h3>
+        <p>Leashed dogs welcome</p>
+      </div>
+    </div>
+
+    <!-- FAQ List -->
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Q: Is there an entry fee?</span>
+        </div>
+        <div class="faq-answer">
+          <p>A: Nope! Admission is free and open to all ages.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Q: Can I bring my own food and drinks?</span>
+        </div>
+        <div class="faq-answer">
+          <p>A: Yes! Coolers are welcome. Just no glass containers, please.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Q: Are pets allowed?</span>
+        </div>
+        <div class="faq-answer">
+          <p>A: Friendly, leashed dogs are welcome. Be sure to clean up after them.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Q: Is seating provided?</span>
+        </div>
+        <div class="faq-answer">
+          <p>A: Feel free to bring camp chairs or a picnic blanket. We'll have some seating, but it's limited.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Q: What if it rains?</span>
+        </div>
+        <div class="faq-answer">
+          <p>A: The festival goes on—rain or shine! Bring a raincoat or poncho just in case.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Q: Will there be food and vendors?</span>
+        </div>
+        <div class="faq-answer">
+          <p>A: Yes! Local food trucks, craft vendors, and more will be on site.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Q: Is there parking?</span>
+        </div>
+        <div class="faq-answer">
+          <p>A: Yes! Both free and paid parking options will be available. Look for signs and volunteers directing traffic.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Q: Are there accessible restrooms?</span>
+        </div>
+        <div class="faq-answer">
+          <p>A: Yes! An ADA-compliant porta potty will be available across from the Beard and Lady Inn.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="contact-cta">
+      <h2>Still Have Questions?</h2>
+      <p>We're here to help make your festival experience amazing!</p>
+      <a href="/#contact" class="btn btn-primary">Contact Us</a>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
+
+  <!-- JavaScript -->
+  <script src="/js/core/component-loader.js"></script>
+  <script src="/js/core/path-resolver.js"></script>
+  <script src="/js/modules/navigation.js"></script>
+
+  <script>
+    // Toggle FAQ item
+    function toggleFAQ(item) {
+      item.classList.toggle('active');
+    }
+
+    document.addEventListener('componentsLoaded', () => {
+      PathResolver.updatePaths();
+      if (typeof Navigation !== 'undefined') {
+        Navigation.init();
+      }
+    });
+  </script>
+</body>
+</html>

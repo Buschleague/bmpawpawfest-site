@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery - Boston Mountains Pawpaw Festival 2025</title>
+  <meta name="description" content="View photos from previous Boston Mountains Pawpaw Festivals. See the fun, food, and festivities from our celebration of Arkansas's native pawpaw fruit.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pawpawfestar.org/pages/gallery/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files - Using relative paths -->
+  <link rel="stylesheet" href="/css/utilities/variables.css">
+  <link rel="stylesheet" href="/css/utilities/reset.css">
+  <link rel="stylesheet" href="/css/utilities/base.css">
+  <link rel="stylesheet" href="/css/components/header.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/components/gallery.css">
+  <link rel="stylesheet" href="/css/utilities/responsive.css">
+
+  <style>
+    /* Gallery page specific styles */
+    .gallery-hero {
+      background: linear-gradient(135deg, #2d5016 0%, #8cbf3f 100%);
+      color: white;
+      padding: 120px 0 60px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .gallery-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: var(--font-decorative);
+    }
+
+    .gallery-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1.5rem;
+      background: white;
+      border: 2px solid var(--color-primary);
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      background: #f0f0f0;
+      aspect-ratio: 4/3;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+      color: white;
+      padding: 2rem 1rem 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 2rem;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: rgba(0,0,0,0.5);
+      border: none;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    .lightbox-prev {
+      left: 2rem;
+    }
+
+    .lightbox-next {
+      right: 2rem;
+    }
+
+    .upload-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 3rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="page-gallery">
+  <!-- Header Component -->
+  <div data-component="header"></div>
+
+  <!-- Gallery Hero -->
+  <section class="gallery-hero">
+    <div class="container">
+      <h1>Festival Gallery</h1>
+      <p>Memories from the Boston Mountains Pawpaw Festival</p>
+    </div>
+  </section>
+
+  <!-- Gallery Content -->
+  <main class="gallery-container">
+    <!-- Filter Buttons -->
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All Photos</button>
+      <button class="filter-btn" data-filter="2024">2024 Festival</button>
+      <button class="filter-btn" data-filter="food">Food & Desserts</button>
+      <button class="filter-btn" data-filter="activities">Activities</button>
+      <button class="filter-btn" data-filter="entertainment">Entertainment</button>
+      <button class="filter-btn" data-filter="vendors">Vendors</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Gallery items will be dynamically loaded here -->
+    </div>
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+      <h2>Share Your Festival Photos!</h2>
+      <p>Were you at the 2024 festival? We'd love to include your photos in our gallery!</p>
+      <a href="mailto:info@ozarkeventshub.com?subject=Pawpaw Festival Pictures" class="btn btn-primary">Submit Photos</a>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="GalleryModule.closeLightbox()">&times;</button>
+      <button class="lightbox-nav lightbox-prev" onclick="GalleryModule.navigateLightbox(-1)">‹</button>
+      <button class="lightbox-nav lightbox-next" onclick="GalleryModule.navigateLightbox(1)">›</button>
+    </div>
+  </div>
+
+  <!-- Footer Component -->
+  <div data-component="footer"></div>
+
+  <!-- JavaScript -->
+  <script src="/js/core/component-loader.js"></script>
+  <script src="/js/core/path-resolver.js"></script>
+  <script src="/js/modules/navigation.js"></script>
+  <script src="/js/modules/gallery.js"></script>
+
+  <script>
+    // Initialize after components load
+    document.addEventListener('componentsLoaded', () => {
+      // Path resolution
+      PathResolver.updatePaths();
+      PathResolver.markActiveNav();
+
+      // Re-initialize navigation
+      if (typeof Navigation !== 'undefined') {
+        Navigation.init();
+      }
+
+      // Initialize gallery
+      if (typeof GalleryModule !== 'undefined') {
+        GalleryModule.init();
+      }
+    });
+  </script>
+</body>
+</html>
