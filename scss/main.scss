@@ -1,20 +1,20 @@
 // Boston Mountain Pawpaw Festival - Main Stylesheet
-// This file imports all component styles
+// Using modern Sass @use syntax with global namespace
 
-// Utilities (order matters)
-@import 'utilities/variables';
-@import 'utilities/mixins';
-@import 'utilities/reset';
-@import 'utilities/base';
+// Load utilities with global namespace (as *)
+@use 'utilities/variables' as *;
+@use 'utilities/mixins' as *;
+@use 'utilities/reset' as *;
+@use 'utilities/base' as *;
 
-// Components
-@import 'components/header';
-@import 'components/hero';
-@import 'components/schedule';
-@import 'components/activities';
-@import 'components/gallery';
-@import 'components/sponsors';
-@import 'components/footer';
+// Load components with global namespace
+@use 'components/header' as *;
+@use 'components/hero' as *;
+@use 'components/schedule' as *;
+@use 'components/activities' as *;
+@use 'components/gallery' as *;
+@use 'components/sponsors' as *;
+@use 'components/footer' as *;
 
-// Utilities (last)
-@import 'utilities/responsive';
+// Load responsive utilities last
+@use 'utilities/responsive' as *;
