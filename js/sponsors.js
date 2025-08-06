@@ -29,7 +29,7 @@ const SponsorsCarousel = (() => {
     },
     {
       name: 'The Garden of Eden',
-      image: '/assets/images/sponsors/garden.jpg',
+      image: '/assets/images/sponsors/garden.png',
       url: 'https://www.instagram.com/thegardenofeden1999/',
       description: 'Community garden and sustainable living'
     },
