@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Refactor Test</title>
+  <style>
+    body { font-family: system-ui; padding: 2rem; }
+    .test { margin: 1rem 0; padding: 1rem; border: 1px solid #ccc; }
+    .success { background: #d4edda; }
+    .error { background: #f8d7da; }
+  </style>
+</head>
+<body>
+  <h1>Boston Mountain Pawpaw Festival - Refactor Test</h1>
+  
+  <div id="test-results"></div>
+
+  <script>
+    async function runTests() {
+      const results = document.getElementById('test-results');
+      
+      // Test 1: Festival Config
+      try {
+        const config = await fetch('/data/festival-config.json');
+        const data = await config.json();
+        results.innerHTML += `<div class="test success">✅ Festival Config loaded: ${data.currentYear}</div>`;
+      } catch (e) {
+        results.innerHTML += `<div class="test error">❌ Festival Config failed: ${e.message}</div>`;
+      }
+      
+      // Test 2: Schedule Data
+      try {
+        const schedule = await fetch('/data/schedule-2025.json');
+        const data = await schedule.json();
+        results.innerHTML += `<div class="test success">✅ Schedule loaded: ${data.events.length} events</div>`;
+      } catch (e) {
+        results.innerHTML += `<div class="test error">❌ Schedule failed: ${e.message}</div>`;
+      }
+      
+      // Test 3: Gallery Data
+      try {
+        const gallery = await fetch('/data/gallery-2024.json');
+        const data = await gallery.json();
+        results.innerHTML += `<div class="test success">✅ Gallery loaded: ${data.images.length} images</div>`;
+      } catch (e) {
+        results.innerHTML += `<div class="test error">❌ Gallery failed: ${e.message}</div>`;
+      }
+    }
+    
+    runTests();
+  </script>
+</body>
+</html>

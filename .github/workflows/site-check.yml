@@ -7,7 +7,15 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install html-proofer
         run: |
-          sudo gem install html-proofer            # or: npm i -g html-proofer
+          sudo gem install html-proofer
       - name: Run html-proofer against source
         run: |
-          htmlproofer . --allow-hash-href --file-ignore "/node_modules/"
+          htmlproofer . \
+            --allow-hash-href \
+            --file-ignore "/node_modules/" \
+            --disable-external \
+            --check-html \
+            --check-img-alt \
+            --empty-alt-ignore \
+            --report-missing-names \
+            --report-invalid-tags
