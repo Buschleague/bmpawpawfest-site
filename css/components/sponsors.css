@@ -1,3 +1,4 @@
+
 .section-sponsors {
   background-color: var(--color-light);
   position: relative;
@@ -14,15 +15,15 @@
 /* Carousel Wrapper */
 .sponsors-carousel-wrapper {
   position: relative;
-  max-width: 600px;
+  max-width: 800px;  /* Increased from 600px */
   margin: 0 auto;
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-xxl) 0;  /* Increased padding */
 }
 
 /* Carousel Container */
 .sponsors-carousel {
   position: relative;
-  height: 250px;
+  height: 400px;  /* Doubled from 250px */
   overflow: hidden;
   border-radius: var(--radius-md);
   background-color: var(--color-white);
@@ -42,7 +43,7 @@
   opacity: 0;
   transform: translateX(100%);
   transition: all var(--transition-medium);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-xl);  /* Increased padding */
 }
 
 .sponsor-slide.active {
@@ -73,8 +74,8 @@
 }
 
 .sponsor-logo {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 90%;  /* Increased from 80% */
+  max-height: 90%;  /* Increased from 80% */
   width: auto;
   height: auto;
   object-fit: contain;
@@ -201,8 +202,8 @@
 /* Footer Sponsors Strip */
 .footer-sponsors {
   background-color: rgba(255, 255, 255, 0.1);
-  padding: var(--spacing-xl) 0;
-  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-xxl) 0;  /* Increased padding */
+  margin-bottom: var(--spacing-xl);  /* Increased margin */
 }
 
 .footer-sponsors-title {
@@ -219,8 +220,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-xxl);
+  gap: calc(var(--spacing-xxl) * 2);  /* Doubled gap for larger logos */
   flex-wrap: wrap;
+  padding: var(--spacing-lg) 0;  /* Added padding */
 }
 
 .footer-sponsor-link {
@@ -238,11 +240,11 @@
   opacity: 0.8;
 }
 
-/* Much larger footer logos */
+/* Much larger footer logos - DOUBLED */
 .footer-sponsor-logo {
-  height: 80px;
+  height: 160px;  /* Doubled from 80px */
   width: auto;
-  max-width: 200px;
+  max-width: 400px;  /* Doubled from 200px */
   object-fit: contain;
   filter: brightness(0) invert(1);  /* Makes dark logos white */
   transition: transform var(--transition-fast);
