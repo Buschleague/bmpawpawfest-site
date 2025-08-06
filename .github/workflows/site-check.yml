@@ -1,0 +1,13 @@
+name: site-check
+on: [pull_request, push]
+jobs:
+  link-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install html-proofer
+        run: |
+          sudo gem install html-proofer            # or: npm i -g html-proofer
+      - name: Run html-proofer against source
+        run: |
+          htmlproofer . --allow-hash-href --file-ignore "/node_modules/"

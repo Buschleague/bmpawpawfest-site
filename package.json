@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "html-proofer": "^0.0.1"
+  }
+}
