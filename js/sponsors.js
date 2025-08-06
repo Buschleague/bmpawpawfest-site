@@ -1,4 +1,3 @@
-
 const SponsorsCarousel = (() => {
   'use strict';
 
@@ -19,28 +18,6 @@ const SponsorsCarousel = (() => {
   // DOM Elements
   let carousel, slides, indicators, prevBtn, nextBtn;
 
-  // Sponsor data (can be expanded with URLs and descriptions)
-  const sponsorData = [
-    {
-      name: 'Beard & Lady Inn',
-      image: '/assets/images/sponsors/beard.jpg',
-      url: 'https://beardandladyinn.com/',
-      description: 'Historic inn and event venue in Chester, AR'
-    },
-    {
-      name: 'The Garden of Eden',
-      image: '/assets/images/sponsors/garden.png',
-      url: 'https://www.instagram.com/thegardenofeden1999/',
-      description: 'Community garden and sustainable living'
-    },
-    {
-      name: 'Gemini Capital Group',
-      image: '/assets/images/sponsors/GeminiCG.png',
-      url: null, // No website yet
-      description: 'Investment and capital management'
-    }
-  ];
-
   // Initialize
   const init = () => {
     // Get DOM elements
@@ -53,6 +30,9 @@ const SponsorsCarousel = (() => {
     slides = carousel.querySelectorAll('.sponsor-slide');
     indicators = document.querySelectorAll('.carousel-indicators .indicator');
 
+    // Fix image paths for all sponsor images
+    fixSponsorImagePaths();
+
     // Setup event listeners
     setupEventListeners();
 
@@ -61,6 +41,38 @@ const SponsorsCarousel = (() => {
 
     // Set ARIA labels
     updateAriaLabels();
+  };
+
+  // Fix sponsor image paths using PathResolver if available
+  const fixSponsorImagePaths = () => {
+    const sponsorImages = carousel.querySelectorAll('.sponsor-logo');
+    sponsorImages.forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && src.startsWith('/')) {
+        // If PathResolver is available, use it
+        if (typeof PathResolver !== 'undefined' && PathResolver.resolve) {
+          img.src = PathResolver.resolve(src);
+        } else {
+          // Fallback: manually fix the path based on current location
+          const depth = (window.location.pathname.match(/\//g) || []).length - 1;
+          const basePath = depth === 0 ? '.' : '../'.repeat(depth);
+          img.src = basePath + src.substr(1);
+        }
+      }
+
+      // Add error handler to debug missing images
+      img.onerror = function() {
+        console.error('Failed to load sponsor image:', this.src);
+        // Optionally set a placeholder
+        this.style.display = 'none';
+        const placeholder = document.createElement('div');
+        placeholder.className = 'sponsor-placeholder';
+        placeholder.textContent = 'Image not found';
+        placeholder.style.padding = '2rem';
+        placeholder.style.color = '#999';
+        this.parentNode.appendChild(placeholder);
+      };
+    });
   };
 
   // Setup Event Listeners
@@ -91,6 +103,9 @@ const SponsorsCarousel = (() => {
 
     // Pause when page is not visible
     document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Listen for path updates after components are loaded
+    document.addEventListener('componentsLoaded', fixSponsorImagePaths);
   };
 
   // Navigate Slide
@@ -242,8 +257,7 @@ const SponsorsCarousel = (() => {
     play: startAutoPlay,
     next: () => navigateSlide('next'),
     prev: () => navigateSlide('prev'),
-    goTo: goToSlide,
-    getSponsorData: () => sponsorData
+    goTo: goToSlide
   };
 })();
 

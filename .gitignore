@@ -7,6 +7,13 @@
 ehthumbs.db
 Thumbs.db
 Desktop.ini
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+node_modules/
+.sass-cache/
 
 # IDE and Editor files
 .idea/
