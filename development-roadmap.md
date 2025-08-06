@@ -8,7 +8,7 @@
 - Updated all brand references  
 - Domain & SEO updates
 - Created countdown timer
-- Built schedule system with filtering
+- Built schedule system with filtering logic
 - Implemented gallery with lightbox
 - Updated hero section
 - Created pawpaw-themed design system
