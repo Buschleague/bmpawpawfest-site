@@ -1,0 +1,100 @@
+{
+  "year": 2025,
+  "events": [
+    {
+      "id": 1,
+      "time": "8:00 AM - 11:00 AM",
+      "title": "Chester Farmer's Market",
+      "description": "Browse local produce, crafts, and goods at the Chester Farmer's Market",
+      "type": "market",
+      "location": "Farmer's Market - 120 S. Wright Street",
+      "icon": "🛍️"
+    },
+    {
+      "id": 2,
+      "time": "9:00 AM",
+      "title": "Fall Foraging with Eden",
+      "description": "Eden Ellis speaks about fall foraging techniques and identifying wild edibles",
+      "type": "workshop",
+      "duration": "45 minutes",
+      "location": "Apothecary Stage - Beard & Lady Inn",
+      "icon": "🌿"
+    },
+    {
+      "id": 3,
+      "time": "9:00 AM - 12:00 PM",
+      "title": "Cornhole Tournament",
+      "description": "Competitive cornhole tournament - Registration required",
+      "type": "activity",
+      "location": "Farmer's Market - 120 S. Wright Street",
+      "icon": "🎯",
+      "requiresRegistration": true
+    },
+    {
+      "id": 4,
+      "time": "9:30 AM - 12:00 PM",
+      "title": "Dreadful Day Live",
+      "description": "Live music performance by Dreadful Day on the main stage",
+      "type": "entertainment",
+      "location": "Main Stage - Farmer's Market",
+      "icon": "🎵"
+    },
+    {
+      "id": 5,
+      "time": "10:00 AM",
+      "title": "Pawpaw Mead Making Demo",
+      "description": "Cyrus Mason with Still'n The Clear demonstrates pawpaw mead making",
+      "type": "workshop",
+      "duration": "45 minutes",
+      "location": "Apothecary Stage - Beard & Lady Inn",
+      "icon": "🍯"
+    },
+    {
+      "id": 6,
+      "time": "11:30 AM - 2:00 PM",
+      "title": "Hobo's Kitchen Lunch",
+      "description": "Donation-based lunch featuring venison chili and cornbread",
+      "type": "food",
+      "location": "Beard & Lady Inn",
+      "icon": "🍲"
+    },
+    {
+      "id": 7,
+      "time": "1:00 PM - 2:00 PM",
+      "title": "Pawpaw Pageant",
+      "description": "Crown the 2025 Pawpaw King - Registration required",
+      "type": "featured",
+      "location": "Main Stage - Farmer's Market",
+      "icon": "👑",
+      "requiresRegistration": true
+    },
+    {
+      "id": 8,
+      "time": "1:00 PM",
+      "title": "Growing & Raising Pawpaws",
+      "description": "Guy King Ames from Ames Orchard speaks on pawpaw cultivation",
+      "type": "workshop",
+      "duration": "45 minutes",
+      "location": "Apothecary Stage - Beard & Lady Inn",
+      "icon": "🌱"
+    },
+    {
+      "id": 9,
+      "time": "2:00 PM - 5:00 PM",
+      "title": "Jesse Dean Live Music",
+      "description": "Live music performance by Jesse Dean",
+      "type": "entertainment",
+      "location": "Beard & Lady Inn",
+      "icon": "🎸"
+    }
+  ],
+  "activityTypes": {
+    "all": { "name": "All Activities", "color": "var(--color-primary)" },
+    "workshop": { "name": "Workshops", "color": "var(--color-leaf)" },
+    "food": { "name": "Food & Dining", "color": "var(--color-secondary)" },
+    "entertainment": { "name": "Entertainment", "color": "var(--color-accent)" },
+    "activity": { "name": "Activities", "color": "var(--color-autumn)" },
+    "featured": { "name": "Featured Events", "color": "var(--color-tertiary)" },
+    "market": { "name": "Market", "color": "var(--color-earth)" }
+  }
+}

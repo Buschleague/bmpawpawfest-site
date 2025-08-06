@@ -7,13 +7,17 @@
 ehthumbs.db
 Thumbs.db
 Desktop.ini
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+node_modules/
+.sass-cache/
 
 # IDE and Editor files
 .idea/
 .vscode/
-*.swp
-*.swo
-*~
 .project
 .settings/
 *.sublime-project
@@ -32,7 +36,6 @@ yarn-error.log*
 .env.*.local
 
 # Temporary files
-*.tmp
 *.temp
 .tmp/
 .temp/
@@ -41,8 +44,6 @@ yarn-error.log*
 # Build output (if you add build tools later)
 dist/
 build/
-node_modules/
-package-lock.json
 yarn.lock
 
 # macOS
@@ -65,9 +66,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # Backup files
-*.bak
 *.backup
-*~
+
 
 # SSL certificates (if added later)
 *.pem
@@ -78,3 +78,8 @@ $RECYCLE.BIN/
 *.db
 *.sqlite
 *.sqlite3
+
+# Build outputs
+*.css.map
+css/main.optimized.css
+

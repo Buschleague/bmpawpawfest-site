@@ -1,210 +1,274 @@
 # Boston Mountain Pawpaw Festival - Development Roadmap
 
-## Phase 1: Core Restructure ✅ COMPLETED (August 4, 2025)
+## ✅ Completed Phases (August 2025)
 
-### Navigation Structure Update ✅
-Successfully implemented new navigation with dropdown menus:
-```
-Primary Navigation:
-- Home
-- About
-  - Festival History
-  - What are Pawpaws?
-  - Our Mission
-- Festival Info
-  - Schedule
-  - Location & Parking
-  - What to Bring
-  - FAQ
-- Gallery
-  - 2024 Photos
-  - Videos
-- News & Updates
-- Vendors & Sponsors
-  - Become a Vendor
-  - Sponsor Opportunities
-  - Vendor List
-- Contact
+### Phase 1: Core Restructure ✅
+**Completed: August 4, 2025**
+- Removed multi-event architecture
+- Updated all brand references  
+- Domain & SEO updates
+- Created countdown timer
+- Built schedule system with filtering logic
+- Implemented gallery with lightbox
+- Updated hero section
+- Created pawpaw-themed design system
 
-Sticky CTA: "Get Tickets" (floating button) ✅
-```
+### Phase 2: Mobile-First Responsive ✅
+**Completed: August 5, 2025**
+- Fixed hero section viewport issues
+- Implemented slide-from-right mobile menu
+- Added touch-friendly tap targets (44x44px min)
+- Fixed all horizontal scroll issues
+- Optimized font sizes for mobile readability
+- Added mobile breakpoints for all components
 
-### Technical Debt Cleanup ✅ COMPLETED
-- Removed multi-event architecture ✅
-- Updated all brand references ✅
-- Domain & SEO updates ✅
-- Created countdown timer ✅
-- Built schedule system with filtering ✅
-- Implemented gallery with lightbox ✅
-- Updated hero section ✅
-- Created pawpaw-themed design system ✅
+### Phase 0: Foundation & Safety Nets ✅
+**Completed: August 6, 2025**
+- Created `refactor-sitewide` branch
+- Setup GitHub Actions CI with html-proofer
+- Automated HTML regression testing
+- Link and image validation in place
 
-### Architecture Refactoring ✅ COMPLETED
-- Created proper directory structure ✅
-- Implemented component loader system ✅
-- Created path resolver for different page depths ✅
-- Extracted header/footer components ✅
-- Migrated pages to new structure ✅
-- Created 404 page ✅
-- Updated all navigation paths ✅
+### Phase 1: Content Decoupling ✅
+**Completed: August 6, 2025**
+- Created `data/festival-config.json` with dates, locations, registration links
+- Extracted schedule to `data/schedule-2025.json`
+- Extracted gallery to `data/gallery-2024.json`
+- Updated `countdown.js` to read from config
+- Updated `schedule.js` to load from JSON
+- Updated `gallery.js` to support year-based loading
+- All hardcoded data removed from JavaScript
 
-## Phase 2: Mobile-First Responsive ✅ COMPLETED (August 5, 2025)
+## 🚀 Refactoring Roadmap (August 2025 - Forward)
 
-### Critical Mobile Fixes ✅ COMPLETED
-- Fixed hero section height blocking viewport ✅
-- Reduced hero padding/margins for mobile ✅
-- Made countdown timer stack vertically (2x2 grid) ✅
-- Fixed sticky CTA button positioning ✅
-- Implemented slide-from-right mobile menu ✅
-- Added proper viewport meta tags ✅
-- Implemented dynamic viewport units (dvh) ✅
-- Added touch-friendly tap targets (44x44px min) ✅
-- Fixed all horizontal scroll issues ✅
-- Optimized font sizes for mobile readability ✅
-- Added mobile breakpoints for all components ✅
-- Fixed dropdown menus for touch devices ✅
-- Added mobile menu overlay ✅
-- Implemented body scroll lock when menu open ✅
+### Legend
+- **P0** = Must complete before anything else (blocking)
+- **P1** = High-impact early work (critical path)
+- **P2** = Nice-to-have / can run in parallel
+- **Deliverable** = Tangible outcome of each step
 
-### Mobile Implementation Summary
-- **Hero**: Max 70vh height, responsive typography, mobile-first countdown
-- **Navigation**: Slide-from-right menu, touch-friendly dropdowns, proper focus management
-- **Sticky CTA**: Icon-only mode on small screens, better positioning
-- **Schedule**: Vertical timeline layout, wrapped filter buttons, mobile icons
-- **Components**: Single column layouts, reduced spacing, touch-optimized
-- **Performance**: Critical CSS inline, smooth scroll polyfill, optimized assets
+---
 
-## Phase 3: Content Enhancement 🚀 NEXT UP
+## Phase 2: Style System Re-org 🔴 NEXT UP
 
-### 1. **News/Blog System**
-- [ ] Create news landing page with article cards
-- [ ] Design article template with hero image
-- [ ] Implement JSON-based content management
-- [ ] Add article categories and tags
-- [ ] Create "Latest News" homepage widget
-- [ ] Add RSS feed generation
-- [ ] Implement social sharing buttons
+| Priority | Task | Key Steps | Deliverable |
+|----------|------|-----------|-------------|
+| **P1** | Introduce Sass build | • Move existing CSS into `scss/` partials<br>• Add GitHub Action to compile to `/css` on push<br>• Setup source maps for development<br>• Create `_variables.scss`, `_mixins.scss` | Compiled CSS + CI pipeline |
+| **P1** | Consolidate duplicated rules | • DRY up `.filter-btn`, hero banners, etc.<br>• Standardize spacing via CSS vars + Sass mixins<br>• Create component library<br>• Extract common patterns | Single-source component styles |
+| **P2** | Performance pass | • PostCSS autoprefixer + cssnano in build<br>• Inline critical CSS (~2KB) if CLS matters<br>• Lazy-load non-critical styles<br>• Bundle and minify | Smaller payload, faster FCP |
 
-### 2. **Enhanced Vendor System**
-- [ ] Create comprehensive vendor directory
-- [ ] Add vendor detail pages
-- [ ] Implement vendor search/filtering
-- [ ] Create online vendor application form
-- [ ] Add vendor location map
-- [ ] Implement vendor categories
-- [ ] Add "Featured Vendor" spotlights
+**Timeline**: 3-4 days  
+**Dependencies**: None (can start immediately)  
+**Risk**: Low (progressive enhancement)
 
-### 3. **Festival Information Pages**
-- [ ] Create detailed FAQ page with categories
-- [ ] Add interactive festival map
-- [ ] Create "What to Bring" checklist
-- [ ] Add parking/directions page
-- [ ] Create accessibility information page
-- [ ] Add weather information widget
-- [ ] Implement printable schedule
+---
 
-### 4. **Ticket System Integration**
-- [ ] Add ticket purchase flow
-- [ ] Create ticket types/pricing page
-- [ ] Implement "Add to Calendar" feature
-- [ ] Add ticket confirmation emails
-- [ ] Create QR code tickets
-- [ ] Add group ticket options
+## Phase 3: New Features - Volunteer System
 
-## Phase 4: Interactive Features
+| Priority | Task | Key Steps | Deliverable |
+|----------|------|-----------|-------------|
+| **P1** | Volunteer page & form | • Create `pages/volunteer/index.html` with hero + info<br>• Add Formspree form with validation<br>• Dropdown populated from `data/volunteer-roles.json`<br>• JS success message | Live signup page |
+| **P1** | Nav + CTA updates | • Add "Volunteer" to navbar & footer<br>• Add homepage banner/button<br>• Update mobile menu | Improved discoverability |
+| **P2** | Role analytics (optional) | • Log submission JSON to Supabase/Airtable<br>• Create webhook from Formspree<br>• Basic dashboard | Lightweight analytics |
 
-### 1. **Interactive Festival Map**
-- [ ] Design festival grounds map
-- [ ] Add vendor booth locations
-- [ ] Implement activity markers
-- [ ] Add restroom/amenity locations
-- [ ] Create "Find My Car" feature
-- [ ] Add real-time updates
+**Timeline**: 2-3 days  
+**Dependencies**: None  
+**Risk**: Low (new feature)
 
-### 2. **Pawpaw Education Center**
-- [ ] Create pawpaw fact database
-- [ ] Add growing guide with zones
-- [ ] Build recipe collection
-- [ ] Create pawpaw variety guide
-- [ ] Add cultivation calendar
-- [ ] Implement Q&A section
+---
 
-### 3. **Community Features**
-- [ ] Add photo upload gallery
-- [ ] Create contest voting system
-- [ ] Implement social media wall
-- [ ] Add testimonials section
-- [ ] Create volunteer signup
-- [ ] Add newsletter integration
+## Phase 4: News System
 
-## Phase 5: Advanced Features & Optimization
+| Priority | Task | Key Steps | Deliverable |
+|----------|------|-----------|-------------|
+| **P1** | Enable Jekyll | • Add `_config.yml` with `collections: news`<br>• Create `_news/2025-08-06-sample.md` markdown<br>• Configure permalink structure | Auto-built `/news/` pages & RSS |
+| **P1** | News landing template | • Liquid loop over `site.news` to build list<br>• Add pagination (Jekyll-paginate)<br>• Style article cards | `/news/index.html` |
+| **P2** | Homepage integration | • Fetch first 3 posts via Jekyll include<br>• Create "Latest News" widget<br>• Add to homepage | Dynamic news snippet |
 
-### 1. **Progressive Web App (PWA)**
-- [ ] Implement service worker
-- [ ] Add offline functionality
-- [ ] Create app manifest
-- [ ] Add push notifications
-- [ ] Implement background sync
-- [ ] Add install prompts
+**Timeline**: 4-5 days  
+**Dependencies**: None  
+**Risk**: Medium (Jekyll integration)
 
-### 2. **Performance Optimization**
-- [ ] Implement image optimization pipeline
-- [ ] Add lazy loading for all images
-- [ ] Create critical CSS extraction
-- [ ] Implement code splitting
-- [ ] Add CDN integration
-- [ ] Optimize web fonts
+---
 
-### 3. **Analytics & SEO**
-- [ ] Implement Google Analytics 4
-- [ ] Add event tracking
-- [ ] Create XML sitemap automation
-- [ ] Implement schema markup
-- [ ] Add meta tag optimization
-- [ ] Create 301 redirect map
+## Phase 5: Build & Deploy Enhancements
 
-## Current Project Status
+| Priority | Task | Key Steps | Deliverable |
+|----------|------|-----------|-------------|
+| **P2** | Bundle & cache-bust JS | • Add esbuild step in GitHub Actions<br>• Minify & hash `main.[hash].js`<br>• Update script tags dynamically | Smaller JS, long-term caching |
+| **P2** | Lighthouse & a11y audit | • Fix contrast issues<br>• Add missing alt-text<br>• Improve form labels | >90 Lighthouse scores |
+| **P2** | PWA enhancements | • Update service worker<br>• Add offline fallback page<br>• Cache strategy for images | Offline support |
+
+**Timeline**: 2-3 days  
+**Dependencies**: Phase 2  
+**Risk**: Low
+
+---
+
+## Phase 6: Documentation & Handoff
+
+| Priority | Task | Deliverable |
+|----------|------|-----------|-------------|
+| **P1** | `CONTRIBUTING.md` authoring guide | Steps for adding schedule items, gallery photos, news posts, volunteer roles |
+| **P1** | Data management guide | Document JSON structure and update process |
+| **P1** | Admin walkthrough video (optional) | 5-min Loom video for non-dev staff |
+
+**Timeline**: 1-2 days  
+**Dependencies**: All phases  
+**Risk**: None
+
+---
+
+## Current Status (August 6, 2025)
 
 ### ✅ Completed
-- **Phase 1**: Core restructure and architecture (100%)
-- **Phase 2**: Mobile-first responsive design (100%)
-- **Foundation**: Single festival focus, component system, mobile optimization
+- Core restructure and architecture (100%)
+- Mobile-first responsive design (100%)
+- Foundation: CI/CD pipeline with automated testing (100%)
+- Content decoupling: All data in JSON files (100%)
 
 ### 🚀 Ready to Start
-- **Phase 3**: Content enhancement systems
-- **Priority**: News system and vendor enhancements
+- **Phase 2**: Style System Re-org (P1 - NEXT)
+- **Immediate Priority**: Sass build system and style consolidation
 
-### 📊 Metrics Achieved
+### 📊 Success Metrics
 - ✅ Hero doesn't block mobile viewport
 - ✅ No horizontal scrolling
 - ✅ All CTAs are tappable (44x44px minimum)
 - ✅ Navigation works smoothly
 - ✅ Content is readable without zooming
 - ✅ Mobile-friendly throughout
+- ✅ Automated testing pipeline (html-proofer)
+- ✅ Content managed via JSON (festival-config, schedule, gallery)
+- ⏳ Sass-based style system (Phase 2)
+- ⏳ Volunteer recruitment system (Phase 3)
+- ⏳ Dynamic news system (Phase 4)
+- ⏳ Optimized build pipeline (Phase 5)
 
-### 🎯 Next Sprint Goals
-1. Implement news/blog system
-2. Enhance vendor directory
-3. Create festival information pages
-4. Add ticket integration preparation
+### 🎯 Sprint Goals (Next Week)
+1. **Days 1-3**: Complete Phase 2 (Sass & Style System)
+2. **Days 4-5**: Complete Phase 3 (Volunteer System)
+3. **Days 6-7**: Begin Phase 4 (News System)
 
-## Technical Stack
+## Technical Stack Evolution
+
+### Current Stack
 - **Frontend**: Vanilla HTML/CSS/JavaScript
+- **Data**: JSON files (festival-config, schedule-2025, gallery-2024)
 - **Hosting**: GitHub Pages
-- **Architecture**: Component-based with dynamic loading
-- **Styling**: Mobile-first CSS with custom properties
-- **Performance**: Inline critical CSS, lazy loading
+- **CI/CD**: GitHub Actions with html-proofer
+- **Architecture**: Component-based with dynamic data loading
 
-## Development Guidelines
-- **Mobile First**: All new features designed for phones first
-- **Progressive Enhancement**: Basic functionality works everywhere
-- **Accessibility**: WCAG 2.1 AA compliance minimum
-- **Performance**: Keep bundle sizes small, optimize assets
-- **Browser Support**: Modern browsers + graceful degradation
+### Target Stack (Post-Refactor)
+- **Frontend**: HTML/Sass/Modern JavaScript
+- **Static Site Generator**: Jekyll
+- **Build Pipeline**: GitHub Actions (Sass, JS bundling, optimization)
+- **Content Management**: JSON files + Markdown (for news)
+- **Forms**: Formspree
+- **CI/CD**: GitHub Actions with testing and deployment
+
+## Implementation Notes
+
+### Phase 2 (Sass Setup)
+```yaml
+# .github/workflows/build.yml
+name: Build and Deploy
+on:
+  push:
+    branches: [ main, refactor-sitewide ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Sass
+        run: npm run build:sass
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+```
+
+### Phase 3 (Volunteer Form)
+```html
+<!-- Formspree integration -->
+<form action="https://formspree.io/f/{YOUR_FORM_ID}" method="POST">
+  <select name="role" required>
+    <!-- Populated from volunteer-roles.json -->
+  </select>
+  <button type="submit">Sign Up to Volunteer</button>
+</form>
+```
+
+### Phase 4 (Jekyll Config)
+```yaml
+# _config.yml
+title: Boston Mountain Pawpaw Festival
+url: https://pawpawfestar.org
+collections:
+  news:
+    output: true
+    permalink: /news/:year/:month/:title/
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+```
+
+## Risk Mitigation
+
+1. **Progressive Enhancement**: Each phase can deploy independently
+2. **Feature Flags**: Use data attributes to toggle new features
+3. **Rollback Strategy**: Git tags at each phase completion
+4. **Testing**: Automated tests prevent regressions
+5. **Documentation**: Update README.md with each phase
+
+## Success Criteria
+
+- [x] All content is data-driven (no hardcoded dates/info)
+- [x] CI/CD pipeline with automated testing
+- [ ] Build process is automated via CI/CD (Phase 2)
+- [ ] Non-technical users can update content (Phase 6)
+- [ ] Lighthouse scores > 90 across all metrics (Phase 5)
+- [ ] Volunteer signups are functional (Phase 3)
+- [ ] News system is live with RSS feed (Phase 4)
+- [ ] Documentation enables self-service updates (Phase 6)
+
+## Recent Achievements 🎉
+
+### August 6, 2025
+- **Automated Testing**: GitHub Actions CI with html-proofer prevents broken links/images
+- **Data Liberation**: All festival data moved to JSON files for easy updates
+- **Dynamic Loading**: JavaScript modules now fetch data asynchronously
+- **Future-Proofing**: Gallery system supports multiple years automatically
+- **Developer Experience**: Clean separation of concerns, better maintainability
+
+## Next Actions
+
+1. **Immediate (Today)**: 
+   - Set up npm/package.json for Sass build
+   - Create `scss/` directory structure
+   - Move first CSS file to Sass
+
+2. **Tomorrow**:
+   - Complete Sass migration
+   - Set up GitHub Action for Sass compilation
+   - Create mixins for common patterns
+
+3. **This Week**:
+   - Complete Phase 2 (Style System)
+   - Start Phase 3 (Volunteer System)
 
 ---
 
-**Last Updated:** August 5, 2025  
-**Current Phase:** Phase 3 - Content Enhancement  
-**Status:** Mobile experience optimized, ready for content systems  
-**Next Priority:** News system implementation
+**Last Updated:** August 6, 2025  
+**Current Phase:** Phase 2 - Style System Re-org  
+**Status:** Ready to begin Sass implementation  
+**Next Action:** Install Sass and create build pipeline

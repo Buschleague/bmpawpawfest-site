@@ -1,0 +1,30 @@
+{
+  "currentYear": 2025,
+  "festivalDate": "2025-09-20T09:00:00-05:00",
+  "festivalEndDate": "2025-09-20T17:00:00-05:00",
+  "timezone": "America/Chicago",
+  "registrationLinks": {
+    "vendor": "https://www.beardandlady.com/products/10x10-vendor-space-at-beard-lady-inn-for-2025-paw-paw-festival",
+    "foodTruck": "https://www.beardandlady.com/products/vendor-food-drink-trucks-for-2025-paw-paw-festival-at-beard-lady-inn",
+    "cornhole": "https://thegardenofeden1999.com/products/untitled-jul19_13-36",
+    "pageant": "https://thegardenofeden1999.com/products/2nd-annual-paw-paw-pageant-2025"
+  },
+  "locations": {
+    "mainVenue": {
+      "name": "Beard & Lady Inn",
+      "address": "Chester, AR 72936",
+      "coordinates": {
+        "lat": 35.6792,
+        "lng": -94.1332
+      }
+    },
+    "farmersMarket": {
+      "name": "Chester Farmer's Market",
+      "address": "120 S. Wright Street, Chester, AR 72936"
+    }
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/events/1247505777050837/",
+    "instagram": "https://instagram.com/bmpawpawfest"
+  }
+}

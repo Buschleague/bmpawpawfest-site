@@ -1,0 +1,117 @@
+{
+  "lastUpdated": "2025-08-06",
+  "volunteerCoordinator": {
+    "name": "Eden Ellis",
+    "email": "eden@thegardenofeden1999.com",
+    "phone": "(479) 555-0123"
+  },
+  "shifts": [
+    {
+      "id": "setup",
+      "name": "Festival Setup",
+      "date": "2025-09-19",
+      "time": "2:00 PM - 6:00 PM",
+      "description": "Help set up vendor booths, signage, and festival areas",
+      "spotsAvailable": 15,
+      "requirements": "Ability to lift 25 lbs"
+    },
+    {
+      "id": "morning",
+      "name": "Morning Shift",
+      "date": "2025-09-20",
+      "time": "8:00 AM - 12:00 PM",
+      "description": "Assist with vendor check-in, parking, and morning activities",
+      "spotsAvailable": 10,
+      "requirements": "None"
+    },
+    {
+      "id": "afternoon",
+      "name": "Afternoon Shift",
+      "date": "2025-09-20",
+      "time": "12:00 PM - 5:00 PM",
+      "description": "Help with activities, crowd management, and vendor support",
+      "spotsAvailable": 10,
+      "requirements": "None"
+    },
+    {
+      "id": "cleanup",
+      "name": "Festival Cleanup",
+      "date": "2025-09-20",
+      "time": "5:00 PM - 8:00 PM",
+      "description": "Help tear down and clean up after the festival",
+      "spotsAvailable": 15,
+      "requirements": "Ability to lift 25 lbs"
+    }
+  ],
+  "roles": [
+    {
+      "id": "parking",
+      "name": "Parking Assistant",
+      "description": "Direct vehicles to parking areas and assist with traffic flow",
+      "icon": "🚗",
+      "skills": ["Standing for extended periods", "Clear communication"]
+    },
+    {
+      "id": "info_booth",
+      "name": "Information Booth",
+      "description": "Answer questions, provide directions, and share festival information",
+      "icon": "ℹ️",
+      "skills": ["Friendly demeanor", "Knowledge of festival layout"]
+    },
+    {
+      "id": "vendor_support",
+      "name": "Vendor Support",
+      "description": "Assist vendors with setup, supplies, and customer flow",
+      "icon": "🛍️",
+      "skills": ["Customer service", "Problem solving"]
+    },
+    {
+      "id": "activity_helper",
+      "name": "Activity Helper",
+      "description": "Support cornhole tournament, pageant, and workshop activities",
+      "icon": "🎯",
+      "skills": ["Enthusiasm", "Following instructions"]
+    },
+    {
+      "id": "setup_crew",
+      "name": "Setup/Cleanup Crew",
+      "description": "Help with physical setup and teardown of festival infrastructure",
+      "icon": "🔨",
+      "skills": ["Physical fitness", "Teamwork"]
+    },
+    {
+      "id": "green_team",
+      "name": "Green Team",
+      "description": "Manage recycling stations and help keep the festival grounds clean",
+      "icon": "♻️",
+      "skills": ["Environmental awareness", "Attention to detail"]
+    },
+    {
+      "id": "photography",
+      "name": "Event Photography",
+      "description": "Capture festival moments for social media and archives",
+      "icon": "📸",
+      "skills": ["Photography skills", "Own camera/phone"]
+    },
+    {
+      "id": "first_aid",
+      "name": "First Aid Support",
+      "description": "Assist medical personnel if needed (certification required)",
+      "icon": "🏥",
+      "skills": ["First Aid/CPR certification", "Calm under pressure"]
+    }
+  ],
+  "benefits": [
+    "Free festival t-shirt",
+    "Complimentary lunch during your shift",
+    "First access to pawpaw treats",
+    "Community service hours available",
+    "Invitation to volunteer appreciation party"
+  ],
+  "requirements": {
+    "minimum_age": 14,
+    "age_note": "Volunteers under 16 must be accompanied by an adult",
+    "orientation": "Brief orientation 30 minutes before shift",
+    "dress_code": "Comfortable clothes and closed-toe shoes"
+  }
+}

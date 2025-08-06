@@ -19,27 +19,20 @@ const SponsorsCarousel = (() => {
   // DOM Elements
   let carousel, slides, indicators, prevBtn, nextBtn;
 
-  // Sponsor data (can be expanded with URLs and descriptions)
-  const sponsorData = [
-    {
-      name: 'Beard & Lady Inn',
-      image: '/assets/images/sponsors/beard.jpg',
-      url: 'https://beardandladyinn.com/',
-      description: 'Historic inn and event venue in Chester, AR'
-    },
-    {
-      name: 'The Garden of Eden',
-      image: '/assets/images/sponsors/garden.png',
-      url: 'https://www.instagram.com/thegardenofeden1999/',
-      description: 'Community garden and sustainable living'
-    },
-    {
-      name: 'Gemini Capital Group',
-      image: '/assets/images/sponsors/GeminiCG.png',
-      url: null, // No website yet
-      description: 'Investment and capital management'
+  // Detect environment
+  const detectEnvironment = () => {
+    const protocol = window.location.protocol;
+    const hostname = window.location.hostname;
+
+    if (protocol === 'file:') {
+      return 'file';
+    } else if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname.startsWith('192.168')) {
+      return 'localserver';
+    } else if (hostname.includes('github.io') || hostname === 'pawpawfestar.org') {
+      return 'production';
     }
-  ];
+    return 'unknown';
+  };
 
   // Initialize
   const init = () => {
@@ -53,6 +46,15 @@ const SponsorsCarousel = (() => {
     slides = carousel.querySelectorAll('.sponsor-slide');
     indicators = document.querySelectorAll('.carousel-indicators .indicator');
 
+    // Fix image paths ONLY if needed
+    const environment = detectEnvironment();
+    console.log('Sponsors carousel environment:', environment);
+
+    if (environment === 'file' || environment === 'production') {
+      fixSponsorImagePaths();
+    }
+    // For local server, absolute paths should work as-is
+
     // Setup event listeners
     setupEventListeners();
 
@@ -61,6 +63,80 @@ const SponsorsCarousel = (() => {
 
     // Set ARIA labels
     updateAriaLabels();
+  };
+
+  // Fix sponsor image paths (only when needed)
+  const fixSponsorImagePaths = () => {
+    const sponsorImages = carousel.querySelectorAll('.sponsor-logo');
+    const environment = detectEnvironment();
+
+    sponsorImages.forEach(img => {
+      const originalSrc = img.getAttribute('src');
+
+      if (!originalSrc) return;
+
+      // Skip if already a full URL
+      if (originalSrc.startsWith('http://') || originalSrc.startsWith('https://')) {
+        return;
+      }
+
+      // Only fix absolute paths starting with /
+      if (originalSrc.startsWith('/')) {
+        let newSrc = originalSrc;
+
+        if (environment === 'file') {
+          // For file:// protocol, convert to relative path
+          const depth = (window.location.pathname.match(/\//g) || []).length - 1;
+          const basePath = depth === 0 ? '.' : '../'.repeat(depth);
+          newSrc = basePath + originalSrc.substr(1);
+        } else if (environment === 'production') {
+          // For production (GitHub Pages or custom domain)
+          // Check if we're in a subdirectory
+          const pathname = window.location.pathname;
+          if (pathname !== '/' && pathname !== '/index.html') {
+            // We're in a subdirectory, need to adjust path
+            if (typeof PathResolver !== 'undefined' && PathResolver.resolve) {
+              newSrc = PathResolver.resolve(originalSrc);
+            } else {
+              // Fallback calculation
+              const depth = (pathname.match(/\//g) || []).length - 1;
+              const basePath = depth === 0 ? '.' : '../'.repeat(depth);
+              newSrc = basePath + originalSrc.substr(1);
+            }
+          }
+          // If at root, leave absolute paths as-is
+        }
+
+        if (newSrc !== originalSrc) {
+          console.log(`Updating sponsor image path: ${originalSrc} -> ${newSrc}`);
+          img.src = newSrc;
+        }
+      }
+
+      // Add error handler to debug missing images
+      img.onerror = function() {
+        console.error('Failed to load sponsor image:', this.src);
+        console.error('Original src attribute:', originalSrc);
+        console.error('Environment:', environment);
+
+        // Show a placeholder message
+        const placeholder = document.createElement('div');
+        placeholder.className = 'sponsor-placeholder';
+        placeholder.innerHTML = `
+          <div style="padding: 2rem; text-align: center; color: #999;">
+            <p>Image not found</p>
+            <small style="font-size: 0.8em; font-family: monospace;">${originalSrc}</small>
+          </div>
+        `;
+        this.style.display = 'none';
+        this.parentNode.appendChild(placeholder);
+      };
+
+      // Add load success handler for debugging
+      img.onload = function() {
+        console.log('Successfully loaded sponsor image:', this.src);
+      };
+    });
   };
 
   // Setup Event Listeners
@@ -91,6 +167,14 @@ const SponsorsCarousel = (() => {
 
     // Pause when page is not visible
     document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Re-check paths if components are reloaded
+    document.addEventListener('componentsLoaded', () => {
+      const environment = detectEnvironment();
+      if (environment === 'file' || environment === 'production') {
+        fixSponsorImagePaths();
+      }
+    });
   };
 
   // Navigate Slide
@@ -243,7 +327,7 @@ const SponsorsCarousel = (() => {
     next: () => navigateSlide('next'),
     prev: () => navigateSlide('prev'),
     goTo: goToSlide,
-    getSponsorData: () => sponsorData
+    getEnvironment: detectEnvironment
   };
 })();
 

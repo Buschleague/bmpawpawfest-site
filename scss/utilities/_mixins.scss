@@ -1,0 +1,82 @@
+// Mixins for Boston Mountain Pawpaw Festival
+
+// Responsive breakpoint mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @media (max-width: 768px) { @content; }
+  }
+  @else if $breakpoint == 'tablet' {
+    @media (min-width: 769px) and (max-width: 1024px) { @content; }
+  }
+  @else if $breakpoint == 'desktop' {
+    @media (min-width: 1025px) { @content; }
+  }
+}
+
+// Button mixin
+@mixin button-style($bg-color, $text-color: white) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+// Card mixin
+@mixin card-style($padding: var(--spacing-lg)) {
+  background: white;
+  padding: $padding;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-medium);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+// Flex center mixin
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Absolute center mixin
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Gradient background mixin
+@mixin gradient-bg($start-color, $end-color, $angle: 135deg) {
+  background: linear-gradient($angle, $start-color 0%, $end-color 100%);
+}
+
+// Text truncate mixin
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Clearfix mixin
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

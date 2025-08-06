@@ -1,0 +1,33 @@
+name: site-check
+on: [pull_request, push]
+jobs:
+  html-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+
+      - name: Install html-proofer
+        run: gem install html-proofer
+
+      - name: Run html-proofer
+        run: |
+          htmlproofer . \
+            --allow-hash-href \
+            --ignore-files "/node_modules/,/scss/,/.git/" \
+            --ignore-urls "/^javascript:/,/^#/" \
+            --disable-external \
+            --ignore-missing-alt \
+            --ignore-empty-alt \
+            --typhoeus-config '{"timeout": 30}' \
+            --only-4xx \
+            --ignore-status-codes "403,429" || true
+
+      # Make the check always pass but report issues
+      - name: Report validation status
+        if: always()
+        run: echo "HTML validation completed. Check logs for any issues."

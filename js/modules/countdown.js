@@ -2,9 +2,10 @@
 const Countdown = (() => {
   'use strict';
 
-  // Festival date: September 20, 2025, 9:00 AM CST
-  const FESTIVAL_DATE = new Date('2025-09-20T09:00:00-05:00');
-
+  // Festival configuration
+  let FESTIVAL_DATE;
+  let FESTIVAL_END_DATE;
+  
   // DOM Elements
   let countdownElement;
   let daysElement;
@@ -14,7 +15,20 @@ const Countdown = (() => {
   let intervalId;
 
   // Initialize
-  const init = () => {
+  const init = async () => {
+    // Load festival configuration
+    try {
+      const response = await fetch('/data/festival-config.json');
+      const config = await response.json();
+      FESTIVAL_DATE = new Date(config.festivalDate);
+      FESTIVAL_END_DATE = new Date(config.festivalEndDate);
+    } catch (error) {
+      console.error('Failed to load festival config:', error);
+      // Fallback to hardcoded date
+      FESTIVAL_DATE = new Date('2025-09-20T09:00:00-05:00');
+      FESTIVAL_END_DATE = new Date('2025-09-20T17:00:00-05:00');
+    }
+
     // Find countdown elements
     countdownElement = document.getElementById('countdown');
     if (!countdownElement) return;
@@ -31,40 +45,35 @@ const Countdown = (() => {
     checkFestivalStatus();
   };
 
+  // Rest of the functions remain the same...
+  // (Copy the rest of the original countdown.js functions here)
+
   // Start countdown interval
   const startCountdown = () => {
-    // Update immediately
     updateCountdown();
-
-    // Update every second
     intervalId = setInterval(updateCountdown, 1000);
   };
 
-  // Update countdown display
   const updateCountdown = () => {
     const now = new Date();
     const difference = FESTIVAL_DATE - now;
 
-    // If festival has passed
     if (difference <= 0) {
       clearInterval(intervalId);
       displayFestivalActive();
       return;
     }
 
-    // Calculate time units
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
     const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    // Update display
     if (daysElement) daysElement.textContent = String(days).padStart(3, '0');
     if (hoursElement) hoursElement.textContent = String(hours).padStart(2, '0');
     if (minutesElement) minutesElement.textContent = String(minutes).padStart(2, '0');
     if (secondsElement) secondsElement.textContent = String(seconds).padStart(2, '0');
 
-    // Add urgency classes
     if (days < 7) {
       countdownElement.classList.add('countdown-urgent');
     }
@@ -73,14 +82,12 @@ const Countdown = (() => {
     }
   };
 
-  // Display when festival is active
   const displayFestivalActive = () => {
     if (!countdownElement) return;
 
-    const festivalEndDate = new Date('2025-09-20T17:00:00-05:00');
     const now = new Date();
 
-    if (now < festivalEndDate) {
+    if (now < FESTIVAL_END_DATE) {
       countdownElement.innerHTML = `
         <div class="festival-active">
           <h3>🎉 The Festival is Happening Now! 🎉</h3>
@@ -97,12 +104,10 @@ const Countdown = (() => {
     }
   };
 
-  // Check festival status on page load
   const checkFestivalStatus = () => {
     const now = new Date();
     const daysUntil = Math.floor((FESTIVAL_DATE - now) / (1000 * 60 * 60 * 24));
 
-    // Add appropriate body classes for styling
     if (daysUntil <= 0) {
       document.body.classList.add('festival-active');
     } else if (daysUntil <= 7) {
@@ -112,7 +117,6 @@ const Countdown = (() => {
     }
   };
 
-  // Format date for display
   const formatDate = (date) => {
     const options = {
       weekday: 'long',
@@ -126,7 +130,6 @@ const Countdown = (() => {
     return date.toLocaleDateString('en-US', options);
   };
 
-  // Stop countdown (cleanup)
   const stop = () => {
     if (intervalId) {
       clearInterval(intervalId);

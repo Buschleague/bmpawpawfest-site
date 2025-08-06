@@ -1,0 +1,60 @@
+name: Build Sass
+
+on:
+  push:
+    branches: [ main, refactor-sitewide ]
+    paths:
+      - 'scss/**'
+      - 'package.json'
+      - 'package-lock.json'
+  pull_request:
+    branches: [ main, refactor-sitewide ]
+    paths:
+      - 'scss/**'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build Sass
+      run: |
+        # Build minified version
+        npm run build:sass
+        
+        # Also create an unminified version for development
+        npx sass scss/main.scss css/main.css --style=expanded --source-map
+
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        git diff --quiet css/ || echo "css_changed=true" >> $GITHUB_OUTPUT
+
+    - name: Commit compiled CSS
+      if: steps.verify-changed-files.outputs.css_changed == 'true' && github.event_name == 'push'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add css/*.css css/*.css.map
+        git diff --staged --quiet || git commit -m "Auto-compile Sass to CSS [skip ci]"
+
+    - name: Push changes
+      if: steps.verify-changed-files.outputs.css_changed == 'true' && github.event_name == 'push'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}

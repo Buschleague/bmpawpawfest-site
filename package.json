@@ -1,0 +1,41 @@
+{
+  "name": "bmpawpawfest-site",
+  "version": "1.0.0",
+  "description": "Official website for the annual Boston Mountain Pawpaw Festival in Chester, Arkansas. This site serves as the primary information hub for festival attendees, vendors, and pawpaw enthusiasts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass scss/main.scss css/main.css --style=compressed",
+    "watch:css": "sass scss/main.scss css/main.css --watch",
+    "build:sass": "sass scss/main.scss css/main.css --style=compressed",
+    "watch:sass": "sass scss/main.scss css/main.css --watch",
+    "clean": "rm -rf css/_archive && rm -f css/main.css css/main.css.map",
+    "cleanup": "node cleanup-styles.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Buschleague/bmpawpawfest-site.git"
+  },
+  "keywords": [
+    "pawpaw",
+    "festival",
+    "arkansas",
+    "chester",
+    "boston-mountains"
+  ],
+  "author": "Buschleague",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Buschleague/bmpawpawfest-site/issues"
+  },
+  "homepage": "https://github.com/Buschleague/bmpawpawfest-site#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.90.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^13.0.0"
+  }
+}
