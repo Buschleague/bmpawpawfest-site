@@ -49,7 +49,6 @@ yarn-error.log*
 dist/
 build/
 node_modules/
-package-lock.json
 yarn.lock
 
 # macOS
