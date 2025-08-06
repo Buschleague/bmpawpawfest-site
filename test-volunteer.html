@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Volunteer System Test</title>
+  <style>
+    body { font-family: system-ui; padding: 2rem; max-width: 800px; margin: 0 auto; }
+    .test { margin: 1rem 0; padding: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+    .success { background: #d4edda; border-color: #c3e6cb; color: #155724; }
+    .error { background: #f8d7da; border-color: #f5c6cb; color: #721c24; }
+    .info { background: #d1ecf1; border-color: #bee5eb; color: #0c5460; }
+    h1 { color: #2d5016; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Volunteer System Test</h1>
+
+  <div id="test-results"></div>
+
+  <script>
+    async function runTests() {
+      const results = document.getElementById('test-results');
+
+      // Test 1: Volunteer Roles Data
+      try {
+        const response = await fetch('/data/volunteer-roles.json');
+        const data = await response.json();
+        results.innerHTML += `
+          <div class="test success">
+            ✅ Volunteer roles data loaded successfully<br>
+            - ${data.roles.length} roles available<br>
+            - ${data.shifts.length} shifts configured<br>
+            - Coordinator: ${data.volunteerCoordinator.name}
+          </div>
+        `;
+      } catch (e) {
+        results.innerHTML += `<div class="test error">❌ Volunteer roles data failed: ${e.message}</div>`;
+      }
+
+      // Test 2: Check page exists
+      try {
+        const response = await fetch('/pages/volunteer/');
+        if (response.ok) {
+          results.innerHTML += `<div class="test success">✅ Volunteer page loads successfully</div>`;
+        } else {
+          throw new Error('Page not found');
+        }
+      } catch (e) {
+        results.innerHTML += `<div class="test error">❌ Volunteer page failed: ${e.message}</div>`;
+      }
+
+      // Test 3: Navigation update check
+      try {
+        const response = await fetch('/components/header.html');
+        const html = await response.text();
+        if (html.includes('Volunteer')) {
+          results.innerHTML += `<div class="test success">✅ Navigation includes Volunteer link</div>`;
+        } else {
+          throw new Error('Volunteer link not found in navigation');
+        }
+      } catch (e) {
+        results.innerHTML += `<div class="test error">❌ Navigation update failed: ${e.message}</div>`;
+      }
+
+      // Test 4: Footer update check
+      try {
+        const response = await fetch('/components/footer.html');
+        const html = await response.text();
+        if (html.includes('Volunteer')) {
+          results.innerHTML += `<div class="test success">✅ Footer includes Volunteer link</div>`;
+        } else {
+          throw new Error('Volunteer link not found in footer');
+        }
+      } catch (e) {
+        results.innerHTML += `<div class="test error">❌ Footer update failed: ${e.message}</div>`;
+      }
+
+      // Info message
+      results.innerHTML += `
+        <div class="test info">
+          ℹ️ <strong>Next Steps:</strong><br>
+          1. Replace YOUR_FORM_ID with your Formspree ID in /pages/volunteer/index.html<br>
+          2. Add volunteer CTA section to index.html (see volunteer-homepage-section.html)<br>
+          3. Test the form submission<br>
+          4. Commit changes to git
+        </div>
+      `;
+
+      // Links to test
+      results.innerHTML += `
+        <div class="test info">
+          🔗 <strong>Quick Links:</strong><br>
+          <a href="/pages/volunteer/" target="_blank">View Volunteer Page</a> |
+          <a href="/data/volunteer-roles.json" target="_blank">View Roles Data</a> |
+          <a href="/" target="_blank">View Homepage</a>
+        </div>
+      `;
+    }
+
+    runTests();
+  </script>
+</body>
+</html>
