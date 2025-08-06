@@ -13,6 +13,66 @@
   font-size: 0.875rem;
 }
 
+/* Footer Sponsors Strip */
+.footer-sponsors {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-lg) 0;
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer-sponsors-title {
+  color: var(--color-white);
+  text-align: center;
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-sponsors-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.footer-sponsor-link {
+  display: block;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.footer-sponsor-link:not(.no-link):hover {
+  opacity: 1;
+}
+
+.footer-sponsor-link.no-link {
+  cursor: default;
+}
+
+.footer-sponsor-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform var(--transition-fast);
+}
+
+.footer-sponsor-logo-white,
+.footer-sponsor-logo-no-filter {
+  filter: none;
+}
+
+.footer-sponsor-logo-no-filter {
+  opacity: 0.9;
+}
+
+.footer-sponsor-link:not(.no-link):hover .footer-sponsor-logo {
+  transform: scale(1.05);
+}
+
 /* Contact Section */
 .section-contact {
   background-color: var(--color-light);
@@ -145,5 +205,8 @@
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+  .footer-sponsor-logo {
+    height: 40px;
   }
 }
