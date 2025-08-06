@@ -1,3 +1,4 @@
+
 const SponsorsCarousel = (() => {
   'use strict';
 
@@ -18,6 +19,21 @@ const SponsorsCarousel = (() => {
   // DOM Elements
   let carousel, slides, indicators, prevBtn, nextBtn;
 
+  // Detect environment
+  const detectEnvironment = () => {
+    const protocol = window.location.protocol;
+    const hostname = window.location.hostname;
+
+    if (protocol === 'file:') {
+      return 'file';
+    } else if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname.startsWith('192.168')) {
+      return 'localserver';
+    } else if (hostname.includes('github.io') || hostname === 'pawpawfestar.org') {
+      return 'production';
+    }
+    return 'unknown';
+  };
+
   // Initialize
   const init = () => {
     // Get DOM elements
@@ -30,8 +46,14 @@ const SponsorsCarousel = (() => {
     slides = carousel.querySelectorAll('.sponsor-slide');
     indicators = document.querySelectorAll('.carousel-indicators .indicator');
 
-    // Fix image paths for all sponsor images
-    fixSponsorImagePaths();
+    // Fix image paths ONLY if needed
+    const environment = detectEnvironment();
+    console.log('Sponsors carousel environment:', environment);
+
+    if (environment === 'file' || environment === 'production') {
+      fixSponsorImagePaths();
+    }
+    // For local server, absolute paths should work as-is
 
     // Setup event listeners
     setupEventListeners();
@@ -43,34 +65,76 @@ const SponsorsCarousel = (() => {
     updateAriaLabels();
   };
 
-  // Fix sponsor image paths using PathResolver if available
+  // Fix sponsor image paths (only when needed)
   const fixSponsorImagePaths = () => {
     const sponsorImages = carousel.querySelectorAll('.sponsor-logo');
+    const environment = detectEnvironment();
+
     sponsorImages.forEach(img => {
-      const src = img.getAttribute('src');
-      if (src && src.startsWith('/')) {
-        // If PathResolver is available, use it
-        if (typeof PathResolver !== 'undefined' && PathResolver.resolve) {
-          img.src = PathResolver.resolve(src);
-        } else {
-          // Fallback: manually fix the path based on current location
+      const originalSrc = img.getAttribute('src');
+
+      if (!originalSrc) return;
+
+      // Skip if already a full URL
+      if (originalSrc.startsWith('http://') || originalSrc.startsWith('https://')) {
+        return;
+      }
+
+      // Only fix absolute paths starting with /
+      if (originalSrc.startsWith('/')) {
+        let newSrc = originalSrc;
+
+        if (environment === 'file') {
+          // For file:// protocol, convert to relative path
           const depth = (window.location.pathname.match(/\//g) || []).length - 1;
           const basePath = depth === 0 ? '.' : '../'.repeat(depth);
-          img.src = basePath + src.substr(1);
+          newSrc = basePath + originalSrc.substr(1);
+        } else if (environment === 'production') {
+          // For production (GitHub Pages or custom domain)
+          // Check if we're in a subdirectory
+          const pathname = window.location.pathname;
+          if (pathname !== '/' && pathname !== '/index.html') {
+            // We're in a subdirectory, need to adjust path
+            if (typeof PathResolver !== 'undefined' && PathResolver.resolve) {
+              newSrc = PathResolver.resolve(originalSrc);
+            } else {
+              // Fallback calculation
+              const depth = (pathname.match(/\//g) || []).length - 1;
+              const basePath = depth === 0 ? '.' : '../'.repeat(depth);
+              newSrc = basePath + originalSrc.substr(1);
+            }
+          }
+          // If at root, leave absolute paths as-is
+        }
+
+        if (newSrc !== originalSrc) {
+          console.log(`Updating sponsor image path: ${originalSrc} -> ${newSrc}`);
+          img.src = newSrc;
         }
       }
 
       // Add error handler to debug missing images
       img.onerror = function() {
         console.error('Failed to load sponsor image:', this.src);
-        // Optionally set a placeholder
-        this.style.display = 'none';
+        console.error('Original src attribute:', originalSrc);
+        console.error('Environment:', environment);
+
+        // Show a placeholder message
         const placeholder = document.createElement('div');
         placeholder.className = 'sponsor-placeholder';
-        placeholder.textContent = 'Image not found';
-        placeholder.style.padding = '2rem';
-        placeholder.style.color = '#999';
+        placeholder.innerHTML = `
+          <div style="padding: 2rem; text-align: center; color: #999;">
+            <p>Image not found</p>
+            <small style="font-size: 0.8em; font-family: monospace;">${originalSrc}</small>
+          </div>
+        `;
+        this.style.display = 'none';
         this.parentNode.appendChild(placeholder);
+      };
+
+      // Add load success handler for debugging
+      img.onload = function() {
+        console.log('Successfully loaded sponsor image:', this.src);
       };
     });
   };
@@ -104,8 +168,13 @@ const SponsorsCarousel = (() => {
     // Pause when page is not visible
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // Listen for path updates after components are loaded
-    document.addEventListener('componentsLoaded', fixSponsorImagePaths);
+    // Re-check paths if components are reloaded
+    document.addEventListener('componentsLoaded', () => {
+      const environment = detectEnvironment();
+      if (environment === 'file' || environment === 'production') {
+        fixSponsorImagePaths();
+      }
+    });
   };
 
   // Navigate Slide
@@ -257,7 +326,8 @@ const SponsorsCarousel = (() => {
     play: startAutoPlay,
     next: () => navigateSlide('next'),
     prev: () => navigateSlide('prev'),
-    goTo: goToSlide
+    goTo: goToSlide,
+    getEnvironment: detectEnvironment
   };
 })();
 
