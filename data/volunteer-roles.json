@@ -10,9 +10,9 @@
       "id": "setup",
       "name": "Festival Setup",
       "date": "2025-09-19",
-      "time": "2:00 PM - 6:00 PM",
+      "time": "3:00 PM - 6:00 PM",
       "description": "Help set up vendor booths, signage, and festival areas",
-      "spotsAvailable": 15,
+      "spotsAvailable": 10,
       "requirements": "Ability to lift 25 lbs"
     },
     {
@@ -37,7 +37,7 @@
       "id": "cleanup",
       "name": "Festival Cleanup",
       "date": "2025-09-20",
-      "time": "5:00 PM - 8:00 PM",
+      "time": "5:00 PM - 6:30 PM",
       "description": "Help tear down and clean up after the festival",
       "spotsAvailable": 15,
       "requirements": "Ability to lift 25 lbs"
