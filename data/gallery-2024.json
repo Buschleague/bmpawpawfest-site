@@ -1,254 +1,473 @@
 {
   "year": 2024,
-  "categories": ["entertainment", "food", "activities", "vendors", "workshops"],
   "images": [
     {
-      "id": 1,
       "src": "/assets/images/gallery/2024/entertainment/dreadfulday.jpeg",
-      "alt": "Dreadful Day performing",
+      "title": "Live Music - Dreadful Day",
       "caption": "Dreadful Day rocking the main stage",
-      "category": ["2024", "entertainment"],
-      "title": "Live Music - Dreadful Day"
+      "alt": "Dreadful Day performing",
+      "category": ["entertainment", "2024", "featured"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 2,
       "src": "/assets/images/gallery/2024/entertainment/dreadfulday2.jpeg",
-      "alt": "Dreadful Day performance",
+      "title": "Dreadful Day Performance",
       "caption": "Another great shot of Dreadful Day performing",
-      "category": ["2024", "entertainment"],
-      "title": "Dreadful Day Performance"
+      "alt": "Dreadful Day performance",
+      "category": ["entertainment", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 3,
       "src": "/assets/images/gallery/2024/entertainment/patioband.jpeg",
-      "alt": "Patio band performance",
+      "title": "Patio Stage Music",
       "caption": "Live music on the patio stage",
-      "category": ["2024", "entertainment"],
-      "title": "Patio Stage Music"
+      "alt": "Patio band performance",
+      "category": ["entertainment", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 4,
       "src": "/assets/images/gallery/2024/entertainment/cornhole.jpeg",
-      "alt": "Cornhole tournament",
+      "title": "Cornhole Tournament",
       "caption": "Competitive cornhole tournament action",
-      "category": ["2024", "activities"],
-      "title": "Cornhole Tournament"
+      "alt": "Cornhole tournament",
+      "category": ["activities", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 5,
+      "src": "/assets/images/gallery/2024/entertainment/cornhole1.jpg",
+      "title": "Cornhole Tournament Action",
+      "caption": "Competitors in action during the cornhole tournament",
+      "alt": "Players competing in cornhole tournament",
+      "category": ["entertainment", "2024", "activities"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/entertainment/cornhole2.jpg",
+      "title": "Cornhole Competition",
+      "caption": "Intense gameplay at the cornhole tournament",
+      "alt": "Cornhole tournament gameplay",
+      "category": ["entertainment", "2024", "activities"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/entertainment/cornhole3.jpg",
+      "title": "Cornhole Finals",
+      "caption": "Final rounds of the cornhole competition",
+      "alt": "Cornhole tournament participant mid-throw",
+      "category": ["entertainment", "2024", "activities"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/entertainment/cornholeboards.jpg",
+      "title": "Custom Cornhole Boards",
+      "caption": "Cornhole boards ready for official tournament action",
+      "alt": "Decorated cornhole boards at the festival",
+      "category": ["entertainment", "2024", "activities"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/entertainment/dance.jpg",
+      "title": "Festival Dancing",
+      "caption": "Visitors enjoying dancing, or maybe a flag-holding foot-hopping competition...we aren't sure",
+      "alt": "People dancing at the pawpaw festival",
+      "category": ["entertainment", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
       "src": "/assets/images/gallery/2024/entertainment/pageantcontestants.jpeg",
-      "alt": "Pawpaw pageant contestants",
+      "title": "Pageant Contestants",
       "caption": "2024 Pawpaw Pageant contestants lined up",
-      "category": ["2024", "entertainment"],
-      "title": "Pageant Contestants"
+      "alt": "Pawpaw pageant contestants",
+      "category": ["entertainment", "2024", "featured"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 6,
-      "src": "/assets/images/gallery/2024/entertainment/pageantking.jpeg",
-      "alt": "Pawpaw King trophy",
+      "src": "/assets/images/gallery/2024/entertainment/pageantcrown.jpg",
+      "title": "Pawpaw King Trophy",
       "caption": "The coveted Pawpaw King trophy",
-      "category": ["2024", "entertainment"],
-      "title": "Pawpaw King Trophy"
+      "alt": "Pawpaw King trophy",
+      "category": ["entertainment", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 7,
+      "src": "/assets/images/gallery/2024/entertainment/pageantking.jpg",
+      "title": "2024 Pawpaw King Crowned",
+      "caption": "The crowning moment of our first Pawpaw King",
+      "alt": "Pawpaw King being crowned at the pageant",
+      "category": ["entertainment", "2024", "featured"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/general/goofycop.jpg",
+      "title": "Fun with Local Law Enforcement",
+      "caption": "Community policing at its finest - having fun at the festival",
+      "alt": "Police officer enjoying the festival atmosphere",
+      "category": ["entertainment", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/food/hobo.jpg",
+      "title": "Festival Character",
+      "caption": "Hobo's Kitchen providing free meals to attendees",
+      "alt": "Hobo's Kitchen Lunch",
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/workshops/edenforage4.jpg",
+      "title": "Garden of Eden Presentation",
+      "caption": "The Garden of Eden enchanting festival-goers",
+      "alt": "Foraging workshop presentation",
+      "category": ["entertainment", "2024", "workshops"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/workshops/edenforage5.jpg",
+      "title": "Advanced Foraging Techniques",
+      "caption": "Learning about local edible plants and pawpaw identification",
+      "alt": "Foraging workshop with local plant identification",
+      "category": ["entertainment", "2024", "workshops"],
+      "photographer": "Festival Staff"
+    },
+    {
       "src": "/assets/images/gallery/2024/food/pawpawicecream.jpeg",
-      "alt": "Pawpaw ice cream",
+      "title": "Pawpaw Ice Cream",
       "caption": "Delicious homemade pawpaw ice cream",
-      "category": ["2024", "food"],
-      "title": "Pawpaw Ice Cream"
+      "alt": "Pawpaw ice cream",
+      "category": ["food", "2024", "featured"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 8,
       "src": "/assets/images/gallery/2024/food/pawpawicecream2.jpeg",
+      "title": "Ice Cream Varieties",
+      "caption": "Lines forming for that delicious Pure Joy ice cream",
       "alt": "Pawpaw ice cream varieties",
-      "caption": "Various flavors of pawpaw ice cream",
-      "category": ["2024", "food"],
-      "title": "Ice Cream Varieties"
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 9,
+      "src": "/assets/images/gallery/2024/food/pawpawicecream3.jpg",
+      "title": "Ice Cream Delight",
+      "caption": "Festival visitors enjoying pawpaw ice cream",
+      "alt": "Look at those Rice Krispy treats - get there early",
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/food/icecream4.jpg",
+      "title": "Ice Cream Preparation",
+      "caption": "Pure Joy bringing the joy",
+      "alt": "Pawpaw ice cream being prepared",
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/food/icecream5.jpg",
+      "title": "Ice Cream Service",
+      "caption": "Serving up delicious pawpaw ice cream to festival goers",
+      "alt": "Pawpaw ice cream being served to customers",
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
       "src": "/assets/images/gallery/2024/food/pavillion.jpeg",
-      "alt": "Food pavilion",
+      "title": "Food Pavilion",
       "caption": "The main food pavilion bustling with activity",
-      "category": ["2024", "food"],
-      "title": "Food Pavilion"
+      "alt": "Food pavilion",
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 10,
       "src": "/assets/images/gallery/2024/food/pavillion2.jpeg",
+      "title": "Pavilion Vendors",
+      "caption": "The community breaking bread together - it's a beautiful thing",
       "alt": "Food pavilion vendors",
-      "caption": "Vendors serving up pawpaw treats",
-      "category": ["2024", "food"],
-      "title": "Pavilion Vendors"
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 11,
       "src": "/assets/images/gallery/2024/food/foodtrucks.jpeg",
-      "alt": "Food trucks",
+      "title": "Food Trucks",
       "caption": "Food trucks offering festival favorites",
-      "category": ["2024", "food"],
-      "title": "Food Trucks"
+      "alt": "Food trucks",
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 12,
       "src": "/assets/images/gallery/2024/food/hoboskitchen.jpeg",
-      "alt": "Hobo's Kitchen food truck",
+      "title": "Hobo's Kitchen",
       "caption": "Hobo's Kitchen serving up delicious food",
-      "category": ["2024", "food"],
-      "title": "Hobo's Kitchen"
+      "alt": "Hobo's Kitchen food truck",
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 13,
       "src": "/assets/images/gallery/2024/food/drinktrough.jpeg",
+      "title": "Beverage Station",
+      "caption": "Festival drink trough keeping everyone hydrated",
       "alt": "Drink station",
-      "caption": "Festival drink station keeping everyone hydrated",
-      "category": ["2024", "food"],
-      "title": "Beverage Station"
+      "category": ["food", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 14,
       "src": "/assets/images/gallery/2024/workshops/edenforage.jpeg",
-      "alt": "Eden teaching foraging",
+      "title": "Foraging Workshop",
       "caption": "Eden Ellis teaching pawpaw foraging techniques",
-      "category": ["2024", "activities"],
-      "title": "Foraging Workshop"
+      "alt": "Eden teaching foraging",
+      "category": ["workshops", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 15,
       "src": "/assets/images/gallery/2024/workshops/edenforage2.jpeg",
-      "alt": "Foraging workshop attendees",
+      "title": "Workshop Attendees",
       "caption": "Attendees learning about pawpaw identification",
-      "category": ["2024", "activities"],
-      "title": "Workshop Attendees"
+      "alt": "Foraging workshop attendees",
+      "category": ["workshops", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 16,
       "src": "/assets/images/gallery/2024/workshops/edenforage3.jpeg",
-      "alt": "Hands-on foraging lesson",
+      "title": "Hands-on Learning",
       "caption": "Hands-on learning in the foraging workshop",
-      "category": ["2024", "activities"],
-      "title": "Hands-on Learning"
+      "alt": "Hands-on foraging lesson",
+      "category": ["workshops", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 17,
       "src": "/assets/images/gallery/2024/workshops/moonshine.jpeg",
+      "title": "Moonshine Demo",
+      "caption": "Traditional mead making demonstration",
       "alt": "Moonshine demonstration",
-      "caption": "Traditional moonshine making demonstration",
-      "category": ["2024", "activities"],
-      "title": "Moonshine Demo"
+      "category": ["workshops", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 18,
       "src": "/assets/images/gallery/2024/workshops/moonshine2.jpeg",
+      "title": "Traditional Crafts",
+      "caption": "Learning about traditional Ozark mead making",
       "alt": "Moonshine workshop",
-      "caption": "Learning about traditional Ozark crafts",
-      "category": ["2024", "activities"],
-      "title": "Traditional Crafts"
+      "category": ["workshops", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 19,
+      "src": "/assets/images/gallery/2024/workshops/mead.jpg",
+      "title": "Mead Making Workshop",
+      "caption": "Take home your very own mead making kit",
+      "alt": "Take home Mead making kit for sale",
+      "category": ["workshops", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
       "src": "/assets/images/gallery/2024/apothecary/frontcounter.jpeg",
+      "title": "Apothecary Counter",
+      "caption": "The bustling Beard & Lady Inn apothecary counter",
       "alt": "Apothecary front counter",
-      "caption": "The Beard & Lady Inn apothecary counter",
-      "category": ["2024", "vendors"],
-      "title": "Apothecary Counter"
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 20,
       "src": "/assets/images/gallery/2024/apothecary/fullinterior.jpeg",
+      "title": "Apothecary Interior",
+      "caption": "Crowds inside the historic apothecary",
       "alt": "Apothecary interior",
-      "caption": "Inside the historic apothecary",
-      "category": ["2024", "vendors"],
-      "title": "Apothecary Interior"
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 21,
       "src": "/assets/images/gallery/2024/apothecary/tastingtable.jpeg",
-      "alt": "Tasting table",
+      "title": "Tasting Station",
       "caption": "Pawpaw product tasting station",
-      "category": ["2024", "vendors"],
-      "title": "Tasting Station"
+      "alt": "Tasting table",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 22,
       "src": "/assets/images/gallery/2024/apothecary/front2back.jpeg",
+      "title": "Apothecary Setup",
+      "caption": "Full view of the apothecary setup, and Greg in his natural habitat",
       "alt": "Apothecary view",
-      "caption": "Full view of the apothecary setup",
-      "category": ["2024", "vendors"],
-      "title": "Apothecary Setup"
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 23,
       "src": "/assets/images/gallery/2024/vendors/v1.jpeg",
-      "alt": "Vendor booth",
+      "title": "Artisan Vendor",
       "caption": "Local artisan showcasing handmade goods",
-      "category": ["2024", "vendors"],
-      "title": "Artisan Vendor"
+      "alt": "Vendor booth",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 24,
       "src": "/assets/images/gallery/2024/vendors/v2.jpeg",
+      "title": "Product Display",
+      "caption": "Festival-goers exploring our local artisans",
       "alt": "Vendor display",
-      "caption": "Beautiful vendor display of pawpaw products",
-      "category": ["2024", "vendors"],
-      "title": "Product Display"
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 25,
       "src": "/assets/images/gallery/2024/vendors/v3.jpeg",
-      "alt": "Vendor interaction",
-      "caption": "Vendor explaining products to festival-goers",
-      "category": ["2024", "vendors"],
-      "title": "Vendor Interaction"
+      "title": "Vendor Interaction",
+      "caption": "Boston Mountain Heritage Society's educational display",
+      "alt": "Heritage Society",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 26,
       "src": "/assets/images/gallery/2024/vendors/v4.jpeg",
-      "alt": "Craft vendor",
+      "title": "Local Crafts",
       "caption": "Handcrafted items from local artisans",
-      "category": ["2024", "vendors"],
-      "title": "Local Crafts"
+      "alt": "Craft vendor",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 27,
       "src": "/assets/images/gallery/2024/vendors/v5.jpeg",
-      "alt": "Plant vendor",
-      "caption": "Pawpaw seedlings and native plants for sale",
-      "category": ["2024", "vendors"],
-      "title": "Plant Sales"
+      "title": "Plant Sales",
+      "caption": "Festival-goers taking time out to pose",
+      "alt": "Festival-goers",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 28,
       "src": "/assets/images/gallery/2024/vendors/v6.jpeg",
-      "alt": "Food vendor",
-      "caption": "Delicious pawpaw treats being prepared",
-      "category": ["2024", "vendors"],
-      "title": "Food Preparation"
+      "title": "Food Preparation",
+      "caption": "Vendors nestled into Vendor Alley",
+      "alt": "Vendor alley",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 29,
       "src": "/assets/images/gallery/2024/vendors/v7.jpeg",
-      "alt": "Vendor row",
+      "title": "Vendor Row",
       "caption": "Busy vendor row with festival attendees",
-      "category": ["2024", "vendors"],
-      "title": "Vendor Row"
+      "alt": "Vendor row",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 30,
       "src": "/assets/images/gallery/2024/vendors/v8.jpeg",
+      "title": "Morning Setup",
+      "caption": "We found the Pawpaw Ice Cream man",
       "alt": "Vendor setup",
-      "caption": "Vendors setting up for the day",
-      "category": ["2024", "vendors"],
-      "title": "Morning Setup"
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
     },
     {
-      "id": 31,
+      "src": "/assets/images/gallery/2024/vendors/v9.jpg",
+      "title": "Craft Vendor Display",
+      "caption": "Unique crafts and artwork at the vendor market",
+      "alt": "Vendor displaying handmade crafts",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/vendors/v10.jpg",
+      "title": "Food Vendor Setup",
+      "caption": "Local vendors sharing their craft",
+      "alt": "Vendor booths at the festival",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/2024/vendors/v11.jpg",
+      "title": "Vendor Selling Kombucha",
+      "caption": "It's Kombucha!!",
+      "alt": "Festival goers browsing vendor booths",
+      "category": ["vendors", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
       "src": "/assets/images/general/dailytrain.jpeg",
-      "alt": "Daily train passing by",
+      "title": "Chester Daily Train",
       "caption": "The daily train passing by the festival grounds",
-      "category": ["2024", "activities"],
-      "title": "Chester Daily Train"
+      "alt": "Daily train passing by",
+      "category": ["activities", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/general/cop.jpg",
+      "title": "Community Support",
+      "caption": "Local law enforcement supporting the festival",
+      "alt": "Police officer at the festival",
+      "category": ["activities", "2024"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/featured/pawpaw-desserts.jpg",
+      "title": "Pawpaw Dessert Display",
+      "caption": "Array of delicious pawpaw desserts",
+      "alt": "Various pawpaw desserts on display",
+      "category": ["food", "2024", "featured"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/featured/live-music.jpg",
+      "title": "Main Stage Performance",
+      "caption": "Live music entertaining the crowd",
+      "alt": "Band performing on the main stage",
+      "category": ["entertainment", "2024", "featured"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/featured/workshop-scene.jpg",
+      "title": "Educational Workshop",
+      "caption": "Attendees learning about pawpaw cultivation",
+      "alt": "Workshop participants engaged in learning",
+      "category": ["workshops", "2024", "featured"],
+      "photographer": "Festival Staff"
+    },
+    {
+      "src": "/assets/images/gallery/featured/pageantcrown.jpg",
+      "title": "Pawpaw King Trophy",
+      "caption": "The coveted Pawpaw King trophy and crown",
+      "alt": "Pawpaw King trophy on display",
+      "category": ["entertainment", "2024", "featured"],
+      "photographer": "Festival Staff"
     }
-  ]
+  ],
+  "categories": {
+    "all": {
+      "name": "All Photos",
+      "description": "Complete collection from the 2024 festival"
+    },
+    "2024": {
+      "name": "2024 Festival",
+      "description": "All photos from the inaugural festival"
+    },
+    "food": {
+      "name": "Food & Desserts",
+      "description": "Delicious pawpaw treats and festival food"
+    },
+    "activities": {
+      "name": "Activities",
+      "description": "Games, competitions, and interactive fun"
+    },
+    "entertainment": {
+      "name": "Entertainment",
+      "description": "Music, pageants, and performances"
+    },
+    "vendors": {
+      "name": "Vendors",
+      "description": "Vendor booths and market scenes"
+    },
+    "workshops": {
+      "name": "Workshops",
+      "description": "Educational sessions and demonstrations"
+    },
+    "featured": {
+      "name": "Featured",
+      "description": "Highlight photos from the festival"
+    }
+  },
+  "metadata": {
+    "total_images": 56,
+    "event_date": "2024-09-21",
+    "location": "Beard & Lady Inn, Chester, AR",
+    "copyright": "© 2024 Boston Mountains Pawpaw Festival",
+    "usage_rights": "All rights reserved. Photos may not be used without permission.",
+    "contact": "info@ozarkeventshub.com",
+    "photographers": ["Festival Staff"],
+    "notes": "Inaugural Boston Mountains Pawpaw Festival photo collection"
+  }
 }
