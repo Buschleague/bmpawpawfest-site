@@ -98,7 +98,7 @@
       "photographer": "Festival Staff"
     },
     {
-      "src": "/assets/images/gallery/2024/entertainment/goofycop.jpg",
+      "src": "/assets/images/general/goofycop.jpg",
       "title": "Fun with Local Law Enforcement",
       "caption": "Community policing at its finest - having fun at the festival",
       "alt": "Police officer enjoying the festival atmosphere",
@@ -106,7 +106,7 @@
       "photographer": "Festival Staff"
     },
     {
-      "src": "/assets/images/gallery/2024/entertainment/hobo.jpg",
+      "src": "/assets/images/gallery/2024/food/hobo.jpg",
       "title": "Festival Character",
       "caption": "Hobo's Kitchen providing free meals to attendees",
       "alt": "Hobo's Kitchen Lunch",
@@ -114,7 +114,7 @@
       "photographer": "Festival Staff"
     },
     {
-      "src": "/assets/images/gallery/2024/entertainment/edenforage4.jpg",
+      "src": "/assets/images/gallery/2024/workshops/edenforage4.jpg",
       "title": "Garden of Eden Presentation",
       "caption": "The Garden of Eden enchanting festival-goers",
       "alt": "Foraging workshop presentation",
@@ -122,7 +122,7 @@
       "photographer": "Festival Staff"
     },
     {
-      "src": "/assets/images/gallery/2024/entertainment/edenforage5.jpg",
+      "src": "/assets/images/gallery/2024/workshops/edenforage5.jpg",
       "title": "Advanced Foraging Techniques",
       "caption": "Learning about local edible plants and pawpaw identification",
       "alt": "Foraging workshop with local plant identification",
@@ -254,14 +254,6 @@
       "title": "Mead Making Workshop",
       "caption": "Take home your very own mead making kit",
       "alt": "Take home Mead making kit for sale",
-      "category": ["workshops", "2024"],
-      "photographer": "Festival Staff"
-    },
-    {
-      "src": "/assets/images/gallery/2024/workshops/mrpawintro.jpg",
-      "title": "Pawpaw Expert Introduction",
-      "caption": "Mr. Pawpaw introducing cultivation techniques",
-      "alt": "Pawpaw cultivation expert giving presentation",
       "category": ["workshops", "2024"],
       "photographer": "Festival Staff"
     },
