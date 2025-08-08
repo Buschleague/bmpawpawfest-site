@@ -116,7 +116,15 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
+  
+
+    .mission-intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--color-text);
+      margin-bottom: 1rem;
+    }
+</style>
 </head>
 <body class="page-mission">
   <!-- Header Component -->
@@ -131,34 +139,41 @@
   </section>
 
   <!-- Main Content -->
+  
   <main class="content-container">
-    <!-- Coming Soon Message -->
-    <div class="coming-soon">
-      <h2>🌿 Our Mission Statement Coming Soon</h2>
-      <p>We're crafting our official mission statement to share our vision for celebrating Arkansas's native pawpaw fruit and supporting our local community. Check back soon!</p>
+    <section class="mission-intro">
+      <p>Our mission is simple and serious: keep Ozark knowledge alive, celebrate native food sources like the pawpaw, and bring people together to live in rhythm with the seasons.</p>
+    </section>
 
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="icon">🌳</div>
-          <h3>Preservation</h3>
-          <p>Protecting and promoting Arkansas's native pawpaw trees</p>
-        </div>
-        <div class="value-card">
-          <div class="icon">🤝</div>
-          <h3>Community</h3>
-          <p>Bringing together locals and visitors in celebration</p>
-        </div>
-        <div class="value-card">
-          <div class="icon">📚</div>
-          <h3>Education</h3>
-          <p>Teaching sustainable cultivation and foraging practices</p>
-        </div>
+    <section class="values-grid" aria-label="Mission Pillars">
+      <div class="value-card">
+        <div class="icon">🏔️</div>
+        <h3>Preserve Ozark Heritage</h3>
+        <p>Safeguard nearly forgotten skills and stories—from pawpaw cultivation to traditional plant lore—so future generations can taste, forage, and thrive off the land.</p>
       </div>
-
-      <p style="margin-top: 2rem;">Join us in celebrating this unique Arkansas treasure!</p>
-      <a href="/" class="btn btn-primary">Learn More About Pawpaws</a>
-    </div>
+      <div class="value-card">
+        <div class="icon">🥭</div>
+        <h3>Celebrate Native Food Sources</h3>
+        <p>Elevate Arkansas’s “mystery fruit” and other wild edibles to spark curiosity about the rich biodiversity tucked into our hills and hollers.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🤝</div>
+        <h3>Cultivate Community</h3>
+        <p>Build a festival made by neighbors for neighbors—where workshops, tastings, and volunteering create durable ties across the region.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🍂</div>
+        <h3>Live with the Seasons</h3>
+        <p>Encourage seasonal practices—harvesting in fall, planting in spring—and honor the cycles that sustain Ozark life.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🌱</div>
+        <h3>Inspire Stewardship &amp; Resilience</h3>
+        <p>Through hands-on education and joyful celebration, foster respect for the land and the self-reliance that defines the Ozarks.</p>
+      </div>
+    </section>
   </main>
+
 
   <!-- Footer Component -->
   <div data-component="footer"></div>

@@ -15,6 +15,7 @@
 @use 'components/gallery' as *;
 @use 'components/sponsors' as *;
 @use 'components/footer' as *;
+@use 'components/about' as *;
 
 // Load responsive utilities last
 @use 'utilities/responsive' as *;
