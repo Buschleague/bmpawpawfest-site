@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* CSS Variables for Boston Mountain Pawpaw Festival */
 :root {
   /* Festival Colors - Pawpaw Theme */
@@ -2534,6 +2535,71 @@ body.menu-open {
     height: 40px;
   }
 }
+/* About (History + Mission) */
+.history-section {
+  position: relative;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 720px) 320px; /* narrower right rail */
+  gap: 2rem;
+  align-items: start;
+}
+
+.history-content h2 {
+  font-family: var(--font-decorative, inherit);
+  color: var(--color-primary);
+  margin: 0.5rem 0;
+}
+.history-content p {
+  line-height: 1.75;
+}
+
+/* Eden portrait overlay */
+.eden-overlay {
+  position: sticky;
+  top: 96px; /* was 120px */
+  align-self: start;
+  text-align: center;
+  pointer-events: none;
+}
+.eden-overlay img {
+  width: 100%;
+  max-width: 320px; /* rein in scale a touch */
+  height: auto;
+  display: block;
+  /* micro “edge melt” + main shadow to hide leftover fringe */
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.06)) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.22));
+}
+.eden-overlay .eden-caption {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-top: 0.5rem;
+  pointer-events: auto;
+}
+
+/* Phone/tablet: keep Eden visible, just stack */
+@media (max-width: 900px) {
+  .history-grid {
+    grid-template-columns: 1fr;
+  }
+  .eden-overlay {
+    position: static;
+    display: block;
+    margin: 1rem auto 0;
+    max-width: 260px;
+  }
+}
+/* Mission intro polish */
+.mission-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
 /* Responsive Utilities */
 /* Tablet and below */
 @media (max-width: 1024px) {
