@@ -113,7 +113,47 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
+  
+
+    /* History Layout & Eden Overlay */
+    .history-section { position: relative; }
+    .history-grid {
+      display: grid;
+      grid-template-columns: 1fr minmax(220px, 360px);
+      gap: 2rem;
+      align-items: start;
+    }
+    .history-content h2 {
+      font-family: var(--font-decorative);
+      color: var(--color-primary);
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .history-content p { line-height: 1.75; }
+    .eden-overlay {
+      position: sticky;
+      top: 120px;
+      align-self: start;
+      text-align: center;
+      pointer-events: none;
+    }
+    .eden-overlay img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,0.25));
+    }
+    .eden-caption {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin-top: 0.5rem;
+      pointer-events: auto;
+    }
+    @media (max-width: 900px) {
+      .history-grid { grid-template-columns: 1fr; }
+      .eden-overlay { display: none; }
+    }
+</style>
 </head>
 <body class="page-history">
   <!-- Header Component -->
@@ -128,34 +168,32 @@
   </section>
 
   <!-- Main Content -->
+  
   <main class="content-container">
-    <!-- Coming Soon Message -->
-    <div class="coming-soon">
-      <h2>🌿 Our Story is Being Written</h2>
-      <p>We're currently gathering the rich history of the Boston Mountain Pawpaw Festival and its origins in Chester, Arkansas. Check back soon to learn about how this celebration of our native fruit began!</p>
+    <article class="history-section">
+      <div class="history-grid">
+        <div class="history-content">
+          <h2>How It Started</h2>
+          <p>In July 2024, founder <strong>Eden Ellis</strong> set out to create Arkansas’s first Pawpaw festival. What began as a spark of an idea quickly grew roots: by <strong>September 28, 2024</strong>, a community of friends, family, and neighbors rallied together to bring the inaugural Boston Mountains Pawpaw Festival to life in Chester.</p>
 
-      <div class="quick-facts">
-        <div class="fact-card">
-          <div class="icon">🎉</div>
-          <h3>Founded</h3>
-          <p>2024</p>
+          <h2>Why Pawpaws?</h2>
+          <p>Many of us grew up hearing about pawpaws—or the old rhyme, “picking up pawpaws and putting them in our pockets”—yet few have actually tasted one. The pawpaw is often called a “mystery fruit”: it looks a bit like a green potato, but the flavor is a lush banana–mango with a custard-like texture. It’s also <strong>North America’s largest native fruit</strong>, hiding in plain sight across the hills and hollers of the Ozark Mountain region.</p>
+
+          <h2>Rooted in Ozark Culture</h2>
+          <p>From day one, the festival’s purpose has been to preserve Ozark Mountain heritage and pass down almost-lost knowledge—about pawpaws and other native plants and wild foods available to forage in the fall. We celebrate <em>history, culture, native food sources, community, thriving off the land,</em> and staying <em>connected with the seasons</em>.</p>
         </div>
-        <div class="fact-card">
-          <div class="icon">📍</div>
-          <h3>Location</h3>
-          <p>Chester, Arkansas</p>
-        </div>
-        <div class="fact-card">
-          <div class="icon">🌳</div>
-          <h3>Mission</h3>
-          <p>Celebrating Arkansas's native pawpaw</p>
-        </div>
+
+        <aside class="eden-overlay" aria-label="Portrait of festival founder, Eden Ellis">
+          <picture>
+            <source srcset="/assets/images/general/eden.webp" type="image/webp">
+            <img src="/assets/images/general/eden.png" alt="Eden Ellis, Festival Founder" loading="lazy">
+          </picture>
+          <div class="eden-caption">Founder: Eden Ellis</div>
+        </aside>
       </div>
-
-      <p style="margin-top: 2rem;">In the meantime, join us for the 2nd Annual Festival on September 20, 2025!</p>
-      <a href="/#schedule" class="btn btn-primary">View 2025 Schedule</a>
-    </div>
+    </article>
   </main>
+
 
   <!-- Footer Component -->
   <div data-component="footer"></div>
