@@ -18,88 +18,77 @@ The Boston Mountain Pawpaw Festival celebrates Arkansas's largest native fruit w
 ## Project Structure
 
 ```
-pawpaw-festival/
-├── index.html              # Main HTML file
-├── css/                    # Stylesheets
-│   ├── utilities/          # Utility styles
-│   │   ├── variables.css   # CSS custom properties (pawpaw theme colors)
-│   │   ├── reset.css       # Modern CSS reset
-│   │   ├── base.css        # Base typography and elements
-│   │   └── responsive.css  # Responsive utilities
-│   └── components/         # Component-specific styles
-│       ├── header.css      # Header and navigation with dropdowns
-│       ├── hero.css        # Hero section with countdown
-│       ├── schedule.css    # Festival schedule timeline
-│       ├── activities.css  # Quick info cards and features
-│       └── footer.css      # Footer and contact
-├── js/                     # JavaScript modules
-│   ├── navigation.js       # Navigation and mobile menu
-│   ├── schedule.js         # Schedule display and filtering
-│   ├── countdown.js        # Countdown timer to festival
-│   └── main.js             # Main app initialization
-├── data/                   # Data files
-│   └── festival-2025.json  # Festival information and schedule
-└── assets/                 # Static assets
-    ├── images/             # Image files
-    │   ├── hero-*.jpg      # Hero and feature images
-    │   ├── gallery/        # Photo gallery (coming soon)
-    │   └── sponsors/       # Sponsor logos
-    └── icons/              # Favicon and app icons
+bmpawpawfest-site/
+├── index.html              # Main landing page
+├── components/             # Shared HTML partials (header, footer)
+├── pages/                  # Standalone pages (about, vendors, etc.)
+├── data/                   # JSON data sources
+│   ├── festival-config.json
+│   ├── schedule-2025.json
+│   ├── gallery-2024.json
+│   └── volunteer-roles.json
+├── js/
+│   ├── core/               # Component loader utilities
+│   └── modules/            # Feature modules (countdown, navigation, schedule, gallery)
+├── scss/                   # Source Sass files
+├── css/                    # Compiled CSS output
+├── assets/                 # Images and icons
+└── package.json            # Project metadata and scripts
 ```
 
 ## Key Features
 
-### 1. **Festival Information Hub**
-- Comprehensive schedule with filtering by activity type
-- Vendor directory and application information
-- Interactive location/parking details
-- FAQ section for common questions
+### Data-Driven Content
+- Festival details, schedules, galleries, and volunteer roles loaded from JSON
+- Content updates without touching markup or scripts
 
-### 2. **Countdown Timer**
-- Dynamic countdown to festival date
-- Special states for final week/day
-- Automatic display updates during festival
+### Component-Based Pages
+- Reusable header and footer loaded on every page
+- Page templates kept in the `pages/` directory
 
-### 3. **Responsive Design**
-- Mobile-first approach
-- Touch-friendly navigation
-- Optimized for all devices
+### Gallery & Media
+- Lightbox gallery with support for multiple years
+- Lazy-loaded images and sponsor logos
 
-### 4. **Accessibility**
-- Semantic HTML structure
-- ARIA labels and landmarks
-- Keyboard navigation support
-- Screen reader optimized
+### Countdown & Schedule
+- Countdown timer to event day
+- Filterable schedule timeline powered by JSON data
 
-### 5. **Performance Optimized**
-- Modular CSS/JS architecture
-- Lazy loading for images
-- Progressive enhancement
-- PWA-ready structure
+### Responsive & Accessible
+- Mobile-first design with touch-friendly navigation
+- Semantic HTML, ARIA landmarks, and keyboard support
+
+### Continuous Integration
+- GitHub Actions runs html-proofer tests on every push
+- Automatic sitemap updates and GitHub Pages deployment
 
 ## Development
 
 ### Getting Started
 
 1. Clone the repository
-2. Open `index.html` in a web browser
-3. No build process required for basic development
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Build styles
+   ```bash
+   npm run build:sass # or npm run watch:sass
+   ```
+4. Serve the site locally
+   ```bash
+   # Using Python
+   python -m http.server 8000
 
-### Local Development
-
-```bash
-# Serve files locally (using Python)
-python -m http.server 8000
-
-# Or using Node.js
-npx http-server
-```
+   # Or using Node.js
+   npx http-server
+   ```
 
 ### Customization
 
-- **Colors**: Edit CSS variables in `css/utilities/variables.css`
-- **Schedule**: Update events in `data/festival-2025.json`
-- **Content**: Modify section content in `index.html`
+- **Styles**: Edit Sass files in `scss/` and recompile
+- **Content**: Update JSON data in `data/`
+- **Pages**: Modify HTML in `pages/` or `components/`
 
 ## Deployment
 
@@ -109,15 +98,15 @@ The site is deployed via GitHub Pages:
 2. GitHub Actions automatically updates the sitemap
 3. Site is live at [pawpawfestar.org](https://pawpawfestar.org)
 
-## Future Enhancements
+## Roadmap
 
-- [ ] Photo gallery from previous festivals
-- [ ] News/blog system for updates
-- [ ] Online vendor applications
-- [ ] Ticket sales integration
-- [ ] Interactive festival map
-- [ ] Email newsletter signup
-- [ ] Social media feed integration
+Development progress and upcoming work are tracked in [development-roadmap.md](development-roadmap.md). Major next steps include:
+
+- **Phase 2 – Style System Re-org**: migrate CSS to Sass, consolidate styles, and optimize with PostCSS
+- **Phase 3 – Volunteer System**: dedicated volunteer page and Formspree-powered signup form
+- **Phase 4 – News System**: Jekyll-powered news posts with RSS feed
+- **Phase 5 – Build & Deploy Enhancements**: JS bundling, Lighthouse and accessibility audits, PWA improvements
+- **Phase 6 – Documentation & Handoff**: expand docs for non-technical contributors
 
 ## Contributing
 
