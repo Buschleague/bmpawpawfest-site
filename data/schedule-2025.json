@@ -12,11 +12,10 @@
     },
     {
       "id": 2,
-      "time": "9:00 AM",
+      "time": "9:00 AM - 9:45 AM",
       "title": "Fall Foraging with Eden",
       "description": "Eden Ellis speaks about fall foraging techniques and identifying wild edibles",
       "type": "workshop",
-      "duration": "45 minutes",
       "location": "Apothecary Stage - Beard & Lady Inn",
       "icon": "🌿"
     },
@@ -41,11 +40,10 @@
     },
     {
       "id": 5,
-      "time": "10:00 AM",
+      "time": "10:00 AM - 10:45 AM",
       "title": "Pawpaw Mead Making Demo",
       "description": "Cyrus Mason with Still'n The Clear demonstrates pawpaw mead making",
       "type": "workshop",
-      "duration": "45 minutes",
       "location": "Apothecary Stage - Beard & Lady Inn",
       "icon": "🍯"
     },
@@ -70,11 +68,10 @@
     },
     {
       "id": 8,
-      "time": "1:00 PM",
+      "time": "1:00 PM - 1:45 PM",
       "title": "Growing & Raising Pawpaws",
       "description": "Guy King Ames from Ames Orchard speaks on pawpaw cultivation",
       "type": "workshop",
-      "duration": "45 minutes",
       "location": "Apothecary Stage - Beard & Lady Inn",
       "icon": "🌱"
     },

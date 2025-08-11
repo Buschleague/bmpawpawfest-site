@@ -100,7 +100,7 @@
 
 @media (min-width: 768px) {
   .schedule-timeline::before {
-    left: 60px;
+    left: 144px;
   }
 }
 
@@ -127,6 +127,8 @@
 
 /* Schedule Time - Mobile First */
 .schedule-time {
+  position: relative;
+  z-index: 2;
   flex: 0 0 auto;
   text-align: left; /* Left-aligned on mobile */
   padding-top: 0;
@@ -141,6 +143,8 @@
 }
 
 .time-text {
+  background: var(--color-light);
+  padding-right: 6px;
   display: block;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
