@@ -120,9 +120,8 @@ To contribute to the festival website:
 ## Contact
 
 - **Website**: [pawpawfestar.org](https://pawpawfestar.org)
-- **Email**: info@pawpawfestar.org
+- **Email**: info@ozarkeventshub.com
 - **Facebook**: [Boston Mountain Pawpaw Festival](https://facebook.com/bostonmountainpawpawfestival)
-- **Instagram**: [@bmpawpawfest](https://instagram.com/bmpawpawfest)
 
 ## License
 
