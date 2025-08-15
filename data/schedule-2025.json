@@ -7,81 +7,108 @@
       "title": "Chester Farmer's Market",
       "description": "Browse local produce, crafts, and goods at the Chester Farmer's Market",
       "type": "market",
-      "location": "Farmer's Market - 120 S. Wright Street",
+      "location": "120 S. Wright Street",
       "icon": "🛍️"
     },
     {
       "id": 2,
-      "time": "9:00 AM - 9:45 AM",
-      "title": "Fall Foraging with Eden",
-      "description": "Eden Ellis speaks about fall foraging techniques and identifying wild edibles",
-      "type": "workshop",
-      "location": "Apothecary Stage - Beard & Lady Inn",
-      "icon": "🌿"
+      "time": "8:00 AM - 5:00 PM",
+      "title": "Local Craft Vendors",
+      "description": "Browse handmade crafts, art, and local goods from regional artisans",
+      "type": "vendors",
+      "location": "North side of Beard & Lady Inn (411 E Front Ave, Chester, AR)",
+      "icon": "🎨"
     },
     {
       "id": 3,
-      "time": "9:00 AM - 12:00 PM",
+      "time": "9:00 AM - 10:00 AM",
+      "title": "Fall Foraging with Eden Ellis",
+      "description": "Eden Ellis of The Garden of Eden 1999 discusses fall foraging techniques and identifying wild edibles",
+      "type": "workshop",
+      "location": "Apothecary Stage (411 E Front Ave, Chester, AR)",
+      "icon": "🌿"
+    },
+    {
+      "id": 4,
+      "time": "9:00 AM - 11:00 AM",
       "title": "Cornhole Tournament",
       "description": "Competitive cornhole tournament - Registration required",
       "type": "activity",
-      "location": "Farmer's Market - 120 S. Wright Street",
+      "location": "120 S. Wright Street (under Pavilion)",
       "icon": "🎯",
       "requiresRegistration": true
     },
     {
-      "id": 4,
+      "id": 5,
       "time": "9:30 AM - 12:00 PM",
       "title": "Dreadful Day Live",
-      "description": "Live music performance by Dreadful Day on the main stage",
+      "description": "Live music performance by Dreadful Day",
       "type": "entertainment",
-      "location": "Main Stage - Farmer's Market",
+      "location": "120 S. Wright Street",
       "icon": "🎵"
     },
     {
-      "id": 5,
-      "time": "10:00 AM - 10:45 AM",
-      "title": "Pawpaw Mead Making Demo",
-      "description": "Cyrus Mason with Still'n The Clear demonstrates pawpaw mead making",
-      "type": "workshop",
-      "location": "Apothecary Stage - Beard & Lady Inn",
-      "icon": "🍯"
-    },
-    {
       "id": 6,
-      "time": "11:30 AM - 2:00 PM",
-      "title": "Hobo's Kitchen Lunch",
-      "description": "Donation-based lunch featuring venison chili and cornbread",
-      "type": "food",
-      "location": "Beard & Lady Inn",
-      "icon": "🍲"
+      "time": "9:30 AM - 11:00 AM",
+      "title": "Outdoor Adventure Tours",
+      "description": "Join Squatch UTV Rentals LLC, Where the Blacktop Ends, Barker Gap, and Cove City Cabins for day of outdoor activities",
+      "type": "activity",
+      "location": "Meet up at #12 School House 27930 Freedom Rd, Chester AR",
+      "icon": "🚗"
     },
     {
       "id": 7,
+      "time": "10:00 AM - 10:45 AM",
+      "title": "Pawpaw Mead Making Demo",
+      "description": "Cyrus Mason of Still'n the Clear demonstrates making pawpaw mead",
+      "type": "workshop",
+      "location": "Apothecary Stage (411 E Front Ave, Chester, AR)",
+      "icon": "🍯"
+    },
+    {
+      "id": 8,
+      "time": "11:00 AM - 11:15 AM",
+      "title": "Ozark Friction Fire Demo",
+      "description": "Corey Cribbs demonstrates traditional fire-making techniques",
+      "type": "workshop",
+      "location": "Apothecary Stage (411 E Front Ave, Chester, AR)",
+      "icon": "🔥"
+    },
+    {
+      "id": 9,
+      "time": "11:30 AM - 2:00 PM",
+      "title": "Hobo's Kitchen Lunch",
+      "description": "Enjoy delicious venison chili and more from Hobo's Kitchen",
+      "type": "food",
+      "location": "Beard & Lady Inn (411 E Front Ave, Chester, AR)",
+      "icon": "🍲"
+    },
+    {
+      "id": 10,
       "time": "1:00 PM - 2:00 PM",
       "title": "Pawpaw Pageant",
       "description": "Crown the 2025 Pawpaw King - Registration required",
       "type": "featured",
-      "location": "Main Stage - Farmer's Market",
+      "location": "120 S. Wright Street (under Pavilion)",
       "icon": "👑",
       "requiresRegistration": true
     },
     {
-      "id": 8,
-      "time": "1:00 PM - 1:45 PM",
+      "id": 11,
+      "time": "1:00 PM - 2:00 PM",
       "title": "Growing & Raising Pawpaws",
-      "description": "Guy King Ames from Ames Orchard speaks on pawpaw cultivation",
+      "description": "Guy King Ames speaks on pawpaw cultivation techniques",
       "type": "workshop",
-      "location": "Apothecary Stage - Beard & Lady Inn",
+      "location": "Apothecary Stage (411 E Front Ave, Chester, AR)",
       "icon": "🌱"
     },
     {
-      "id": 9,
+      "id": 12,
       "time": "2:00 PM - 5:00 PM",
       "title": "Jesse Dean Live Music",
       "description": "Live music performance by Jesse Dean",
       "type": "entertainment",
-      "location": "Beard & Lady Inn",
+      "location": "Beard & Lady Inn (411 E Front Ave, Chester, AR)",
       "icon": "🎸"
     }
   ],
@@ -92,6 +119,7 @@
     "entertainment": { "name": "Entertainment", "color": "var(--color-accent)" },
     "activity": { "name": "Activities", "color": "var(--color-autumn)" },
     "featured": { "name": "Featured Events", "color": "var(--color-tertiary)" },
-    "market": { "name": "Market", "color": "var(--color-earth)" }
+    "market": { "name": "Market", "color": "var(--color-earth)" },
+    "vendors": { "name": "Vendors", "color": "var(--color-primary)" }
   }
 }
